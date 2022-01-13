@@ -1,0 +1,874 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	
+	<!--================ Start Home Banner Area =================-->
+	<section class="home_banner_area" style="background-image: none!important;">
+		<div class="banner_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7">
+						{% for h in hello %}
+						
+						{% if  h.image_banner.url != None %}
+							
+						<div class="banner_content" style="background-image: url({{h.image_banner.url}});" >
+						
+						{% else %}
+						<div class="banner_content" style="background-image: none!important;" >
+						
+							{% endif %}
+						
+							<h3 class="text-uppercase">{{h.hello_name}}</h3>
+							<h1 class="text-uppercase ">{{h.title}}</h1>
+							<h5 class="text-uppercase">{{h.des}}</h5>
+							<div class="d-flex align-items-center">
+							<a class="primary_btn" href="{{h.hire_link}}"><span>{{h.hire}}</span></a>
+								<a class="primary_btn tr-bg" href="{{h.cv_link}}"><span>{{h.cv}}</span></a>
+								
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-lg-5">
+						<div class="home_right_img">
+							{% if  h.back_banner.url != None %}
+							<img class="" src="{{h.back_banner.url}}" alt="">
+							{% else %}
+							<img class="" src="" alt="">
+							{% endif %}
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Home Banner Area =================-->
+	
+	
+	
+	
+	
+	<!--================ Start About Us Area =================-->
+	<section class="about_area section_gap">
+		<div class="container">
+			<div class="row justify-content-start align-items-center">
+				<div class="col-lg-5">
+					{% for s in myself %}
+					<div class="about_img">
+						{% if  s.image.url != None %}
+						<img class="" src="{{s.image.url}}" alt="">
+						{% else %}
+						<img class="" src="" alt="">
+						{% endif %}
+					</div>
+				</div>
+
+				<div class="offset-lg-1 col-lg-5">
+				
+					<div class="main_title text-left">
+						<h2>{{s.title}}</h2>
+						<p>
+							{{s.des}}
+						</p>
+						
+						<a class="primary_btn" href="{{s.download_link}}"><span> {{s.download_cv}}</span></a>
+					</div>
+					
+					
+				</div>
+				
+				
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!--================ End About Us Area =================-->
+
+	<!--================ Srart Brand Area =================-->
+	
+	
+	<section class="brand_area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="row">
+					{% for brand in brand %}
+					  
+				
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="single-brand-item d-table">
+								<div class="d-table-cell text-center">
+									<img src="{{brand.image.url}}" alt="">
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+				
+				
+				
+				<div class="offset-lg-2 col-lg-4 col-md-6">
+					
+					<div class="client-info">
+						{% for g in call %}
+						<div class="d-flex mb-50 m-1">
+							<span class="large text-uppercase color-swatch" ><h2> {{g.years}} </h2> </span>
+							<span></span>
+							<span class="smll text-uppercase"> {{g.experience}} </span>
+						</div>
+						
+						<br><br><br>
+						<div class="call-now d-flex">
+							<div>
+							
+							
+								<span class="fa fa-phone gradient-color"></span>
+							</div>
+							<div class="ml-15">
+								
+								<h3 class="text-uppercase">{{g.title}}</h3>
+								<h4>{{g.phone}}</h4>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Brand Area =================-->
+
+	<!--================ Start Features Area =================-->
+	<section class="features_area">
+		<div class="container">
+			<div class="row justify-content-center">
+			
+				<div class="col-lg-8 text-center">
+					
+					{% for serve in serv %}
+
+					<div class="main_title">
+						<h2>{{serve}}</h2>
+						<p>
+						{{serve.big_dec}}
+						</p>
+					</div>
+					{% endfor %}
+				
+			</div>
+			<div class="row feature_inner">
+			
+		
+				{% for ser in service %}
+	
+				<div class="col-lg-3 col-md-6">
+					<div class="feature_item">
+					<img src="{{ser.image.url}}" alt="">
+						<h4>	{{ser.title}}</h4>
+						<p>{{ser.des}}</p>
+					</div>
+				</div>
+				{% endfor %}	
+			</div>
+		</div>
+	</section>
+	<!--================ End Features Area =================-->
+	
+	<!--================Start Portfolio Area =================-->
+	<!-- Tabs navs -->
+	
+	<section class=" Portfolio_Area">
+		<div class="container">
+		
+			<div class="row">
+				<div class="col-lg-12">
+				
+				{% for work in work  %}
+					<div class="main_title text-center">
+						<h2>{{work.title}} </h2>
+						<p>{{work.des}}</p>
+					</div>
+					
+					{% endfor %}
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col-12 ">
+				
+					<ul class="nav nav-pills mb-4" id="mhk-tab" role="tablist" style=" overflow: hidden;
+					border: 1px solid rgb(255, 255, 255);
+					background-color: #fdfdfd;
+					color: #545454;
+					">
+					<style> 
+					a{
+					color:#333;
+					font-weight: 600;
+					font-size: medium;
+				    }
+					</style>	
+						
+						<li class="nav-item" style="background-color: rgb(215, 224, 255);">
+							<a class="active" id="pills-profile-tab1" data-toggle="pill" href="#home-profile" role="tab"
+							   aria-controls="home-profile" aria-selected="false" >ALL</a>
+						</li>
+						
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+							   aria-controls="pills-profile" aria-selected="false">Popular</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab1" data-toggle="pill" href="#pills-contact1" role="tab"
+							   aria-controls="pills-contact" aria-selected="false">Latest</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact2" role="tab"
+							   aria-controls="pills-contact" aria-selected="false">Following</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab3" data-toggle="pill" href="#pills-contact3" role="tab"
+							   aria-controls="pills-contact" aria-selected="false">Upcoming</a>
+						</li>
+						
+						
+					</ul>
+					
+					
+				
+					
+					
+					<div class="tab-content active " id="mhk-tabContent">
+						
+									
+						
+						<div class="tab-pane active" id="home-profile" role="tabpanel"
+							 aria-labelledby="pills-profile-tab1">
+							 
+							 <div class="row">
+							 
+								<div class="portfolio_box">
+									<div class="single_portfolio">
+								{% for alltabs in alltabs %}
+								  
+								
+									<div class="col-lg-4 col-md-6  ">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{alltabs.image.url}}" alt="Card image cap">
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+											<div class="card-body">
+											
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{alltabs.title}}</a> </h6>
+												<p class="card-text text-muted ">{{alltabs.des}} </p>
+											</div>
+										</div>
+										
+									</div><!--.col-->
+								{% endfor %}
+							</div>
+						</div>
+								</div><!--.row-->
+							 
+							 
+							 </div>
+						
+						
+	
+					
+	
+					
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel"
+							 aria-labelledby="pills-profile-tab">
+							 
+							 <div class="row">
+							 						 
+							
+								{% for Popular in Popular %}						
+									<div class="col-lg-4 col-md-6">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{Popular.image.url}}" alt="Card image cap">
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+											<div class="card-body">
+											
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Popular.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Popular.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								
+								</div><!--.row-->
+							 
+							 
+							 </div>
+							 
+							 
+						<div class="tab-pane fade" id="pills-contact1" role="tabpanel"
+							 aria-labelledby="pills-contact-tab">
+							 
+							 <div class="row">
+							 
+							 
+								{% for Latest in Latest %}
+								  
+								
+									<div class="col-lg-4 col-md-6">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{Latest.image.url}}" alt="Card image cap">
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+											<div class="card-body">
+												
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Latest.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Latest.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								</div><!--.row-->
+							 
+							 
+							 </div>
+							 
+							 <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+							 aria-labelledby="pills-contact-tab">
+							 
+							 <div class="row">
+								{% for Following in Following %}
+								  
+								
+									<div class="col-lg-4 col-md-6">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{Following.image.url}}" alt="Card image cap">
+											
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+											<div class="card-body">
+											
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Following.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Following.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								</div><!--.row-->
+							 
+							 
+							 </div>	 
+							 
+							 <div class="tab-pane fade" id="pills-contact3" role="tabpanel"
+							 aria-labelledby="pills-contact-tab">
+							 
+							 <div class="row">
+								{% for Upcoming in Upcoming %}
+								  
+								
+									<div class="col-lg-4 col-md-6">
+										<div class="card">
+											<img class="img-fluid w-100" src="{{Upcoming.image.url}}" alt="Card image cap">
+											<div class="card-body">
+												
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Upcoming.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Upcoming.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								</div><!--.row-->
+							 
+							 
+							 </div>		 
+							 
+					</div>
+				</div><!--.col-->
+			</div><!--.row-->
+		</div><!--.container-->
+		
+		
+		
+		
+		
+	</section>
+	<!--================ End Portfolio Area =================-->
+
+<br><br><br><br><br>
+	<!--================ Start Testimonial Area =================-->
+	<div class="testimonial_area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+					{% for clientsay in clientsay %}
+					  
+				
+						<h2>{{clientsay.big_name}}</h2>
+						<p>{{clientsay.big_dec}}</p>
+							 {% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			<div class="testi_item">
+							
+							
+							
+							
+	
+			
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+				
+				<ol class="carousel-indicators" style="bottom: -11px;">
+				
+				  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background: rgba(124, 124, 124, 0.56);"></li>
+				  <li data-target="#carouselExampleIndicators" data-slide-to="1" style="background: rgb(177 175 175 / 56%);;"></li>
+				  <li data-target="#carouselExampleIndicators" data-slide-to="2" style="background: rgb(177 175 175 / 56%);;"></li>
+				</ol>
+				<div class="carousel-inner">
+				
+				
+					{% for client in client %}
+									{% with forloop.counter0 as i %}
+									<div class="carousel-item {% if i is 0 %}active{% endif %}">
+										<div class="col-lg-2 col-md-6 m-1">
+										<img src="{{client.image.url}}" alt="Chania">
+										</div>
+										<div class="col-lg-9 col-md-6">
+										<h1>{{client.title}}</h1>
+								        <h3>{{client.des}} </h3>
+								        
+							</div>
+						</div>
+									{% endwith %}
+									{% endfor %}
+				
+				
+				
+				 
+				</div>
+				
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style=" width: 2%; margin: -40px;">
+				  <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #bfb8b8cc " ></span>
+				  <span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style=" width: 2%; margin: -40px;">
+				  <span  class="carousel-control-next-icon" aria-hidden="true" style="background-color: #bfb8b8cc "></span>
+				  <span class="sr-only">Next</span>
+				</a>
+				
+			  </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+        			
+        			
+						
+        		
+        			
+        		</div>
+			</div>
+		</div>
+	</div>
+	<!--================ End Testimonial Area =================-->
+
+	<!--================ Start Newsletter Area =================-->
+	<section class="newsletter_area">
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-12">
+					<div class="subscription_box text-center">
+						<h2 class="text-uppercase text-white">get update from anywhere</h2>
+                  
+                    <p class="text-white">
+                        Bearing Void gathering light light his eavening unto dont afraid. 
+                    </p>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div  {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+                      {{message}}
+                      </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="subcribe-form" id="mc_embed_signup">
+                        <form target="_blank" novalidate="true"  method="POST" class="subscription relative">
+                            {% csrf_token %} 
+								{{form}}
+								<div style="position: absolute; left: -5000px;">
+									
+								</div>
+								<button class="primary-btn hover d-inline" type="submit">Subscribe</button>
+								<div class="info"></div>
+							</form>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Newsletter Area =================-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+<br>
+	<br>
+	
+	<!--
+	
+	<section class="portfolio_area" id="portfolio">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="main_title text-left">
+						<h2>quality work <br>
+							Recently done project </h2>
+					</div>
+				</div>
+			</div>
+			<div class="filters portfolio-filter">
+				<ul>
+					<li class="active" data-filter="*">all</li>
+					<li data-filter=".popular">popular</li>
+					<li data-filter=".latest"> latest</li>
+					<li data-filter=".following">following</li>
+					<li data-filter=".upcoming">upcoming</li>
+				</ul>
+			</div>
+	
+			<div class="filters-content">
+				<div class="row portfolio-grid justify-content-center">
+					<div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p1.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">minimal design</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all popular">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p2.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">Paint wall</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all latest">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p3.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">female light</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all popular">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p4.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p4.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">fourth air</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all following">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p6.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p5.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">together sign</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all upcoming">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p6.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">multiply fowl</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all upcoming following">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p7.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p7.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">green heaven</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all following">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p8.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p8.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4>fly male</h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 all upcoming">
+						<div class="portfolio_box">
+							<div class="single_portfolio">
+								<img class="img-fluid w-100" src="img/portfolio/p9.jpg" alt="">
+								<div class="overlay"></div>
+								<a href="img/portfolio/p9.jpg" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+								</a>
+							</div>
+							<div class="short_info">
+								<h4><a href="portfolio-details.html">season face</a></h4>
+								<p>Animated, portfolio</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	--->
+	<!--
+	<hr>
+	<div class="col-lg-4 col-md-6 all upcoming">
+		<div class="portfolio_box">
+			<div class="single_portfolio">
+				<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
+				<div class="overlay"></div>
+				<a href="img/portfolio/p6.jpg" class="img-gal">
+					<div class="icon">
+						<span class="lnr lnr-cross"></span>
+					</div>
+				</a>
+			</div>
+			<div class="short_info">
+				<h4><a href="portfolio-details.html">multiply fowl</a></h4>
+				<p>Animated, portfolio</p>
+			</div>
+		</div>
+	</div>
+	-->
+	<!--================End Portfolio Area =================-->
+
+	<!--================ Start Testimonial Area =================-->
+	<!--
+	<div class="testimonial_area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<div class="main_title">
+					{% for clientsay  in clientsay %}
+					  
+					
+						<h2>{{clientsay.big_name}}</h2>
+						<p>{{clientsay.big_dec}}</p>
+							 
+					 {% endfor %}
+					 
+					 
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 text-center">
+				<div class="testi_slider owl-carousel">
+				
+				{% for client in client  %}
+				  
+				
+        			<div class="testi_item">
+        				<div class="row">
+        					<div class="col-lg-4">
+        						<img src="{{client.image.url}}" alt="">
+        					</div>
+        					<div class="col-lg-8">
+        						<div class="testi_text">
+        							<h4>{{client.name}}</h4>
+									<p>{{client.des}} </p>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        			</div>
+        			
+				{% endfor %}	
+			</div>
+        		</div>
+			</div>
+		</div>
+	</div>-->
+	<!--================ End Testimonial Area =================-->
+
+	<!--================ Start Newsletter Area =================-->
+	<!--
+	<section class="newsletter_area">
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-12">
+					<div class="subscription_box text-center">
+						<h2 class="text-uppercase text-white">get update from anywhere</h2>
+						<p class="text-white">
+							Bearing Void gathering light light his eavening unto dont afraid. 
+						</p>
+						<div class="subcribe-form" id="mc_embed_signup">
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
+								<input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
+								<div style="position: absolute; left: -5000px;">
+									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+								</div>
+								<button class="primary-btn hover d-inline">Get Started</button>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Newsletter Area =================-->
+
+
+
+
+
+
+
+
+{% endblock content %}
+        
