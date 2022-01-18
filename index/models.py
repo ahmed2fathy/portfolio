@@ -66,7 +66,7 @@ class Call(models.Model):
     des = models.TextField(max_length=400,  null = True , blank = True)
     image = models.ImageField(upload_to='media/index/call/' , null = True , blank = True)
     phone = models.CharField(max_length=50, null = True , blank = True )
-    experience =models.CharField(max_length=60,default=' Years Experience Working', null = True , blank = True) 
+    experience =models.CharField(max_length=60, default=' Years Experience Working', null = True , blank = True) 
     years = models.IntegerField(default='3', null = True , blank = True)
    
     def __str__(self) -> str:
