@@ -829,7 +829,7 @@
 
 .comment-form {
 	background: #fafaff;
-	text-align: center;
+	text-align: inherit;
 	border: 1px solid #eee;
 	padding: 47px 30px 43px;
 	margin-top: 50px;
@@ -854,19 +854,7 @@
 			padding-left: 0px;
 		}
 	}
-	.form-control {
-		padding: 8px 20px;
-		background: #fff;
-		border: none;
-		border-radius: 0px;
-		width: 100%;
-		font-size: 14px;
-		color: #777777;
-		border: 1px solid transparent;
-		&:focus {
-			box-shadow: none;
-			border: 1px solid #eee;
-		}
+	
 	}
 	textarea {
 		&.form-control {

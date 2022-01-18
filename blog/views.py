@@ -1,10 +1,8 @@
-from contextlib import redirect_stdout
-from itertools import count
-from unicodedata import category
+
+from .forms import CommentForm
 from django.http import request
 from django.shortcuts import render, redirect
 from index.forms import NewsletterUserSignUpForm
-from index.views import all_index
 from index.models import NewsletterUser
 from .models import *
 from django.db.models.aggregates import Count
@@ -12,11 +10,15 @@ from django.core.paginator  import Paginator
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.db.models.query_utils import Q
 # Create your views here.
+
+
+
  
 def  blog(request):
     
-    
+    # دالة الاشتراك في المدونة
     form = NewsletterUserSignUpForm(request. POST or None )
     if form.is_valid():
         instance= form.save(commit=False)
@@ -39,25 +41,29 @@ def  blog(request):
             
              messages.success(request, 'Your Email has been submitted', 
              'alert alert-success alert-dismissible')
+             # -------------------------------------------------------
     
     
-    
-    
+    # دالة البحث
     search= Blog.objects.all()
     title=None
-    
-    if'search_name'in request.GET:
+    if'search_name' in request.GET:
             title= request.GET['search_name']
-            if title:
-                search= search.filter(title__icontains= title)
-    
+            multiple_q =  Q(Q(title__icontains = title) |
+                            Q(content__icontains = title))
+            search= search.filter(multiple_q)
+              #-------------------------------  
   
-    
+  
+    #دالة ترقيم الصفحات
     paginator = Paginator(search, 2) # Show 1 contacts per page.
     
     page_number = request.GET.get('page')
     
     page_obj = paginator.get_page(page_number)
+    #-----------------------------------------
+   
+    
     
     about = AboutAuthor.objects.all()[:1]
     popular_blogs = Blog.objects.all()[:4]
@@ -78,6 +84,7 @@ def  blog(request):
     'banner_category': banner_category,
     'form':form,
     'all_tag':all_tag,
+    'single_blog':single_blog,
     
     }
     
@@ -89,7 +96,13 @@ def  blog(request):
     
     
 def single_blog(request, slug):
+
     single_blog = Blog.objects.get(slug=slug)
+    
+    # عداد الزيارات
+    single_blog.views = single_blog.views + 1
+    single_blog.save()
+    #-------------------------
     
     
     form = NewsletterUserSignUpForm(request. POST or None )
@@ -117,6 +130,23 @@ def single_blog(request, slug):
     
     
     
+    #فورم التعليقات  CommentForm
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+        
+        if comment_form.is_valid():
+            obj = comment_form.save(commit=False)
+            obj.blog = Blog.objects.get(slug=slug)
+            obj.save()
+            messages.success(request, 'Your Reservation Confirmed ') ### send gmail message
+            return redirect('blog:single_blog', slug=single_blog.slug)
+            
+    else:
+        comment_form = CommentForm() 
+        
+    #-------------------------------------------
+    
+        
     about = AboutAuthor.objects.all()[:1]
     popular_blogs = Blog.objects.all()[:4]
     name_wedgits = NameWidget.objects.all()
@@ -124,8 +154,7 @@ def single_blog(request, slug):
     all_category = Category.objects.all().annotate(post_count=Count('post_category'))
     banner_category = Category.objects.all()[:3]
     all_tag = Tag.objects.all()[:10]
-    
-    
+ 
     
     
     context= {
@@ -138,7 +167,8 @@ def single_blog(request, slug):
     'banner_category': banner_category,
     'form':form,
     'all_tag':all_tag,
-    
+    'comment_form':comment_form,
+   
     }
     
     return render(request, 'pages\single-blog.html', context)

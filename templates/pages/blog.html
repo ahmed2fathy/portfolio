@@ -64,7 +64,7 @@
                                     <ul class="blog_meta list">
                                         <li><a href="#">{{blog.author}} <i class="lnr lnr-user"></i></a></li>
                                         <li><a href="#">{{blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
+                                        <li><a >{{blog.views}} Views<i class="lnr lnr-eye"></i></a></li>
                                         <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
                                     </ul>
                                 </div>
@@ -75,7 +75,14 @@
                                     <div class="blog_details">
                                         <a href="{{blog.get_absolute_url}}"><h2>{{blog.title}}</h2></a>
                                         <p>{{blog.content|safe|truncatewords:20}}</p>
+                                        
+                                        
+                                        
                                         <a href="{{blog.get_absolute_url}}" class="primary_btn"><span>View More</span></a>
+                                        
+                                        
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +297,7 @@
                             {% for tag in all_tag %}
                               
                             
-                                <li><a href="{{tag.get_absolute_url}}">{{tag}}</a></li>
+                                <li><a href="">{{tag}}</a></li>
                             {% endfor %}   
                             </ul>
                         </aside>

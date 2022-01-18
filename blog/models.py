@@ -1,5 +1,6 @@
 
 from pyexpat import model
+from xml.etree.ElementInclude import default_loader
 from django.db import models
 
 from django.utils import timezone
@@ -43,6 +44,10 @@ class Category(models.Model):
     
     def __str__(self) -> str:
         return self.name
+        
+        
+        
+
 
 
 class  Blog(models.Model):
@@ -53,9 +58,16 @@ class  Blog(models.Model):
     author =  models.ForeignKey(User , related_name ='post_author',default=User, on_delete = models.CASCADE)
     category = models.ForeignKey('Category', related_name='post_category',default=Category, on_delete = models.CASCADE )
     tag = models.ForeignKey('Tag', related_name='post_tag', default=Tag, on_delete = models.CASCADE)
+    views = models.IntegerField(default=0)
+    
     slug = models.SlugField(null = True, blank = True)
+    
     def __str__(self) -> str:
         return self.title
+        
+    def total_views(self):
+            return self.views.count()
+
         
         
         
@@ -116,7 +128,16 @@ class AdsWidget(models.Model):
     def __str__(self) -> str:
         return str('ad')
     
+
+class  Comment(models.Model):
+    blog = models.ForeignKey(Blog, related_name='Comments', on_delete=models.CASCADE)
+    name = models.CharField(max_length=70)
+    email = models.EmailField()
+    body = models.TextField(max_length=500)
+    date_added = models.DateTimeField(auto_now_add=True)
     
+    def __str__(self):
+        return '%s - %s' % (self.blog.title, self.name)
         
 
     
