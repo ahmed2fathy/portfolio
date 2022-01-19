@@ -1,4 +1,4 @@
-
+from next_prev import next_in_order, prev_in_order
 from .forms import CommentForm
 from django.http import request
 from django.shortcuts import render, redirect
@@ -11,6 +11,8 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.db.models.query_utils import Q
+from django.shortcuts import get_object_or_404
+
 # Create your views here.
 
 
@@ -94,7 +96,7 @@ def  blog(request):
     
     
     
-    
+    #----------------------------------------------------------------
 def single_blog(request, slug):
 
     single_blog = Blog.objects.get(slug=slug)
@@ -138,7 +140,6 @@ def single_blog(request, slug):
             obj = comment_form.save(commit=False)
             obj.blog = Blog.objects.get(slug=slug)
             obj.save()
-            messages.success(request, 'Your Reservation Confirmed ') ### send gmail message
             return redirect('blog:single_blog', slug=single_blog.slug)
             
     else:
@@ -154,10 +155,39 @@ def single_blog(request, slug):
     all_category = Category.objects.all().annotate(post_count=Count('post_category'))
     banner_category = Category.objects.all()[:3]
     all_tag = Tag.objects.all()[:10]
- 
+    
+    
+       
+    # دالة عرض ذر السابق والتالي في المقال
+    post = get_object_or_404(Blog, slug=slug)
+    try:
+        next_post = post.get_next_by_created_at()
+    except Blog.DoesNotExist:
+        next_post= None
+
+    try:
+        previous_post = post.get_previous_by_created_at()
+    except Blog.DoesNotExist:
+        previous_post = None
+    #-----------------------------------------------------
+   
+
+
+   
+      
+    
+    
+    
     
     
     context= {
+   
+    'post': post,
+    'next_post': next_post,
+    'previous_post': previous_post,
+    
+    
+    
     'single_blog':single_blog,
     'about':about,
     'popular_blogs': popular_blogs,
@@ -168,6 +198,7 @@ def single_blog(request, slug):
     'form':form,
     'all_tag':all_tag,
     'comment_form':comment_form,
+
    
     }
     

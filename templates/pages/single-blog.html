@@ -77,36 +77,46 @@
                   
                   
                   
-                  
+                  <!---الكود الخاص بالسابق والتالي داخل المقال-->
+
                     <div class="navigation-area">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                                 <div class="thumb">
                                     <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
                                 </div>
-                                <div class="arrow">
-                                    <a href="#"><span class="lnr text-white lnr-arrow-left"></span></a>
-                                </div>
+                                
+                                {% if previous_post %}
                                 <div class="detials">
+                                
                                     <p>Prev Post</p>
-                                    <a href="#"><h4>Space The Final Frontier</h4></a>
+                                    <a href="{% url 'blog:single_blog' previous_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{previous_post.image.url}}" alt=""></a>
+                                    <a href="{% url 'blog:single_blog' previous_post.slug %}"><h5>{{previous_post.title}}</h5></a>
+                                    
                                 </div>
+                                {% else %}
+                                This is the first blog!
+                                {% endif %}
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                                {% if next_post %}
                                 <div class="detials">
                                     <p>Next Post</p>
-                                    <a href="#"><h4>Telescopes 101</h4></a>
-                                </div>
-                                <div class="arrow">
-                                    <a href="#"><span class="lnr text-white lnr-arrow-right"></span></a>
-                                </div>
+                                    <a href="{% url 'blog:single_blog' next_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{next_post.image.url}}" alt=""></a>
+                                    <a href="{% url 'blog:single_blog' next_post.slug %}"><h5>{{next_post.title}}</h5></a>
+                                   
+                                </div> 
+                                {% else %}
+                                This is the last blog!
+                                {% endif %}
+                                
                                 <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
+                                   
                                 </div>										
                             </div>									
                         </div>
                     </div>
-                    
+                <!----------------------------------------------------------------------------------->
                     
                     
                     
@@ -123,7 +133,10 @@
                           
                         
                         <div class="comment-list">
-                            <div class="single-comment justify-content-between d-flex">
+                            <div class="single-comment justify-content-between d-flex" style="background: #fff;
+                            padding: 8px;
+                            border: 1px #ececec solid;">
+                           
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
                                         <img src="img/blog/c1.jpg" alt="">
@@ -132,14 +145,16 @@
                                   
                                         <h5><a href="#"> {{comment.name}}</a></h5>
                                         <p class="date">{{comment.date_added}} </p>
-                                        <p class="comment">
+                                        <p class="comment ">
                                             {{comment.body}}
                                         </p>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="reply-btn">
                                         <a href="" class="btn-reply text-uppercase">reply</a> 
                                 </div>
+                                -->
                             </div>
                         </div>	
                                    				
@@ -164,6 +179,7 @@
                                                   }
                     
                     </style>
+                    
                     <div class="comment-form text-left w-full">
                         <h4>Leave a Reply</h4>
                         <form method="POST">

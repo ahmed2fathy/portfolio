@@ -59,8 +59,12 @@ class  Blog(models.Model):
     category = models.ForeignKey('Category', related_name='post_category',default=Category, on_delete = models.CASCADE )
     tag = models.ForeignKey('Tag', related_name='post_tag', default=Tag, on_delete = models.CASCADE)
     views = models.IntegerField(default=0)
-    
     slug = models.SlugField(null = True, blank = True)
+    
+    
+    class Meta:
+        ordering = ["-created_at", "title"]
+        
     
     def __str__(self) -> str:
         return self.title
