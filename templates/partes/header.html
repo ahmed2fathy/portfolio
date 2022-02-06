@@ -1,4 +1,5 @@
 	{% load static %}
+	{% load i18n %}
 	<!--================ Start Header Area =================-->
 
 	<header class="header_area">
@@ -35,30 +36,50 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-							<li class="nav-item active"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						{% for  item in menu %}
+						  
+						
+							<li class="nav-item"><a class="nav-link" href="{{item.url}}">{{item.menu}}</a></li>
+						{% endfor %}
+						
+						
+						
+						
+		
 						</ul>
 						
+						
+						
+						
+						
 					</div>
+					
+						{% if request.user.is_authenticated %}
+           
+            
+          <div class="linx">
+          
+          <button style="margin-left: 9px;" type="button" class="btn "><a href="{% url 'accounts:profile' %}" class="nav-link"><span>{% trans 'Profile' %}</span></a></button>
+          
+          
+          
+           <button style="margin-left: 9px;" type="button" class=" btn "><a href="{% url 'logout' %}" class="nav-link"><span>{% trans 'Logout' %}</span></a></button>
+          
+          
+          
+          {% else %}
+          
+          <button style="margin-left: 9px;" type="button" class="btn  "><a href="{% url 'login' %}" class="nav-link"><span>{% trans "Login" %}</span></a></button>
+          
+          
+          <button style="margin-left: 9px;" type="button" class="btn  "><a href="{% url 'accounts:signup' %}" class="nav-link"><span>{% trans 'Signup' %}</span></a></button>
+          
+          
+          
+            
+          {% endif %}
+			</div>		
+					
 				</div>
 			</nav>
 		</div>

@@ -32,22 +32,28 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     ## my_apps
+    'newsletters',
+    'blog',
+    'index',
+    'bootstrap4',
+    'accounts',
+    'admin_interface',
+    'colorfield',
+    #'grappelli',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'newsletters',
-    #'portfolio',
-   # 'about',
-    'blog',
-    #'contact',
-    'index',
-    #'single_blog',
-    #'services',
-    
+   
+   
+
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',  # Email Settings
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -117,13 +124,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -151,6 +160,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+
+
+
 #Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
@@ -158,3 +170,23 @@ EMAIL_HOST_USER = 'kashaf.techno@gmail.com'
 EMAIL_HOST_PASSWORD = 'ab1162588'
 EMAIL_USE_TLS = 'True'
 #EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+ADMINS = [
+    ('Portfolio', 'kashaf.techno@gmail.com'),
+]
+
+MANAGERS = ADMINS
+
+
+ADMINS = [
+    ('Portfolio', 'kashaf.techno@gmail.com'),
+]
+
+
+MANAGERS = [
+    ('Portfolio', 'kashaf.techno@gmail.com'),
+
+]
+
+#--------------------------------------------

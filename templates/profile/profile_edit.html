@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+<br>
+<div class="containerx" style=" background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #000;">
+<div class="hero-wrap js-fullheight" style="background-image: url();">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center"
+			data-scrollax-parent="true">
+			<div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+				<br>
+				<h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Edit Profile</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+    <div class="col-md-4 mx-auto mt-5 mb-5">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form user_form %}
+            {% bootstrap_form profile_form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary py-3">Edit Profile</button>
+            {% endbuttons %}
+        
+        </form>
+    </div>
+</div>
+
+</div>
+ {% endblock content %}

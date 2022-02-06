@@ -1,0 +1,6 @@
+{
+    "editor.fontSize": 17,
+    "editor.formatOnPaste": true,
+    "files.autoSave": "afterDelay",
+    "editor.bracketPairColorization.enabled": true
+}

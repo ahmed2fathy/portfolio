@@ -1,4 +1,11 @@
 /* DASHBOARD */
+[dir="rtl"] .admin-interface #main.shifted>#nav-sidebar {
+    padding: 10px !important;
+    background: #0d344b!important;
+    border-left: 1px solid #eaeaea;
+    margin-right: 0px !important;
+    /* padding: 40px 0px 40px 40px !important; */
+}
 
 .dashboard .module table th {
     width: 100%;

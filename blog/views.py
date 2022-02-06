@@ -1,6 +1,6 @@
 
+
 from .forms import CommentForm
-from django.http import request
 from django.shortcuts import render, redirect
 from index.forms import NewsletterUserSignUpForm
 from index.models import NewsletterUser
@@ -11,6 +11,9 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.db.models.query_utils import Q
+from django.shortcuts import get_object_or_404
+from index.models import FooterHeader
+
 # Create your views here.
 
 
@@ -18,7 +21,7 @@ from django.db.models.query_utils import Q
  
 def  blog(request):
     
-    # دالة الاشتراك في المدونة
+# ----------------------دالة الاشتراك في المدونة ----------------------------
     form = NewsletterUserSignUpForm(request. POST or None )
     if form.is_valid():
         instance= form.save(commit=False)
@@ -41,10 +44,10 @@ def  blog(request):
             
              messages.success(request, 'Your Email has been submitted', 
              'alert alert-success alert-dismissible')
-             # -------------------------------------------------------
+# ----------------------------------------------------------------------------
     
     
-    # دالة البحث
+# --------------------دالة البحث -------------------------------
     search= Blog.objects.all()
     title=None
     if'search_name' in request.GET:
@@ -52,19 +55,17 @@ def  blog(request):
             multiple_q =  Q(Q(title__icontains = title) |
                             Q(content__icontains = title))
             search= search.filter(multiple_q)
-              #-------------------------------  
+#----------------------------------------------------
   
   
-    #دالة ترقيم الصفحات
+#--------------------دالة ترقيم الصفحات ---------------------------------
     paginator = Paginator(search, 2) # Show 1 contacts per page.
     
     page_number = request.GET.get('page')
     
     page_obj = paginator.get_page(page_number)
-    #-----------------------------------------
+#-----------------------------------------------------------------------
    
-    
-    
     about = AboutAuthor.objects.all()[:1]
     popular_blogs = Blog.objects.all()[:4]
     name_wedgits = NameWidget.objects.all()
@@ -72,6 +73,7 @@ def  blog(request):
     all_category = Category.objects.all().annotate(post_count=Count('post_category'))
     banner_category = Category.objects.all()[:3]
     all_tag = Tag.objects.all()[:10]
+    menu = MenuBar.objects.all()[:8]
     
     
     context ={
@@ -84,13 +86,13 @@ def  blog(request):
     'banner_category': banner_category,
     'form':form,
     'all_tag':all_tag,
-    'single_blog':single_blog,
-    
+    'menu': menu,
+    'FooterHeader': FooterHeader.objects.all()[:1],
     }
     
     return render(request,'pages/blog.html', context)
-    
-    
+
+    #----------------------------------------------------------------
     
     
     
@@ -99,12 +101,46 @@ def single_blog(request, slug):
 
     single_blog = Blog.objects.get(slug=slug)
     
-    # عداد الزيارات
+# -------------------- الدالة الخاصة بعداد التعليقات---------------------
+    comment_count = Comment.objects.filter(post=Blog.objects.get(slug=slug)).count()
+#------------------------------------------------------------------
+
+# ---------------- عداد الزيارات ------------------------
     single_blog.views = single_blog.views + 1
     single_blog.save()
-    #-------------------------
+#----------------------------------------------------
     
+# ----------------- دالة عرض ذر السابق والتالي في المقال ----------------------
+    post = get_object_or_404(Blog, slug=slug)
+    try:
+        next_post = post.get_next_by_created_at()
+    except Blog.DoesNotExist:
+        next_post= None
+
+    try:
+        previous_post = post.get_previous_by_created_at()
+    except Blog.DoesNotExist:
+        previous_post = None
+#---------------------------------------------------------------
+   
     
+#------------------ فورم التعليقات  CommentForm ---------------
+    if request.method == 'POST':
+        comment_form = CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            obj = comment_form.save(commit=False)
+            obj.post = Blog.objects.get(slug=slug)
+            obj.save()
+            return redirect('blog:single_blog', slug=single_blog.slug)
+
+    else:
+        comment_form = CommentForm()
+
+#---------------------------------------------
+
+
+ # -----------------دالة الاشتراك في المدونة -----------------
     form = NewsletterUserSignUpForm(request. POST or None )
     if form.is_valid():
         instance= form.save(commit=False)
@@ -127,24 +163,7 @@ def single_blog(request, slug):
             
              messages.success(request, 'Your Email has been submitted', 
              'alert alert-success alert-dismissible')
-    
-    
-    
-    #فورم التعليقات  CommentForm
-    if request.method == 'POST':
-        comment_form = CommentForm(request.POST)
-        
-        if comment_form.is_valid():
-            obj = comment_form.save(commit=False)
-            obj.blog = Blog.objects.get(slug=slug)
-            obj.save()
-            messages.success(request, 'Your Reservation Confirmed ') ### send gmail message
-            return redirect('blog:single_blog', slug=single_blog.slug)
-            
-    else:
-        comment_form = CommentForm() 
-        
-    #-------------------------------------------
+#--------------------------------------------------------------------------------------
     
         
     about = AboutAuthor.objects.all()[:1]
@@ -154,10 +173,14 @@ def single_blog(request, slug):
     all_category = Category.objects.all().annotate(post_count=Count('post_category'))
     banner_category = Category.objects.all()[:3]
     all_tag = Tag.objects.all()[:10]
- 
+    menu = MenuBar.objects.all()[:8]
     
     
     context= {
+   
+    'post': post,
+    'next_post': next_post,
+    'previous_post': previous_post,
     'single_blog':single_blog,
     'about':about,
     'popular_blogs': popular_blogs,
@@ -168,7 +191,16 @@ def single_blog(request, slug):
     'form':form,
     'all_tag':all_tag,
     'comment_form':comment_form,
+    'comment_count': comment_count,
+    'menu': menu,
+    'FooterHeader':FooterHeader.objects.all()[:1],
    
     }
     
     return render(request, 'pages\single-blog.html', context)
+
+
+#--------------------------------------------------------------------------------------
+
+    
+    

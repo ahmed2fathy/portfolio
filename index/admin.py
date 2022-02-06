@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Brand, Call, ClientSay, ClientSay, FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+
+from accounts import models
+from .models import Brand, Call, ClientSay, ClientSay, ContactInfo, Feedback, FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+
+
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'date',)
+    search_fields = ('name', 'email',)
+    date_hierarchy = 'date'
 
 
 class NewsletterAdmin(admin.ModelAdmin):
@@ -19,3 +27,5 @@ admin.site.register(Service)
 admin.site.register(Work)
 admin.site.register(FooterHeader)
 admin.site.register(Tab)
+admin.site.register(Feedback, FeedbackAdmin, )
+admin.site.register(ContactInfo)

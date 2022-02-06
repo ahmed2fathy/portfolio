@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+.containerx {
+
+    background: #67B26F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color: #000;
+}
+
+.student-profile .card {
+    border-radius: 10px;
+    
+}
+.student-profile .card .card-header .profile_img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 10px solid #ccc;
+    border-radius: 50%;
+}
+.student-profile .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.student-profile .card p {
+    font-size: 16px;
+    color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+    font-size: 14px;
+    padding: 5px 10px;
+    color: #000;
+}
+.fbs{  padding: 5px 10px;}
+.banner_x {padding: 5px 10px;}
+</style>
+
+<br>
+<br>
+
+ <div class="containerx">
+ <br>
+  <div class="banner_x text-center ">
+                    <h2>Profile</h2> </div>
+                    
+                    <br>
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+          
+          {% if  profile.image %}
+          
+            <img class="profile_img" src="{{profile.image.url}}" alt="">
+            {% else %}
+     
+            <img class="profile_img"  src="{% static 'img/avt.png' %}" alt="Avatar" class="avatar">
+           
+            {% endif %}
+            
+            <h3> {{profile.user.username}}</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0"><strong class="pr-1">Email:</strong>{{profile.user.email}}</p>
+            
+           
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">Phone</th>
+                <td width="2%">:</td>
+                <td>{{profile.phone_number}}</td>
+              </tr>
+             
+              </tr>
+              <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>{{profile.gender}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Skills</th>
+                <td width="2%">:</td>
+                <td>{{profile.skills}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Country</th>
+                <td width="2%">:</td>
+                <td>{{profile.country}}</td>
+                 <tr>
+                <th width="30%"> Address	</th>
+                <td width="2%">:</td>
+                <td>{{profile.address}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+          <div style="height: 26px"></div>
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>
+          </div>
+          <div class="card-body pt-0">
+              <p>{{profile.description}}</p>
+              
+              <br>
+              <hr>
+              <h4>Social Media</h4>
+              <br>
+     <div class="footer_social">
+        <a  class ="fbs " href="{{profile.fb_link}}"><i class="fa fa-facebook"></i></a>
+          <a  class ="fbs " href="{{profile.twitter_link}}"><i class="fa fa-twitter"></i></a>
+           <a  class ="fbs " href="{{profile.instagram_link}}"><i class="fa fa-instagram"></i></a>
+      </div>
+           <br>   
+              <hr> 
+              <h6><a href="{% url 'accounts:profile_edit' %}">Edit Profile</a></h6>
+        <h6><a href="{% url 'password_change' %}">Change Password</a></h6>
+              
+              
+          </div>
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+{% endblock content %}
