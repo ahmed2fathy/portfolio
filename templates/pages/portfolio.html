@@ -1,239 +1,290 @@
-
-
 {% extends 'base.html' %}
 
 
 {% block content %}
-  
 
-
-
-    <!--================ Start Banner Area =================-->
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content text-center">
-                    <h2>Portfolio</h2>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="portfolio.html">Portfolio</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Banner Area =================-->
-
-	<!--================Start Portfolio Area =================-->
-	<section class="portfolio_area section_gap_top" id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main_title text-left">
-                        <h2>quality work <br>
-                            Recently done project </h2>
-                    </div>
-                </div>
-            </div>
-            <div class="filters portfolio-filter">
-                <ul>
-                    <li class="active" data-filter="*">all</li>
-                    <li data-filter=".popular">popular</li>
-                    <li data-filter=".latest"> latest</li>
-                    <li data-filter=".following">following</li>
-                    <li data-filter=".upcoming">upcoming</li>
-                </ul>
-            </div>
-    
-            <div class="filters-content">
-				<div class="row portfolio-grid justify-content-center">
-					<div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p1.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">minimal design</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
+	
+	<br><br><br><br>
+	
+	<section class=" Portfolio_Area">
+		<div class="container">
+		
+			<div class="row">
+				<div class="col-lg-12">
+				
+				{% for work in work  %}
+					<div class="main_title text-center">
+						<h2>{{work.title}} </h2>
+						<p>{{work.des}}</p>
 					</div>
-					<div class="col-lg-4 col-md-6 all popular">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p2.jpg" alt="">
-								<div class="overlay"></div>
+					
+					{% endfor %}
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col-12 ">
+				
+					<ul class="nav nav-pills mb-4" id="mhk-tab" role="tablist" style=" overflow: hidden;
+					border: 1px solid rgb(255, 255, 255);
+					background-color: #fdfdfd;
+					color: #545454;
+					">
+					<style> 
+					a{
+					color:#333;
+					font-weight: 600;
+					font-size: medium;
+				    }
+					</style>	
+						
+						<li class="nav-item" style="background-color: rgb(215, 224, 255);">
+							<a class="active" id="pills-profile-tab1" data-toggle="pill" href="#home-profile" role="tab"
+							   aria-controls="home-profile" aria-selected="false" >ALL</a>
+						</li>
+						
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+							   aria-controls="pills-profile" aria-selected="false">Popular</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab1" data-toggle="pill" href="#pills-contact1" role="tab"
+							   aria-controls="pills-contact" aria-selected="false">Latest</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab2" data-toggle="pill" href="#pills-contact2" role="tab"
+							   aria-controls="pills-contact" aria-selected="false">Following</a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" id="pills-contact-tab3" data-toggle="pill" href="#pills-contact3" role="tab"
+							   aria-controls="pills-contact" aria-selected="false">Upcoming</a>
+						</li>
+						
+						
+					</ul>
+					
+					
+				
+					
+					
+					<div class="tab-content active " id="mhk-tabContent">
+						
+									
+						
+						<div class="tab-pane active" id="home-profile" role="tabpanel"
+							 aria-labelledby="pills-profile-tab1">
+							 
+							 <div class="row">
+							 
+								<div class="portfolio_box">
+									<div class="single_portfolio">
+								{% for alltabs in alltabs %}
+								  
+								
+									<div class="col-lg-4 col-md-6  ">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{alltabs.image.url}}" alt="Card image cap">
+											<div class="overlay"></div>
 								<a href="img/portfolio/p2.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">Paint wall</a></h4>
-								<p>Animated, portfolio</p>
+											<div class="card-body">
+											
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{alltabs.title}}</a> </h6>
+												<p class="card-text text-muted ">{{alltabs.des}} </p>
+											</div>
+										</div>
+										
+									</div><!--.col-->
+								{% endfor %}
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p3.jpg" class="img-gal">
+								</div><!--.row-->
+							 
+							 
+							 </div>
+						
+						
+	
+					
+	
+					
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel"
+							 aria-labelledby="pills-profile-tab">
+							 
+							 <div class="row">
+							 						 
+							
+								{% for Popular in Popular %}						
+									<div class="col-lg-4 col-md-6">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{Popular.image.url}}" alt="Card image cap">
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">female light</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all popular">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p4.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p4.jpg" class="img-gal">
+											<div class="card-body">
+											
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Popular.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Popular.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								
+								</div><!--.row-->
+							 
+							 
+							 </div>
+							 
+							 
+						<div class="tab-pane fade" id="pills-contact1" role="tabpanel"
+							 aria-labelledby="pills-contact-tab">
+							 
+							 <div class="row">
+							 
+							 
+								{% for Latest in Latest %}
+								  
+								
+									<div class="col-lg-4 col-md-6">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{Latest.image.url}}" alt="Card image cap">
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">fourth air</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all following">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p6.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p5.jpg" class="img-gal">
+											<div class="card-body">
+												
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Latest.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Latest.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								</div><!--.row-->
+							 
+							 
+							 </div>
+							 
+							 <div class="tab-pane fade" id="pills-contact2" role="tabpanel"
+							 aria-labelledby="pills-contact-tab">
+							 
+							 <div class="row">
+								{% for Following in Following %}
+								  
+								
+									<div class="col-lg-4 col-md-6">
+										<div class="card m-3">
+											<img class="img-fluid w-100" src="{{Following.image.url}}" alt="Card image cap">
+											
+											<div class="overlay"></div>
+								<a href="img/portfolio/p2.jpg" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">together sign</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
+											<div class="card-body">
+											
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Following.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Following.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								</div><!--.row-->
+							 
+							 
+							 </div>	 
+							 
+							 <div class="tab-pane fade" id="pills-contact3" role="tabpanel"
+							 aria-labelledby="pills-contact-tab">
+							 
+							 <div class="row">
+								{% for Upcoming in Upcoming %}
+								  
+								
+									<div class="col-lg-4 col-md-6">
+										<div class="card">
+											<img class="img-fluid w-100" src="{{Upcoming.image.url}}" alt="Card image cap">
+											<div class="card-body">
+												
+												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Upcoming.title}}</a> </h6>
+												<p class="card-text text-muted ">{{Upcoming.des}} </p>
+											</div>
+										</div>
+									</div><!--.col-->
+								{% endfor %}
+								</div><!--.row-->
+							 
+							 
+							 </div>		 
+							 
 					</div>
-					<div class="col-lg-4 col-md-6 all upcoming">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p6.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">multiply fowl</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all upcoming following">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p7.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p7.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">green heaven</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all following">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p8.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p8.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>fly male</h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all upcoming">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p9.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p9.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">season face</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
+				</div><!--.col-->
+			</div><!--.row-->
+		</div><!--.container-->
+		
+		
+		
+		
+		
+	</section>
+	<!--================ End Portfolio Area =================-->
+
+<br>
+
+	<!--================ Start Newsletter Area =================-->
+	<section class="newsletter_area">
+		<div class="container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-lg-12">
+					<div class="subscription_box text-center">
+						<h2 class="text-uppercase text-white">get update from anywhere</h2>
+                  
+                    <p class="text-white">
+                        Bearing Void gathering light light his eavening unto dont afraid. 
+                    </p>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div  {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+                      {{message}}
+                      </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="subcribe-form" id="mc_embed_signup">
+                        <form target="_blank" novalidate="true"  method="POST" class="subscription relative">
+                            {% csrf_token %} 
+								{{form}}
+								<div style="position: absolute; left: -5000px;">
+									
+								</div>
+								<button class="primary-btn hover d-inline" type="submit">Subscribe</button>
+								<div class="info"></div>
+							</form>
+							{% endif %}
 						</div>
 					</div>
 				</div>
 			</div>
-        </div>
-    </section>
-    <!--================End Portfolio Area =================-->
-    
-    <!--================ Start Newsletter Area =================-->
-    <section class="newsletter_area">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-12">
-                    <div class="subscription_box text-center">
-                        <h2 class="text-uppercase text-white">get update from anywhere</h2>
-                        <p class="text-white">
-                            Bearing Void gathering light light his eavening unto dont afraid. 
-                        </p>
-                        <div class="subcribe-form" id="mc_embed_signup">
-                            <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
-                                <input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
-                                <div style="position: absolute; left: -5000px;">
-                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                                </div>
-                                <button class="primary-btn hover d-inline">Get Started</button>
-                                <div class="info"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Newsletter Area =================-->
+		</div>
+	</section>
+	<!--================ End Newsletter Area =================-->
+	
+	
+	
+<br>
+	
+
+{% endblock content %}
         
-        
-   
-{% endblock content %} 
-   

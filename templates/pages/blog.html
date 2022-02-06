@@ -46,7 +46,7 @@
     <!--================Blog Area =================-->
     <section class="blog_area">
         <div class="container">
-            <div class="row">
+            <div class="row"> 
                 <div class="col-lg-8">
                     <div class="blog_left_sidebar">
                     
@@ -65,7 +65,8 @@
                                         <li><a href="#">{{blog.author}} <i class="lnr lnr-user"></i></a></li>
                                         <li><a href="#">{{blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
                                         <li><a >{{blog.views}} Views<i class="lnr lnr-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
+                                        <!---
+                                        <li><a href="#">{{single_blog.comment_count}} Comments<i class="lnr lnr-bubble"></i></a></li>-->
                                     </ul>
                                 </div>
                             </div>
@@ -193,10 +194,10 @@
                               
                             
                             <div class="media post_item">
-                                <img class="popular-image" src="{{popular_blog.image.url}}" alt="post" style="width: 100px;">
+                                <img class="popular-image" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;">
                                 <div class="media-body">
                                     
-                                    <a href="single-blog.html"><h3>{{popular_blog.title}}</h3></a>
+                                    <a href="{{popular_blog.get_absolute_url}}"><h3>{{popular_blog.title}}</h3></a>
                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
                                 </div>
                             </div>

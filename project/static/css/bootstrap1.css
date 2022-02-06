@@ -176,7 +176,7 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #010f1f;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
@@ -9205,7 +9205,7 @@ a.text-dark:hover {
 }
 
 .text-muted {
-    color: #6c757d !important
+    color: #323333 !important
 }
 
 .text-black-50 {

@@ -1,8 +1,9 @@
 
 from pyexpat import model
+from unicodedata import category
 from xml.etree.ElementInclude import default_loader
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib.auth.models import User
 import index
@@ -133,15 +134,35 @@ class AdsWidget(models.Model):
         return str('ad')
     
 
-class  Comment(models.Model):
-    blog = models.ForeignKey(Blog, related_name='Comments', on_delete=models.CASCADE)
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Blog, related_name='Comments', on_delete=models.CASCADE, default='self')
     name = models.CharField(max_length=70)
     email = models.EmailField()
     body = models.TextField(max_length=500)
     date_added = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
-        return '%s - %s' % (self.blog.title, self.name)
+        return '%s - %s' % (self.post.title, self.name)
+
+        
+
+
+
+class MenuBar(models.Model):
+    menu = models.CharField(max_length=100, null=True, blank=True,)
+    url = models.URLField(null = True , blank = True,)
+    
+    def __str__(self) -> str:
+        return self.menu
+   
+    
+    
+        
+
+        
+        
+        
         
 
     

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+
+
+<br>
+
+
+
+
+
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;margin: 0 auto;}
+table {border: 3px solid #f1f1f1;}
+
+
+.imgcontainerx {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.containerx {
+
+  color: #f0f0f0;
+    padding-top: 44px;
+   
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+    background: linear-gradient(to right, #4ca2cd, #67B26F);
+    margin:0 auto;
+}
+
+.controls td{
+  width: 90%;
+  
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 990px) {
+  .containerx {
+ left: 0;
+ 
+}
+}
+</style>
+
+<div class="row">
+
+
+        <div class="containerx col-lg-6  col-md-10 ">
+        <div class="banner_x text-center ">
+                    <h2>Login</h2> </div>
+                    
+                    <br>
+        <div class="imgcontainerx">
+    <img src="{% static 'img/avt.png' %}" alt="Avatar" class="avatar">
+  </div>
+
+         {% if form.errors %}
+    <p class=" label label-danger">
+                        Your username and password didn't match. 
+                        Please try again.
+                    </p>
+    {% endif %}
+    
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+    <div class="container">
+    <form id="login-form" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+        
+            
+                <table class="table">
+                
+                    <tr>
+                        <td><label for="id_username">{{ form.username.label_tag }}</label></td>
+                        
+                       
+                        <td >{{ form.username }}{{ form.username.errors }}</td>
+                    </tr>
+                   
+                   
+                    <tr>
+                        <td><label for="id_password">{{ form.password.label_tag }}</label></td>
+                       
+                        <td >{{ form.password }}{{ form.password.errors }}</td>
+                    </tr>
+                    
+                </table>
+                
+                
+<input type="submit" value="Login" 
+                       class="btn btn-primary pull-center" style="text-align: center;
+    font-weight: 700;
+    color: #333;
+    font-size: 12px;
+    /* color: #fff; */
+    background-color: #8cd2b5;
+    border-color: #bcfae0;
+    width: 1;
+    margin: 10px;
+    padding: 11px 25px 10px 25px" />
+                <input type="hidden" name="next" value="{{ next }}" />
+               
+            </form>
+             
+             </div>
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a style="color: #333;" href="{% url 'password_reset' %}">Lost password?</a></p>
+        
+    
+</div>
+
+ </div>
+</div>
+
+
+{% endblock content %}

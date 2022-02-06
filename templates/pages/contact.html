@@ -6,51 +6,6 @@
 {% block content %}
   
 
-	<!--================ Start Header Area =================-->
-	<header class="header_area">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-							<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!--================ End Header Area =================-->
-
     <!--================ Start Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
@@ -69,53 +24,109 @@
     
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
+    
         <div class="container">
+         {% block title %}      
+        <h3>Submit Your feedback</h3>   {{ block.super }}         
+              {% endblock %}
+  
+             <br>
+
             <div class="row">
+            
                 <div class="col-lg-3">
+               
+              
                     <div class="contact_info">
+                     {% for contact in ContactInfo %}
                         <div class="info_item">
                             <i class="lnr lnr-home"></i>
-                            <h6>California, United States</h6>
-                            <p>Santa monica bullevard</p>
+                            <h6>{{contact.address}}</h6>
+                             <p>{{contact.address_details}}</p>
+                            
                         </div>
+                        <br>
                         <div class="info_item">
                             <i class="lnr lnr-phone-handset"></i>
-                            <h6><a href="#">00 (440) 9865 562</a></h6>
-                            <p>Mon to Fri 9am to 6 pm</p>
+                            <h6><a href="#">{{contact.phone}}</a></h6>
+                            <p>{{contact.work_time}}</p>
                         </div>
+                        <br>
                         <div class="info_item">
                             <i class="lnr lnr-envelope"></i>
-                            <h6><a href="#">support@colorlib.com</a></h6>
-                            <p>Send us your query anytime!</p>
+                            <h6><a href="#">{{contact.email}}</a></h6>
+                            <p>{{contact.Send_any_time}}</p>
                         </div>
+                        <br>
+                         {% endfor %}
                     </div>
+                   
                 </div>
                 <div class="col-lg-9">
-                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                        <div class="col-md-6">
+         
+ 
+<style>
+.contact_info {
+   padding-top: 33px;
+    padding-right: 33px;
+    margin: 8px;
+}
+
+
+table {
+    background-color: transparent;
+    width: 100%!important;
+}
+ input {
+    overflow: visible;
+    width: 100%;
+    padding: 8px;
+    margin: 10px;
+}
+.contact_form .form-group textarea {
+   padding: 8px;
+    margin: 10px;
+    width: 100%;
+    height: 150px;
+}
+
+</style>
+
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}   
+                
+      <form class="row contact_form"  method="post" id="contactForm" novalidate="novalidate">
+        {% csrf_token %}
+                        <div class="col-md-9">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
-                            </div>
+                               
+                              {% csrf_token %}
+            <table>
+            {{ formx.as_table }}                   
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>  
+                               
+                               
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-right">
-                            <button type="submit" value="submit" class="primary_btn">
-                                <span>Send Message</span>
-                            </button>
-                        </div>
-                    </form>
+                       
+                      
+                    </form>           
+       
+                   
                 </div>
             </div>
+            
+          
+             <!--mapBox
             <div id="mapBox" class="mapBox" 
                 data-lat="40.701083" 
                 data-lon="-74.1522848" 
@@ -124,9 +135,11 @@
                 data-mlat="40.701083"
                 data-mlon="-74.1522848">
             </div>
+            -->
+        
         </div>
     </section>
     <!--================Contact Area =================-->
         
-        <!--================Footer Area =================-->
+     
 {% endblock content %}

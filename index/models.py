@@ -127,9 +127,31 @@ class Brand(models.Model):
     def __str__(self) -> str:
             return str (self.image)
      
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=200, help_text="")
+    email = models.EmailField(max_length=200)
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Feedback"
+
+    def __str__(self):
+        return self.name + "-" + self.email
+        
+        
+class ContactInfo(models.Model):
+    address             = models.CharField(max_length = 70, null = True , blank = True)
+    address_details     = models.CharField(max_length = 90, null = True , blank = True)
+    phone               = models.CharField(max_length = 20, null = True , blank = True)
+    work_time           = models.CharField(max_length = 70, blank = True, default='Mon to Fri 9am to 6 pm')
+    email               = models.EmailField(max_length=200, null = True , blank = True)
+    Send_any_time = models.CharField(max_length=70, blank=True, default='Send us your query anytime!')
     
-    
-    
-    
+    def __str__(self):
+        return self.phone + "-" + self.email
+
 
     

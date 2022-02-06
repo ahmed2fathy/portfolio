@@ -1,7 +1,7 @@
 
 
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
   
@@ -50,7 +50,7 @@
                                     <li><a href="#">{{single_blog.author}}<i class="lnr lnr-user"></i></a></li>
                                     <li><a href="#">{{single_blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
                                     <li><a >{{single_blog.views}}  Views<i class="lnr lnr-eye"></i></a></li>
-                                    <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
+                                    <li><a href="#">{{comment_count}} Comments<i class="lnr lnr-bubble"></i></a></li>
                                 </ul>
                                 <ul class="social-links">
                                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -121,9 +121,10 @@
                     
                     
                     
-                    <!--التعليقات-->
+                  
+                   <!--التعليقات-->
                     <div class="comments-area">
-                        <h4> {{all_comment.comment_count}} Comments</h4>
+                        <h4>( {{comment_count}} ) Comments</h4>
                         
                         {% if not single_blog.Comments.all %}
                             no comments yet!
@@ -132,10 +133,10 @@
                         {% for comment in single_blog.Comments.all %}
                           
                         
-                        <div class="comment-list">
-                            <div class="single-comment justify-content-between d-flex" style="background: #fff;
+                        <div class="comment-list" style="background: #fff;
                             padding: 8px;
                             border: 1px #ececec solid;">
+                            <div class="single-comment justify-content-between d-flex">
                            
                                 <div class="user justify-content-between d-flex">
                                     <div class="thumb">
@@ -149,15 +150,29 @@
                                             {{comment.body}}
                                         </p>
                                     </div>
+                                    
                                 </div>
-                                <!--
-                                <div class="reply-btn">
-                                        <a href="" class="btn-reply text-uppercase">reply</a> 
-                                </div>
-                                -->
+                               
+                               
+                               
                             </div>
+                           
+                             <div class="reply-btn m-5">
+  <button class="btn-reply text-uppercase" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    reply
+  </button>
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>
+                                        
+                                </div>
+                            
+                            
                         </div>	
-                                   				
+                       <br>            				
                                    				
                     {% endfor %}
                     </div>
@@ -166,37 +181,30 @@
                     textarea {
                         overflow: auto;
                         resize: vertical;
-                             width: 100%;
+                            
                               height: 111px;
                                             }
                               #id_email{
                                   
-                                width: 70%;    
+                              
+                                height: 36px;
                                             }
                                             #id_name {
                                            
-                                              width: 70%;
+                                            
+                                              height: 36px;
                                                   }
                     
                     </style>
                     
-                    <div class="comment-form text-left w-full">
+                    <div class="comment-form text-left w-full " style="background: rgb(214 196 196 / 34%);">
                         <h4>Leave a Reply</h4>
                         <form method="POST">
                         {% csrf_token %}
                             <div class="form-group ">
-                                <div class="form-group col-lg-10 col-md-6 name">
+                               
                                 
-                            
-                                {{comment_form.name}} 
-                                </div>
-                                <div class="form-group col-lg-10 col-md-6 email">
-                                    {{comment_form.email}} 
-                                </div>										
-                           
-                            <div class=" form-group h-100 col-lg-10 col-md-6  textarea" >
-                                {{comment_form.body}} 
-                            </div>
+                               {{comment_form| crispy }}
                            
                             <button href="#" class="primary-btn primary_btn medium$ heroku login" tape='submit'><span>add Comment</span></button>
                         </div>
@@ -258,10 +266,10 @@
                               
                             
                             <div class="media post_item">
-                                <img class="popular-image" src="{{popular_blog.image.url}}" alt="post" style="width: 100px;">
+                                <img class="popular-image" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;">
                                 <div class="media-body">
                                     
-                                    <a href="single-blog.html"><h3>{{popular_blog.title}}</h3></a>
+                                    <a href="{{popular_blog.get_absolute_url}}"><h3>{{popular_blog.title}}</h3></a>
                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
                                 </div>
                             </div>

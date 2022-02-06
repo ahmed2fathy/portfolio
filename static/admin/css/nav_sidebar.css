@@ -3,6 +3,13 @@
     top: 0;
     max-height: 100vh;
 }
+[dir="rtl"] .admin-interface #main.shifted>#nav-sidebar {
+    padding: 10px !important;
+    background: #0d344b!important;
+    border-left: 1px solid #eaeaea;
+    margin-right: 0px !important;
+    /* padding: 40px 0px 40px 40px !important; */
+}
 
 .toggle-nav-sidebar {
     z-index: 20;
@@ -30,6 +37,11 @@
 .toggle-nav-sidebar:focus {
     background-color: var(--darkened-bg);
 }
+
+.admin-interface #main.shifted > #nav-sidebar {
+ background: #1f525d;
+ background: #1f525d!important;
+ padding: 10px;}
 
 #nav-sidebar {
     z-index: 15;
