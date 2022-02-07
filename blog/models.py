@@ -151,7 +151,7 @@ class Comment(models.Model):
 
 class MenuBar(models.Model):
     menu = models.CharField(max_length=100, null=True, blank=True,)
-    url = models.URLField(null = True , blank = True,)
+    url = models.CharField(max_length=100, null=True,blank=True,default='/', help_text="eg: /page")
     
     def __str__(self) -> str:
         return self.menu
