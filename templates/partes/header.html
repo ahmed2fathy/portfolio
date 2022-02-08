@@ -2,7 +2,7 @@
 	{% load i18n %}
 	<!--================ Start Header Area =================-->
 
-	<header class="header_area">
+	<header class="header_area" style="opacity: .9;">
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
@@ -15,7 +15,7 @@
 					
 					 {% if  Header.logo.url != None %}	
 				
-					<a class="navbar-brand logo_h text-uppercase" href="/">{{Header.site_name}}<img src="{{Header.logo.url}}" alt=""></a>
+					<a class="navbar-brand logo_h text-uppercase "  href="/">{{Header.site_name}}<img style="max-height: 80px;padding: 5px;" src="{{Header.logo.url}}" alt=""></a>
 			
 					 {% else %}
 					
@@ -45,39 +45,57 @@
 						
 						
 						
-		
-						</ul>
 						
-						
-						
-						
-						
-					</div>
-					
-						{% if request.user.is_authenticated %}
+							{% if request.user.is_authenticated %}
            
             
-          <div class="linx">
+        
           
-          <button style="margin-left: 9px;" type="button" class="btn "><a href="{% url 'accounts:profile' %}" class="nav-link"><span>{% trans 'Profile' %}</span></a></button>
+          <li class="nav-item submenu dropdown " style="list-style: none; text-align: center; min-width: 100px;">
+								<a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false" style="font-size: large;"><i class="lnr lnr-user"></i></a>
+								<ul class="dropdown-menu">
+									<li class="nav-item " style="font-size: small;"><a class="nav-link" href="{% url 'accounts:profile' %}">{% trans 'Profile' %}</a></li>
+									<li class="nav-item" style="font-size: small;"><a class="nav-link" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
+									
+								</ul>
+							</li>
           
           
           
-           <button style="margin-left: 9px;" type="button" class=" btn "><a href="{% url 'logout' %}" class="nav-link"><span>{% trans 'Logout' %}</span></a></button>
+          
+          
+         
           
           
           
           {% else %}
           
-          <button style="margin-left: 9px;" type="button" class="btn  "><a href="{% url 'login' %}" class="nav-link"><span>{% trans "Login" %}</span></a></button>
           
-          
-          <button style="margin-left: 9px;" type="button" class="btn  "><a href="{% url 'accounts:signup' %}" class="nav-link"><span>{% trans 'Signup' %}</span></a></button>
-          
-          
+           <li class="nav-item submenu dropdown " style="list-style: none; text-align: center; min-width: 100px;">
+								<a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false" style="font-size: large;"><i class="lnr lnr-user"></i></a>
+								<ul class="dropdown-menu">
+									<li class="nav-item " style="font-size: small;"><a class="nav-link" href="{% url 'login' %}">{% trans "Login" %}</a></li>
+									<li class="nav-item" style="font-size: small;"><a class="nav-link" href="{% url 'accounts:signup' %}">{% trans 'Signup' %}</a></li>
+									
+								</ul>
+							</li>
           
             
           {% endif %}
+						
+						
+		
+						</ul>
+						
+						
+					
+						
+						
+					
+					
+					
 			</div>		
 					
 				</div>

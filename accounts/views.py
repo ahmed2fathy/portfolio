@@ -10,6 +10,7 @@ from django.contrib import messages
 #from property.forms import PropertyReviewForm
 # Create your views here.
 
+
 def signup(request):
     if request.method == 'POST':
         signup_form = UserCreateForm(request.POST)
