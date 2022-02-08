@@ -11,7 +11,7 @@ class NewsletterUser(models.Model):
 
 
 class FooterHeader(models.Model):
-    site_name           = models.CharField(max_length = 220)
+    site_name = models.CharField(max_length=220, blank=True)
     logo                = models.ImageField (upload_to = 'media/index/FollowMe/',null = True , blank = True)
     phone               = models.CharField(max_length = 20, null = True , blank = True)
     address             = models.CharField(max_length = 300, null = True , blank = True)
@@ -28,9 +28,12 @@ class FooterHeader(models.Model):
     Copyright_link      = models.URLField(max_length = 400, null = True , blank = True )
     Copyright_date      = models.DateTimeField(default = timezone.now)
     
-    def  __str__(self):
-            return self.site_name
     
+    def  __str__(self):
+        return "setting footer and header - "  + str(self.id)
+        
+    
+
 
 class Hello(models.Model):
     hello_name = models.CharField(max_length=50,  default='hello')
