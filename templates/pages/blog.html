@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 
 {% block content %}
 
@@ -74,12 +74,21 @@
                                 <div class="blog_post">
                                     <img src="{{blog.image.url}}" alt="">
                                     <div class="blog_details">
+                                    
+                                    {% if LANGUAGE_CODE  == 'en' %} 
                                         <a href="{{blog.get_absolute_url}}"><h2>{{blog.title}}</h2></a>
                                         <p>{{blog.content|safe|truncatewords:20}}</p>
                                         
+                                        {% else %}
+                                         <a href="{{blog.get_absolute_url}}"><h2>{{blog.title_ar}}</h2></a>
+                                        <p>{{blog.content_ar|safe|truncatewords:20}}</p>
+                                        {% endif %}
                                         
                                         
-                                        <a href="{{blog.get_absolute_url}}" class="primary_btn"><span>View More</span></a>
+                                        <a href="{{blog.get_absolute_url}}" class="primary_btn"><span>
+                                        
+                                        {% trans "View More" %}
+                                        </span></a>
                                         
                                         
                                         

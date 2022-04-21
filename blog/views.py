@@ -1,5 +1,8 @@
 
 
+from pdb import post_mortem
+
+from django.forms import SlugField
 from .forms import CommentForm
 from django.shortcuts import render, redirect
 from index.forms import NewsletterUserSignUpForm
@@ -47,6 +50,11 @@ def  blog(request):
 # ----------------------------------------------------------------------------
     
     
+# -------------------- الدالة الخاصة بعداد التعليقات---------------------
+    #comment_count = Comment.objects.filter(post=Blog.objects.get(Slug=SlugField)).count()
+#------------------------------------------------------------------
+
+    
 # --------------------دالة البحث -------------------------------
     search= Blog.objects.all()
     title=None
@@ -87,6 +95,7 @@ def  blog(request):
     'form':form,
     'all_tag':all_tag,
     'menu': menu,
+    #'comment_count': comment_count,
     'FooterHeader': FooterHeader.objects.all()[:1],
     }
     
