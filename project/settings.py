@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'index',
     'bootstrap4',
     'accounts',
-    'admin_interface',
-    'colorfield',
+    'admin_interface',  # theme
+    'colorfield',  # theme
     #'grappelli',
     'crispy_forms',
     

@@ -119,9 +119,19 @@
 			
 			
 <!---------- language  form  ------------->
-				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-    <input name="next" type="hidden" value="{{ redirect_to }}">
-    <select name="language">
+
+<style>
+.go{background: rgb(98 84 228 / 7%);
+    font-size: 13px;
+    border: 1px #ddd solid;}
+.SelectLanguage{}    
+.languageform{padding: 5px;
+    background: rgb(108 138 223 / 9%);
+</style>
+
+				<form class="languageform" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input class="SelectLanguage" name="next" type="hidden" value="{{ redirect_to }}">
+    <select  name="language">
         {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
@@ -131,7 +141,7 @@
             </option>
         {% endfor %}
     </select>
-    <input type="submit" value="Go">
+    <input class="go" type="submit" value="Go"  style="">
 </form>	
 <!-------- end language  form  ------->
 

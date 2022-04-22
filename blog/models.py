@@ -6,6 +6,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib.auth.models import User
+import blog
 import index
 from django.utils.translation import gettext_lazy as _
 
@@ -52,10 +53,12 @@ class Category(models.Model):
 
 
 class  Blog(models.Model):
-    title = models.CharField(max_length=50, verbose_name=_('title'))
-    title_ar = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('title_ar'))
-    content = models.TextField(max_length=4000, verbose_name=_('content'))
-    content_ar = models.TextField(max_length=4000, null=True, blank=True, verbose_name=_('content_ar'))
+    title = models.CharField(
+        max_length=50,  verbose_name=_('title'))
+    title_ar = models.CharField(max_length=50, blank=True, verbose_name=_('title_ar'))
+    content = models.TextField(
+        max_length=4000, blank=True,  verbose_name=_('content'))
+    content_ar = models.TextField(max_length=4000,  blank=True, verbose_name=_('content_ar'))
     image = models.ImageField(upload_to='media/blog/frontbage', verbose_name=_('image'))
     created_at = models.DateTimeField(default=timezone.now, verbose_name=_('created at'))
     author = models.ForeignKey(User, related_name='post_author', default=User, on_delete=models.CASCADE, verbose_name=_(' author'))
@@ -70,7 +73,7 @@ class  Blog(models.Model):
         
     
     def __str__(self) -> str:
-        return self.title
+        return self.title 
         
     def total_views(self):
             return self.views.count()
