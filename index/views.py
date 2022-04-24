@@ -158,6 +158,7 @@ def about_area(request):
     return render(request, 'pages/about.html', context)
     
     
+    
 def service_area(request):
     form = NewsletterUserSignUpForm(request. POST or None)
     if form.is_valid():

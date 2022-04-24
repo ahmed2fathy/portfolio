@@ -1,6 +1,18 @@
 	{% load static %}
 	{% load i18n %}
 	<!--================ Start Header Area =================-->
+	
+	
+<style>
+.nav>li>a:focus, .nav>li>a:hover {
+    width: 100px;
+    height: auto;
+    text-align: center;
+    border-radius: 5%;
+    background-color: rgb(248 249 250 / 89%);
+}
+</style>
+
 
 	<header class="header_area" style="opacity: .9;">
 		<div class="main_menu">
@@ -32,6 +44,12 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
+					
+				
+
+
+					
+					
 					
 					<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
@@ -96,9 +114,40 @@
 					
 					
 					
-			</div>		
-					
+			</div>	
+			
+			
+			
+<!---------- language  form  ------------->
+
+<style>
+.go{background: rgb(98 84 228 / 7%);
+    font-size: 13px;
+    border: 1px #ddd solid;}
+.SelectLanguage{}    
+.languageform{padding: 5px;
+    background: rgb(108 138 223 / 9%);
+</style>
+
+				<form class="languageform" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input class="SelectLanguage" name="next" type="hidden" value="{{ redirect_to }}">
+    <select  name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input class="go" type="submit" value="Go"  style="">
+</form>	
+<!-------- end language  form  ------->
+
+
 				</div>
+				
 			</nav>
 		</div>
 	</header>
