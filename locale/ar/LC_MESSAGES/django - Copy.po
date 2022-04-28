@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-25 17:35+0200\n"
+"POT-Creation-Date: 2022-04-25 17:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,6 +44,8 @@ msgid "Tags"
 msgstr "العلامات"
 
 #: .\blog\models.py:50
+#, fuzzy
+#| msgid " category"
 msgid "Categories"
 msgstr "التصنيفات"
 
@@ -75,11 +77,11 @@ msgstr "الكاتب"
 
 #: .\blog\models.py:70
 msgid " category"
-msgstr "تصنيف"
+msgstr "التصنيف"
 
 #: .\blog\models.py:71
 msgid "tag"
-msgstr "علامة"
+msgstr "الوسم"
 
 #: .\blog\models.py:72
 msgid " views"
@@ -87,9 +89,11 @@ msgstr "المشاهدات"
 
 #: .\blog\models.py:73
 msgid " url"
-msgstr "رابط"
+msgstr "الرابط"
 
 #: .\blog\models.py:76
+#, fuzzy
+#| msgid "Blog"
 msgid "Blogs"
 msgstr "التدوين"
 
@@ -99,7 +103,7 @@ msgstr "وصف قصير"
 
 #: .\blog\models.py:116 .\index\models.py:25
 msgid "description"
-msgstr "الوصف"
+msgstr "وصف كامل"
 
 #: .\blog\models.py:117
 msgid "Facebook link"
@@ -115,7 +119,7 @@ msgstr "رابط جيت هوب"
 
 #: .\blog\models.py:122
 msgid "AboutAuthor"
-msgstr "معلومات عن الكاتب"
+msgstr "معلومات عن الناشر"
 
 #: .\blog\models.py:129
 msgid "popular post"
@@ -123,7 +127,7 @@ msgstr "الاكثر مشاهدة"
 
 #: .\blog\models.py:131
 msgid "post catgories"
-msgstr "تصنيفات المقالات"
+msgstr "تصنيف البوست"
 
 #: .\blog\models.py:132
 msgid "newsletter"
@@ -131,7 +135,7 @@ msgstr "النشرة الاخبارية"
 
 #: .\blog\models.py:133
 msgid " tag clouds"
-msgstr "العلامات السحابية"
+msgstr "الوسم السحابي"
 
 #: .\blog\models.py:136
 msgid "NameWidget"
@@ -139,31 +143,31 @@ msgstr "اسم الاداة"
 
 #: .\blog\models.py:145
 msgid " ad code (1) "
-msgstr "كود اعلان (1)"
+msgstr "اضف كود -1 "
 
 #: .\blog\models.py:146
 msgid " ad code (2) "
-msgstr "كود اعلان (2)"
+msgstr "اضف كود -2"
 
 #: .\blog\models.py:147
 msgid " ad code (3) "
-msgstr "كود اعلان (3)"
+msgstr "اضف كود -3"
 
 #: .\blog\models.py:148
 msgid " ad code (4) "
-msgstr "كود اعلان (4)"
+msgstr "اضف كود -4"
 
 #: .\blog\models.py:150
 msgid " ad code (5) "
-msgstr "كود اعلان (5)"
+msgstr "اضف كود -5"
 
 #: .\blog\models.py:151
 msgid " ad code (6) "
-msgstr "كود اعلان (6)"
+msgstr "اضف كود -6"
 
 #: .\blog\models.py:154
 msgid "AdsWidget"
-msgstr "اداة الاعلانات"
+msgstr "أداة الإعلانات"
 
 #: .\blog\models.py:161
 msgid "post"
@@ -183,6 +187,7 @@ msgid "date added"
 msgstr "تاريخ الاضافة"
 
 #: .\blog\models.py:169
+#, fuzzy
 msgid "Comments"
 msgstr "التعليقات"
 
@@ -191,16 +196,22 @@ msgid "MenuBar"
 msgstr "شريط القوائم"
 
 #: .\index\models.py:9
+#, fuzzy
+#| msgid "date added"
 msgid "data_added"
-msgstr "اضافة تاريخ"
+msgstr "تاريخ الاضافة"
 
 #: .\index\models.py:12
+#, fuzzy
+#| msgid "newsletter"
 msgid "NewsletterUser"
 msgstr "مستخدمين النشرة الاخبارية"
 
 #: .\index\models.py:20
+#, fuzzy
+#| msgid "name"
 msgid "site_name"
-msgstr "اسم الموقع"
+msgstr "الاسم"
 
 #: .\index\models.py:21
 msgid "logo"
@@ -213,19 +224,21 @@ msgstr "الهاتف"
 
 #: .\index\models.py:23 .\index\models.py:203
 msgid "address"
-msgstr "عنوان المنزل"
+msgstr "العنوان"
 
 #: .\index\models.py:27
 msgid "fb_link"
-msgstr "رابط للفيس لوك"
+msgstr "رابط الفيس بوك"
 
 #: .\index\models.py:29
+#, fuzzy
+#| msgid "Twitter link"
 msgid "twitter_link"
-msgstr "رابط لتويتر"
+msgstr "رابط تويتر"
 
 #: .\index\models.py:30
 msgid "instagram_link"
-msgstr "رابط لانسجترام"
+msgstr "رابط انستجرام"
 
 #: .\index\models.py:31
 msgid "Copyright"
@@ -233,23 +246,23 @@ msgstr "حقوق النشر"
 
 #: .\index\models.py:33
 msgid "all_rights_reserved"
-msgstr "جميع الحقوق محفوظة"
+msgstr "كل الحقوق محفوظة"
 
 #: .\index\models.py:34
 msgid "Copyright_txt_1"
-msgstr "نص حقوق النشر - 1"
+msgstr "نص  الحقوق المحفوظة-1"
 
 #: .\index\models.py:35
 msgid "Copyright_txt_2"
-msgstr "نص حقوق النشر - 2"
+msgstr "نص  الحقوق المحفوظة-2"
 
 #: .\index\models.py:37
 msgid "Copyright_link"
-msgstr "رابط حقوف النشر"
+msgstr "رابط حقوق النشر"
 
 #: .\index\models.py:39
 msgid "Copyright_date"
-msgstr "تاريخ حقوق النشر"
+msgstr "تاريخ الحقوق المحفوظة"
 
 #: .\index\models.py:42
 msgid "FooterHeader"
@@ -257,13 +270,15 @@ msgstr "الهيدر والفوتر"
 
 #: .\index\models.py:53
 msgid "hello_name"
-msgstr "اسم الترحيب"
+msgstr "عنوان الترحيب"
 
 #: .\index\models.py:55 .\index\models.py:79 .\index\models.py:95
 #: .\index\models.py:116 .\index\models.py:132 .\index\models.py:149
 #: .\index\models.py:167
+#, fuzzy
+#| msgid "address"
 msgid "des"
-msgstr "وصف"
+msgstr "الوصف"
 
 #: .\index\models.py:57
 msgid "image_banner"
@@ -283,11 +298,11 @@ msgstr "وظيفة"
 
 #: .\index\models.py:64
 msgid "hire_link"
-msgstr "رابط الوظيفة"
+msgstr "رابط التوظيف"
 
 #: .\index\models.py:65
 msgid "back_banner"
-msgstr "بانر خلفي"
+msgstr "لافتة خلفية"
 
 #: .\index\models.py:70
 msgid "Hello"
@@ -295,15 +310,15 @@ msgstr "الترحيب"
 
 #: .\index\models.py:80
 msgid "download_cv"
-msgstr "تنزيل السيرة الذاتية"
+msgstr "تحميل السيرة الذاتية"
 
 #: .\index\models.py:81
 msgid "download_link"
-msgstr "رابط التنزيل"
+msgstr "رابط التحميل"
 
 #: .\index\models.py:86
 msgid "MySelf"
-msgstr "عن نفسك"
+msgstr " نبذة عن نفسك "
 
 #: .\index\models.py:99
 msgid "experience"
@@ -311,15 +326,17 @@ msgstr "الخبرات"
 
 #: .\index\models.py:101
 msgid "years"
-msgstr "اعوام"
+msgstr "الاعوام"
 
 #: .\index\models.py:104
 msgid "Call"
 msgstr "الاتصال"
 
 #: .\index\models.py:112 .\index\models.py:164
+#, fuzzy
+#| msgid "name"
 msgid "big_name"
-msgstr "الاسم بالكامل"
+msgstr "الاسم"
 
 #: .\index\models.py:114 .\index\models.py:165
 msgid "big_dec"
@@ -327,7 +344,7 @@ msgstr "الوصف بالكامل"
 
 #: .\index\models.py:121
 msgid "Service"
-msgstr "خدمات"
+msgstr "الخدمات"
 
 #: .\index\models.py:134
 msgid "Work"
@@ -403,4 +420,9 @@ msgstr "تسجيل الدخول"
 
 #: .\templates\partes\header.html:98
 msgid "Signup"
-msgstr "تسجيل عضو جديد"
+msgstr " تسجيل عضو جديد"
+
+#, fuzzy
+#~| msgid "tag"
+#~ msgid "Tag"
+#~ msgstr "الوسم"

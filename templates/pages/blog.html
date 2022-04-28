@@ -3,15 +3,34 @@
 
 {% block content %}
 
+
+
+
+
+
+
+
     <!--================ Start Banner Area =================-->
     <section class="banner_area">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
                     <h2>Blog</h2>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="blog.html">Our Blog</a>
+                   <div class="page_link1" style="color:#fff">
+                     
+                       <br>
+                         {% if LANGUAGE_CODE  == 'en' %} 
+                            <p >{{single_blog.created_at|date:'d-m-y'}}</p> 
+                      
+                          <a class="breadcrumb-item1"  style="color:#fff" href="/"> Home</a>
+                        
+                         {% else %}
+                          
+                       <br>
+                       
+                        <a class="breadcrumb-item1" style="color:#fff" href="/"> الرئيسية </a>
+                       
+                          {% endif %}
                     </div>
                 </div>
             </div>
@@ -192,27 +211,74 @@
                         {% endfor %}
                         
                         
-                        <aside class="single_sidebar_widget popular_post_widget">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                         <aside class="single_sidebar_widget popular_post_widget">
                         
                         {% for name_wedgit in name_wedgits %}
                             <h3 class="widget_title">{{name_wedgit.popular_post}}</h3>
                             {% endfor %}
-                            
+                         <article class="col-xs-6 col-sm-3 col-lg-12 mt-3 pointer bg-hover-white-smoke p-1">   
                             
                             {% for popular_blog in popular_blogs %}
-                              
-                            
-                            <div class="media post_item">
-                                <img class="popular-image" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;">
+                               
+        {% if LANGUAGE_CODE  == 'en' %}
+       <div  class="row align-items-center">
+        
+        <div class="media post_item" style="margin-top: -31px;
+    background: #7e50ec29;
+    padding: 7px;">
+                              <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
+                              <div class="col-lg-8">
                                 <div class="media-body">
-                                    
-                                    <a href="{{popular_blog.get_absolute_url}}"><h3>{{popular_blog.title}}</h3></a>
+                                   <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title|safe|truncatewords:7}}</h3></a>
+                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
+                                </div>
+                            </div></div></div>
+                            <div class="br"></div>
+        {% else %}
+       <div  class="row align-items-center">
+        <div class="media post_item" style="margin-top: -31px;
+    background: #7e50ec29;
+    padding: 7px;">
+                                <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
+                                <div class="col-lg-8">
+                                <div class="media-body">
+                                     <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title_ar|safe|truncatewords:7}}</h3></a>
                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
                                 </div>
-                            </div>
+                                </div>
+                            </div></div>
+                            <div class="br"></div>
+     
+     
+        {% endif %}
+     
+      </article>
+   
+    
                             {% endfor %}
                             <div class="br"></div>
                         </aside>
+                        
+                        
+                        {% for ad in ads %}
+                      
+                        <aside class="single_sidebar_widget ads_widget">
+                            
+                            <p>{{ad.ad_code_1}}</p>
+                            <div class="br"></div>
+                        </aside>
+                        {% endfor %}
+                        
+                        
+                        
                         
                         
                         {% for ad in ads %}

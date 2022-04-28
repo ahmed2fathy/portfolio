@@ -9,7 +9,7 @@ class NewsletterUser(models.Model):
         auto_now_add=True, verbose_name=_('data_added'))
     
     class Meta:
-            verbose_name_plural = _('NewsletterUser')
+        verbose_name_plural = _('NewsletterUser')
     
     def __str__(self) -> str:
         return self.email
