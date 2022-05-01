@@ -6,7 +6,7 @@ from django.http import BadHeaderError
 from django.shortcuts import redirect, render
 from blog.models import MenuBar
 from .forms import FeedbackForm, NewsletterUserSignUpForm
-from index.models import Brand, Call, ClientSay, ContactInfo, FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+from index.models import Brand, Call, ClientSay, ContactInfo,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
 
 
 
@@ -101,6 +101,7 @@ def all_index(request):
     'Following': Tab.objects.filter(status = 'Following')[:6],
     'Upcoming': Tab.objects.filter(status = 'Upcoming')[:6],
     'menu': MenuBar.objects.all()[:8],
+    
     
     }
     

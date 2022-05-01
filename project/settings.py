@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'colorfield',  # theme
     #'grappelli',
     'crispy_forms',
-    
+   
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   
+    
    
 
 ]
@@ -148,6 +148,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Lists of languages site supports.
+
 LANGUAGES = (
 
     ('en', 'English'),

@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1e409a9-5f18-4ae1-8887-b96696150fc6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/ar/LC_MESSAGES/django.mo" beforeDir="false" afterPath="$PROJECT_DIR$/locale/ar/LC_MESSAGES/django.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/ar/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/ar/LC_MESSAGES/django.po" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/portfolio.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/single-blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/single-blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/header.html" afterDir="false" />
     </list>

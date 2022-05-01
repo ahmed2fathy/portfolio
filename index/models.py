@@ -14,7 +14,6 @@ class NewsletterUser(models.Model):
     def __str__(self) -> str:
         return self.email
 
-
 class FooterHeader(models.Model):
     site_name = models.CharField(
         max_length=220, blank=True, verbose_name=_('site_name'))

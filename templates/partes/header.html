@@ -2,87 +2,49 @@
 	{% load i18n %}
 	<!--================ Start Header Area =================-->
 	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-<style>
-.nav>li>a:focus, .nav>li>a:hover {
-    width: 100px;
-    height: auto;
-    text-align: center;
-    border-radius: 5%;
-    background-color: rgb(248 249 250 / 89%);
-}
-</style>
-
-
 	<header class="header_area" style="opacity: .9;">
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
-					
-				  
-			
-					<!-- Brand and toggle get grouped for better mobile display -->
-					
+				
+				
+				<div class="logo">
 					{% for Header in FooterHeader %}
 					
 					 {% if  Header.logo.url != None %}	
-				
-					<a class="navbar-brand logo_h text-uppercase "  href="/">{{Header.site_name}}<img style="max-height: 80px;padding: 5px;" src="{{Header.logo.url}}" alt=""></a>
 			
-					 {% else %}
+  <a class="navbar-brand" href="/">
+    <img src="{{Header.logo.url}}" width="55" height="55" class="d-inline-block align-top" alt="">
+    {{Header.site_name}}
+  </a>
+
+				 {% else %}
 					
 					<a class="navbar-brand logo_h" href="/">{{Header.site_name}}</a>
 					
 					{% endif %}
 					{% endfor %}
 				
-					
-				
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					
-				
-
-
-					
-					
-					
+				  </div>
+				  
+				  
 					<!-- Collect the nav links, forms, and other content for toggling -->
+				
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-end">
+						<ul class="nav navbar-nav menu_nav justify-content-end" >
 						{% for  item in menu %}
-						  
-						
 							<li class="nav-item"><a class="nav-link" href="{{item.url}}">{{item.menu}}</a></li>
 						{% endfor %}
 						
-						
-						
-						
-						
-							{% if request.user.is_authenticated %}
-           
-            
-        
-          
-          <li class="nav-item submenu dropdown " style="list-style: none; text-align: center; min-width: 100px;">
+				</div>		
+						 
+						 
+						 <div class="menu">
+						 <li class="nav-item submenu dropdown " style="list-style: none;">
 								<a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false" style="font-size: large;"><i class="lnr lnr-user"></i></a>
+							{% if request.user.is_authenticated %}
+  
 								<ul class="dropdown-menu">
 									<li class="nav-item " style="font-size: small;"><a class="nav-link" href="{% url 'accounts:profile' %}">{% trans 'Profile' %}</a></li>
 									<li class="nav-item" style="font-size: small;"><a class="nav-link" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
@@ -90,77 +52,56 @@
 								</ul>
 							</li>
           
-          
-          
-          
-          
-         
-          
-          
-          
           {% else %}
-          
-          
-           <li class="nav-item submenu dropdown " style="list-style: none; text-align: center; min-width: 100px;">
-								<a  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false" style="font-size: large;"><i class="lnr lnr-user"></i></a>
+      
 								<ul class="dropdown-menu">
 									<li class="nav-item " style="font-size: small;"><a class="nav-link" href="{% url 'login' %}">{% trans "Login" %}</a></li>
 									<li class="nav-item" style="font-size: small;"><a class="nav-link" href="{% url 'accounts:signup' %}">{% trans 'Signup' %}</a></li>
 									
 								</ul>
 							</li>
-          
-            
-          {% endif %}
-						
-						
-		
-						</ul>
-						
-						
-					
-						
-						
-					
-					
-					
-			</div>	
-			
-			
-			
+          {% endif %}	
+   		
+   		</div>
+   		
+   		
 <!---------- language  form  ------------->
-
-<style>
-.go{background: rgb(98 84 228 / 7%);
-    font-size: 13px;
-    border: 1px #ddd solid;}
-.SelectLanguage{}    
-.languageform{padding: 5px;
-    background: rgb(108 138 223 / 9%);
-</style>
-
-				<form class="languageform" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+ <div class="language-Select">
+<form class="languageform" action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input class="SelectLanguage" name="next" type="hidden" value="{{ redirect_to }}">
-    <select  name="language">
+   <select name="language" class="form-control" onchange="this.form.submit()">
         {% get_current_language as LANGUAGE_CODE %}
         {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
         {% for language in languages %}
             <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                {{ language.name_local }} ({{ language.code }})
+                {{ language.name_local }} - {{ language.code }}
             </option>
         {% endfor %}
     </select>
-    <input class="go" type="submit" value="Go"  style="">
+    
 </form>	
+
+
+
+</div>
 <!-------- end language  form  ------->
+   		
+   		
+   <div class="navbar-coll">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>		
+</div>
 
+</div>
 
-				</div>
-				
-			</nav>
-		</div>
+	</nav>
+	
 	</header>
 	<!--================ End Header Area =================-->
 	<br><br><br>
