@@ -1,0 +1,428 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-25 17:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\blog\models.py:18 .\blog\models.py:44 .\blog\models.py:114
+#: .\blog\models.py:162 .\blog\models.py:180 .\index\models.py:189
+msgid "name"
+msgstr "الاسم"
+
+#: .\blog\models.py:19 .\blog\models.py:45
+msgid "Description"
+msgstr "الوصف"
+
+#: .\blog\models.py:20 .\blog\models.py:46 .\blog\models.py:67
+#: .\blog\models.py:113 .\index\models.py:83 .\index\models.py:96
+#: .\index\models.py:118 .\index\models.py:151 .\index\models.py:169
+#: .\index\models.py:179
+msgid "image"
+msgstr "الصورة"
+
+#: .\blog\models.py:21 .\blog\models.py:47 .\blog\models.py:181
+msgid "url"
+msgstr "الرابط"
+
+#: .\blog\models.py:24
+msgid "Tags"
+msgstr "العلامات"
+
+#: .\blog\models.py:50
+#, fuzzy
+#| msgid " category"
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: .\blog\models.py:62 .\index\models.py:54 .\index\models.py:78
+#: .\index\models.py:94 .\index\models.py:115 .\index\models.py:130
+#: .\index\models.py:148 .\index\models.py:166
+msgid "title"
+msgstr "العنوان"
+
+#: .\blog\models.py:63
+msgid "title_ar"
+msgstr "العنوان بالعربية"
+
+#: .\blog\models.py:65
+msgid "content"
+msgstr "المحتوي"
+
+#: .\blog\models.py:66
+msgid "content_ar"
+msgstr "المحتوي بالعربية"
+
+#: .\blog\models.py:68
+msgid "created at"
+msgstr "تاريخ الانشاء"
+
+#: .\blog\models.py:69
+msgid " author"
+msgstr "الكاتب"
+
+#: .\blog\models.py:70
+msgid " category"
+msgstr "التصنيف"
+
+#: .\blog\models.py:71
+msgid "tag"
+msgstr "الوسم"
+
+#: .\blog\models.py:72
+msgid " views"
+msgstr "المشاهدات"
+
+#: .\blog\models.py:73
+msgid " url"
+msgstr "الرابط"
+
+#: .\blog\models.py:76
+#, fuzzy
+#| msgid "Blog"
+msgid "Blogs"
+msgstr "التدوين"
+
+#: .\blog\models.py:115
+msgid "short description"
+msgstr "وصف قصير"
+
+#: .\blog\models.py:116 .\index\models.py:25
+msgid "description"
+msgstr "وصف كامل"
+
+#: .\blog\models.py:117
+msgid "Facebook link"
+msgstr "رابط الفيس بوك"
+
+#: .\blog\models.py:118
+msgid "Twitter link"
+msgstr "رابط تويتر"
+
+#: .\blog\models.py:119
+msgid "Github link"
+msgstr "رابط جيت هوب"
+
+#: .\blog\models.py:122
+msgid "AboutAuthor"
+msgstr "معلومات عن الناشر"
+
+#: .\blog\models.py:129
+msgid "popular post"
+msgstr "الاكثر مشاهدة"
+
+#: .\blog\models.py:131
+msgid "post catgories"
+msgstr "تصنيف البوست"
+
+#: .\blog\models.py:132
+msgid "newsletter"
+msgstr "النشرة الاخبارية"
+
+#: .\blog\models.py:133
+msgid " tag clouds"
+msgstr "الوسم السحابي"
+
+#: .\blog\models.py:136
+msgid "NameWidget"
+msgstr "اسم الاداة"
+
+#: .\blog\models.py:145
+msgid " ad code (1) "
+msgstr "اضف كود -1 "
+
+#: .\blog\models.py:146
+msgid " ad code (2) "
+msgstr "اضف كود -2"
+
+#: .\blog\models.py:147
+msgid " ad code (3) "
+msgstr "اضف كود -3"
+
+#: .\blog\models.py:148
+msgid " ad code (4) "
+msgstr "اضف كود -4"
+
+#: .\blog\models.py:150
+msgid " ad code (5) "
+msgstr "اضف كود -5"
+
+#: .\blog\models.py:151
+msgid " ad code (6) "
+msgstr "اضف كود -6"
+
+#: .\blog\models.py:154
+msgid "AdsWidget"
+msgstr "أداة الإعلانات"
+
+#: .\blog\models.py:161
+msgid "post"
+msgstr "مقال"
+
+#: .\blog\models.py:163 .\index\models.py:7 .\index\models.py:24
+#: .\index\models.py:190 .\index\models.py:209
+msgid "email"
+msgstr "الايميل"
+
+#: .\blog\models.py:164
+msgid "comment"
+msgstr "تعليق"
+
+#: .\blog\models.py:166
+msgid "date added"
+msgstr "تاريخ الاضافة"
+
+#: .\blog\models.py:169
+#, fuzzy
+msgid "Comments"
+msgstr "التعليقات"
+
+#: .\blog\models.py:184
+msgid "MenuBar"
+msgstr "شريط القوائم"
+
+#: .\index\models.py:9
+#, fuzzy
+#| msgid "date added"
+msgid "data_added"
+msgstr "تاريخ الاضافة"
+
+#: .\index\models.py:12
+#, fuzzy
+#| msgid "newsletter"
+msgid "NewsletterUser"
+msgstr "مستخدمين النشرة الاخبارية"
+
+#: .\index\models.py:20
+#, fuzzy
+#| msgid "name"
+msgid "site_name"
+msgstr "الاسم"
+
+#: .\index\models.py:21
+msgid "logo"
+msgstr "لوجو"
+
+#: .\index\models.py:22 .\index\models.py:67 .\index\models.py:97
+#: .\index\models.py:206
+msgid "phone"
+msgstr "الهاتف"
+
+#: .\index\models.py:23 .\index\models.py:203
+msgid "address"
+msgstr "العنوان"
+
+#: .\index\models.py:27
+msgid "fb_link"
+msgstr "رابط الفيس بوك"
+
+#: .\index\models.py:29
+#, fuzzy
+#| msgid "Twitter link"
+msgid "twitter_link"
+msgstr "رابط تويتر"
+
+#: .\index\models.py:30
+msgid "instagram_link"
+msgstr "رابط انستجرام"
+
+#: .\index\models.py:31
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+#: .\index\models.py:33
+msgid "all_rights_reserved"
+msgstr "كل الحقوق محفوظة"
+
+#: .\index\models.py:34
+msgid "Copyright_txt_1"
+msgstr "نص  الحقوق المحفوظة-1"
+
+#: .\index\models.py:35
+msgid "Copyright_txt_2"
+msgstr "نص  الحقوق المحفوظة-2"
+
+#: .\index\models.py:37
+msgid "Copyright_link"
+msgstr "رابط حقوق النشر"
+
+#: .\index\models.py:39
+msgid "Copyright_date"
+msgstr "تاريخ الحقوق المحفوظة"
+
+#: .\index\models.py:42
+msgid "FooterHeader"
+msgstr "الهيدر والفوتر"
+
+#: .\index\models.py:53
+msgid "hello_name"
+msgstr "عنوان الترحيب"
+
+#: .\index\models.py:55 .\index\models.py:79 .\index\models.py:95
+#: .\index\models.py:116 .\index\models.py:132 .\index\models.py:149
+#: .\index\models.py:167
+#, fuzzy
+#| msgid "address"
+msgid "des"
+msgstr "الوصف"
+
+#: .\index\models.py:57
+msgid "image_banner"
+msgstr "لافتة مصورة"
+
+#: .\index\models.py:58
+msgid "cv"
+msgstr "السيرة الذاتية"
+
+#: .\index\models.py:60
+msgid "cv_link"
+msgstr "رابط السيرة الذاتية"
+
+#: .\index\models.py:62
+msgid "hire"
+msgstr "وظيفة"
+
+#: .\index\models.py:64
+msgid "hire_link"
+msgstr "رابط التوظيف"
+
+#: .\index\models.py:65
+msgid "back_banner"
+msgstr "لافتة خلفية"
+
+#: .\index\models.py:70
+msgid "Hello"
+msgstr "الترحيب"
+
+#: .\index\models.py:80
+msgid "download_cv"
+msgstr "تحميل السيرة الذاتية"
+
+#: .\index\models.py:81
+msgid "download_link"
+msgstr "رابط التحميل"
+
+#: .\index\models.py:86
+msgid "MySelf"
+msgstr " نبذة عن نفسك "
+
+#: .\index\models.py:99
+msgid "experience"
+msgstr "الخبرات"
+
+#: .\index\models.py:101
+msgid "years"
+msgstr "الاعوام"
+
+#: .\index\models.py:104
+msgid "Call"
+msgstr "الاتصال"
+
+#: .\index\models.py:112 .\index\models.py:164
+#, fuzzy
+#| msgid "name"
+msgid "big_name"
+msgstr "الاسم"
+
+#: .\index\models.py:114 .\index\models.py:165
+msgid "big_dec"
+msgstr "الوصف بالكامل"
+
+#: .\index\models.py:121
+msgid "Service"
+msgstr "الخدمات"
+
+#: .\index\models.py:134
+msgid "Work"
+msgstr "الاعمال"
+
+#: .\index\models.py:147
+msgid "status"
+msgstr "الحالة"
+
+#: .\index\models.py:152
+msgid "active"
+msgstr "تفعيل"
+
+#: .\index\models.py:155
+msgid "Tab"
+msgstr "الازرار"
+
+#: .\index\models.py:172
+msgid "ClientSay"
+msgstr "اراء العملاء"
+
+#: .\index\models.py:184
+msgid "Brand"
+msgstr "الشعارات"
+
+#: .\index\models.py:191
+msgid "subject"
+msgstr "الموضوع"
+
+#: .\index\models.py:192
+msgid "message"
+msgstr "الرسالة"
+
+#: .\index\models.py:193
+msgid "date"
+msgstr "التاريخ"
+
+#: .\index\models.py:196
+msgid "Feedback"
+msgstr "فيد باك"
+
+#: .\index\models.py:204
+msgid "address_details"
+msgstr "العنوان بالتفصيل"
+
+#: .\index\models.py:208
+msgid "work_time"
+msgstr "اوقات العمل"
+
+#: .\index\models.py:211
+msgid "Send_any_time"
+msgstr "ارسل في اي وقت"
+
+#: .\index\models.py:214
+msgid "ContactInfo"
+msgstr "معلومات الاتصال"
+
+#: .\templates\pages\blog.html:90
+msgid "View More"
+msgstr "شاهد المزيد"
+
+#: .\templates\partes\header.html:76
+msgid "Profile"
+msgstr "الصفحة الشخصية"
+
+#: .\templates\partes\header.html:77
+msgid "Logout"
+msgstr "خروج"
+
+#: .\templates\partes\header.html:97
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\templates\partes\header.html:98
+msgid "Signup"
+msgstr " تسجيل عضو جديد"
+
+#, fuzzy
+#~| msgid "tag"
+#~ msgid "Tag"
+#~ msgstr "الوسم"

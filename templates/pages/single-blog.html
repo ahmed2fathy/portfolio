@@ -8,15 +8,44 @@
 
 
     <!--================ Start Banner Area =================-->
-    <section class="banner_area">
+    <section class="banner_area"  style="color:#fff">
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>Blog Details</h2>
-                    <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="single-blog.html">Blog Details</a>
+                 
+                 
+                  {% if LANGUAGE_CODE  == 'en' %} 
+                                        <h2>{{single_blog.title|safe|truncatewords:5}}</h2>
+                                      
+                                        
+                                        {% else %}
+                                         <h2>{{single_blog.title_ar|safe|truncatewords:5}}</h2>
+                                      
+                            {% endif %}
+                 
+                 
+                 
+                                   
+                                    
+                                    
+                                    
+                    <div class="page_link1" style="color:#fff">
+                     
+                       <br>
+                         {% if LANGUAGE_CODE  == 'en' %} 
+                            <p >{{single_blog.created_at|date:'d-m-y'}}</p> 
+                      
+                          <a class="breadcrumb-item"  style="color:#fff" href="/"> Home</a>
+                        <a class="breadcrumb-item"  href="/blog">Blog</a>
+                        <a class="breadcrumb-item"  href="{{blog.get_absolute_url}}">{{single_blog.title|safe|truncatewords:3}}</a>
+                         {% else %}
+                            <a >{{single_blog.created_at|date:'d-m-y'}}</a> 
+                       <br>
+                       
+                        <a class="breadcrumb-item"  href="/"> الرئيسية </a>
+                        <a class="breadcrumb-item"  href="/blog"> المدونة </a> 
+                           <a class="breadcrumb-item"  href="{{blog.get_absolute_url}}">{{single_blog.title_ar|safe|truncatewords:3}}</a>
+                          {% endif %}
                     </div>
                 </div>
             </div>
@@ -64,10 +93,20 @@
                             <div class="feature-img">
                                 <img class="img-fluid" src="{{single_blog.image.url}}" alt="">
                             </div>	
-                            <h2>{{single_blog.title}}</h2>
-                            <p class="excert">
-                              {{single_blog.content}}
-                            </p>
+                            
+                           
+                           
+                            {% if LANGUAGE_CODE  == 'en' %} 
+                                        <h2>{{single_blog.title}}</h2>
+                                       <p class="excert">{{single_blog.content}}</p>
+                                        
+                                        {% else %}
+                                         <h2>{{single_blog.title_ar}}</h2>
+                                         <p class="excert">{{single_blog.content_ar}}</p>
+                            {% endif %}
+                                        
+                           
+                           
                            
                         </div> 
                    
@@ -81,41 +120,41 @@
 
                     <div class="navigation-area">
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                                <div class="thumb">
-                                    <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
-                                </div>
+                           
                                 
+                                <div class="col">
                                 {% if previous_post %}
-                                <div class="detials">
+                                <div class="col-sm">
+                                <div class="detials-right">
                                 
                                     <p>Prev Post</p>
                                     <a href="{% url 'blog:single_blog' previous_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{previous_post.image.url}}" alt=""></a>
                                     <a href="{% url 'blog:single_blog' previous_post.slug %}"><h5>{{previous_post.title}}</h5></a>
+                                </div>
                                     
                                 </div>
                                 {% else %}
                                 This is the first blog!
                                 {% endif %}
+                           
                             </div>
-                            <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                            <div class="col">
                                 {% if next_post %}
-                                <div class="detials">
+                                 <div class="col-sm">
+                                <div class="detials-left">
                                     <p>Next Post</p>
                                     <a href="{% url 'blog:single_blog' next_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{next_post.image.url}}" alt=""></a>
                                     <a href="{% url 'blog:single_blog' next_post.slug %}"><h5>{{next_post.title}}</h5></a>
-                                   
-                                </div> 
+                                 </div>  
+                                
                                 {% else %}
                                 This is the last blog!
                                 {% endif %}
-                                
-                                <div class="thumb">
-                                   
-                                </div>										
+                                </div>
+                               								
                             </div>									
                         </div>
-                    </div>
+                    </div> 
                 <!----------------------------------------------------------------------------------->
                     
                     
@@ -255,29 +294,65 @@
                         {% endfor %}
                         
                         
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!---------------------->
+                        
                         <aside class="single_sidebar_widget popular_post_widget">
                         
                         {% for name_wedgit in name_wedgits %}
-                            <h3 class="widget_title">{{name_wedgit.popular_post}}</h3>
+                            <h3 class="widget_title" >{{name_wedgit.popular_post}}</h3>
                             {% endfor %}
-                            
+                       <br>
                             
                             {% for popular_blog in popular_blogs %}
-                              
-                            
-                            <div class="media post_item">
-                                <img class="popular-image" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;">
+                               
+        {% if LANGUAGE_CODE  == 'en' %}
+       <div  class="row align-items-center">
+        
+        <div class="media post_item" style="margin-top: -31px;
+    background: #7e50ec29;
+    padding: 7px">
+                              <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
+                              <div class="col-lg-8">
                                 <div class="media-body">
-                                    
-                                    <a href="{{popular_blog.get_absolute_url}}"><h3>{{popular_blog.title}}</h3></a>
+                                   <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title|safe|truncatewords:7}}</h3>
+                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
+                                </div>
+                            </div></div></div> 
+                            <div class="br"></div>
+                                {% else %}
+                             <div  class="row align-items-center">
+                              <div class="media post_item" style="margin-top: -31px; background: #7e50ec29; padding: 7px;">
+                                                
+                                                 
+                                <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
+                                <div class="col-lg-8">
+                                <div class="media-body">
+                                     <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title_ar|safe|truncatewords:7}}</h3></a>
                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
                                 </div>
-                            </div>
+                                </div>
+                            </div></div>
+                            <div class="br"></div>
+     
+     
+        {% endif %}
+     
+     
+   
+    
                             {% endfor %}
                             <div class="br"></div>
                         </aside>
                         
-                        
+                         <!---------------------->
+                         
+                         
                         {% for ad in ads %}
                       
                         <aside class="single_sidebar_widget ads_widget">
@@ -286,6 +361,10 @@
                             <div class="br"></div>
                         </aside>
                         {% endfor %}
+                        
+                        
+                        
+                        
                         
                         <aside class="single_sidebar_widget post_category_widget">
                         

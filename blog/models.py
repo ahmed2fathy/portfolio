@@ -20,6 +20,9 @@ class Tag(models.Model):
     image =  models.ImageField( upload_to='media/blog/frontbage/tag', null = True, blank = True, verbose_name=_('image'),)
     slug = models.SlugField(null = True, blank = True, verbose_name=_('url'),)
     
+    class Meta:
+        verbose_name_plural = _('Tags')
+    
     def __str__(self) -> str:
         return self.name
         
@@ -43,6 +46,8 @@ class Category(models.Model):
     image = models.ImageField( upload_to='media/blog/frontbage/category', null = True, blank = True, verbose_name=_('image'))
     slug = models.SlugField(null=True, blank=True, verbose_name=_('url'))
     
+    class Meta:
+        verbose_name_plural = _('Categories')
     
     def __str__(self) -> str:
         return self.name
@@ -68,7 +73,10 @@ class  Blog(models.Model):
     slug = models.SlugField(null = True, blank = True,  verbose_name=_(' url'))
     
     
+        
+    
     class Meta:
+        verbose_name_plural = _('Blogs')
         ordering = ["-created_at", "title"]
         
     
@@ -111,6 +119,9 @@ class AboutAuthor(models.Model):
     twitter_link = models.URLField(max_length=300, null=True, blank=True, verbose_name=_('Twitter link'))
     github_link = models.URLField( max_length=300, null = True , blank = True, verbose_name=_('Github link') )
     
+    class Meta:
+        verbose_name_plural = _('AboutAuthor')
+    
     def __str__(self) -> str:
         return self.name
     
@@ -122,6 +133,8 @@ class NameWidget(models.Model):
     newsletter = models.CharField(max_length=90, default='Newsletter', verbose_name=_('newsletter'))
     tag_clouds=models.CharField(max_length = 90, default = 'Tag Clouds', verbose_name = _(' tag clouds'))
     
+    class Meta:
+        verbose_name_plural = _('NameWidget')
     
     def __str__(self) -> str:
         return str('wedgit')
@@ -138,6 +151,9 @@ class AdsWidget(models.Model):
         null=True, blank=True, default='Enter ads code', verbose_name=_(' ad code (5) '))
     ad_code_6 = models.TextField(null = True , blank = True, default='Enter ads code', verbose_name=_(' ad code (6) '))
     
+    class Meta:
+        verbose_name_plural = _('AdsWidget')
+    
     def __str__(self) -> str:
         return str('ad')
     
@@ -149,6 +165,9 @@ class Comment(models.Model):
     body = models.TextField(max_length=500, verbose_name=_('comment'))
     date_added = models.DateTimeField(
         auto_now_add=True, verbose_name=_('date added'))
+        
+    class Meta:
+        verbose_name_plural = _('Comments')
 
     def __str__(self):
         return '%s - %s' % (self.post.title, self.name)
@@ -161,6 +180,9 @@ class MenuBar(models.Model):
     menu = models.CharField(max_length=100, null=True,
                             blank=True, verbose_name=_('name'))
     url = models.CharField(max_length=100, null=True,blank=True,default='/', help_text="eg: /page", verbose_name=_('url'))
+    
+    class Meta:
+        verbose_name_plural = _('MenuBar')
     
     def __str__(self) -> str:
         return self.menu

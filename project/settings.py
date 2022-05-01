@@ -32,12 +32,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+USE_I18N = True
 
 # Application definition
 
 INSTALLED_APPS = [
      ## my_apps
+    
     'newsletters',
     'blog',
     'index',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     'colorfield',  # theme
     #'grappelli',
     'crispy_forms',
+   
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   
+    
    
 
 ]
@@ -62,6 +64,7 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',  # should be after SessionMiddleware and before CommonMiddleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',  # LANGUAGE_MIDDLEWARE
@@ -145,6 +148,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Lists of languages site supports.
+
 LANGUAGES = (
 
     ('en', 'English'),
