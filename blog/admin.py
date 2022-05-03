@@ -1,5 +1,11 @@
 from dataclasses import fields
+from urllib import request
+
+from django.conf import settings
+
 from django.contrib import admin
+
+from project.settings import LANGUAGE_CODE, LANGUAGES
 from .models import  AdsWidget, Blog, Category, AboutAuthor, MenuBar, NameWidget, Tag , Comment
 # Register your models here.
 
@@ -10,14 +16,26 @@ admin.site.site_title = 'dashboard'
 
 
 class BlogAdmin(admin.ModelAdmin):
+     
+    
+
     #fields = ('title', 'title_ar', 'author','category', 'tag', 'created_at',)
-    list_display = ('title', 'title_ar',
-                    'author', 'category', 'tag', 'created_at',)
-    list_display_link = ('title', 'author', )
-    list_editable = ( 'title_ar','category', 'tag', 'created_at',)
-    list_filter = ('author', 'category', 'created_at')
-    search_fields = ('title', 'title_ar',)
-    date_hierarchy = ('created_at')
+   
+       fields = ('title_en', 'content_en', 'title_ar', 'content_ar', 'image', 'created_at',
+                 'author', 'category', 'tag', 'views', 'slug')
+       list_display = ('title_en', 'title_ar',
+                        'author', 'category', 'tag', 'created_at',)
+       list_display_link = ('title_en' and 'title_ar', 'author', )
+       search_fields = ('title_en''title_ar',)
+       list_editable = ('category', 'tag', 'created_at',)
+       list_filter = ('author', 'category', 'created_at')
+       date_hierarchy = ('created_at')
+     
+  
+
+         
+        
+   
    
     
 #class InlineCategory(admin.StackedInline):

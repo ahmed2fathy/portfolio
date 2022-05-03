@@ -95,14 +95,23 @@
                                     <div class="blog_details">
                                     
                                     {% if LANGUAGE_CODE  == 'en' %} 
-                                        <a href="{{blog.get_absolute_url}}"><h2>{{blog.title}}</h2></a>
-                                        <p>{{blog.content|safe|truncatewords:20}}</p>
                                         
-                                        {% else %}
+                                        <a href="{{blog.get_absolute_url}}"><h2>{{blog.title}}</h2></a>
+                                        <p>{{blog.content|safe|truncatewords:20}}</p> 
+                                    {% elif LANGUAGE_CODE  == 'ar' %} 
                                          <a href="{{blog.get_absolute_url}}"><h2>{{blog.title_ar}}</h2></a>
                                         <p>{{blog.content_ar|safe|truncatewords:20}}</p>
-                                        {% endif %}
+                                    {% else %}
+                                         not support
+                                    {% endif %}
                                         
+                                        {% if blog.title_ar and blog.content_ar == "" %} 
+                                        <a href="{{blog.get_absolute_url}}"><h2>{{blog.title}}</h2></a>
+                                        <p>{{blog.content|safe|truncatewords:20}}</p> {% endif %}
+                                        
+                                         {% if blog.title and blog.content == "" %} 
+                                        <a href="{{blog.get_absolute_url}}"><h2>{{blog.title_ar}}</h2></a>
+                                        <p>{{blog.content_ar|safe|truncatewords:20}}</p> {% endif %}
                                         
                                         <a href="{{blog.get_absolute_url}}" class="primary_btn"><span>
                                         
@@ -111,6 +120,15 @@
                                         
                                         
                                         
+                                        
+                                        
+                                         
+                                         
+                                         
+                                        
+                                         
+                                         
+                                         
                                         
                                     </div>
                                 </div>

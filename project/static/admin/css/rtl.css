@@ -7,6 +7,9 @@
     margin-right: 0px !important;
     /* padding: 40px 0px 40px 40px !important; */
 }
+.form-row .field-title_en {
+    display: none!important;
+}
 
 th {
     text-align: right;

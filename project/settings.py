@@ -133,10 +133,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Lists of languages site supports.
+LANGUAGES = (
+    ('en', 'English'),
+    ('ar', 'Arabic')
+)
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
+
+DEFAULT_LANGUAGE = '1'
 LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
@@ -146,24 +156,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# Lists of languages site supports.
-
-LANGUAGES = (
-
-    ('en', 'English'),
-    ('ar', 'Arabic')
-
-
-   )
-
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
-]
-
-
-
-
 
 
 # Static files (CSS, JavaScript, Images)
@@ -182,16 +174,10 @@ MEDIA_URL = 'media/'
 
 
 
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
 
 
 #Email Settings
@@ -221,3 +207,6 @@ MANAGERS = [
 ]
 
 #--------------------------------------------
+
+
+ALLOW_UNICODE_SLUGS = True

@@ -1,15 +1,20 @@
 
 from pyexpat import model
+from trace import Trace
 from unicodedata import category
 from xml.etree.ElementInclude import default_loader
+from django.conf import Settings, settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from django.contrib.auth.models import User
 import blog
 import index
-from django.utils.translation import gettext_lazy as _
+from urllib.parse import quote
+from django.utils.encoding import iri_to_uri
+from django.contrib import admin
 
+from project.settings import LANGUAGE_CODE, LANGUAGES
 
 
 # Create your models here.
@@ -53,35 +58,49 @@ class Category(models.Model):
         return self.name
         
         
-        
+class Languages_Chooser(models.Model):
+    language_list = [
+        ('en', 'English'),
+        ('ar', 'Arabic'),
+    ]
 
+    language = models.CharField(
+        max_length=50, choices=language_list, null=True, blank=True, verbose_name=_('language'))
+    
 
-
+    
+    
+    
 class  Blog(models.Model):
-    title = models.CharField(
-        max_length=50,  verbose_name=_('title'))
-    title_ar = models.CharField(max_length=50, blank=True, verbose_name=_('title_ar'))
-    content = models.TextField(
-        max_length=4000, blank=True,  verbose_name=_('content'))
-    content_ar = models.TextField(max_length=4000,  blank=True, verbose_name=_('content_ar'))
+   
+    title_en = models.CharField(
+        max_length=200,  blank=True, verbose_name=_('title_en'))
+    
+    content_en = models.TextField( max_length= 1000000 ,blank=True,  verbose_name=_('content_en'))
+    
+    title_ar = models.CharField(
+        max_length=200,  blank=True, verbose_name=_('title_ar'))
+    content_ar = models.TextField(
+        max_length=100000, blank=True, verbose_name=_('content_ar'))
     image = models.ImageField(upload_to='media/blog/frontbage', verbose_name=_('image'))
     created_at = models.DateTimeField(default=timezone.now, verbose_name=_('created at'))
     author = models.ForeignKey(User, related_name='post_author', default=User, on_delete=models.CASCADE, verbose_name=_(' author'))
     category = models.ForeignKey('Category', related_name='post_category',default=Category, on_delete = models.CASCADE , verbose_name=_(' category'))
     tag = models.ForeignKey('Tag', related_name='post_tag', default=Tag, on_delete=models.CASCADE,  verbose_name=_('tag'))
     views = models.IntegerField(default=0,  verbose_name=_(' views'))
-    slug = models.SlugField(null = True, blank = True,  verbose_name=_(' url'))
+    slug = models.SlugField(max_length=200, null=True,
+                            blank=True,  verbose_name=_(' url'))
     
     
         
     
     class Meta:
         verbose_name_plural = _('Blogs')
-        ordering = ["-created_at", "title"]
+        ordering = ["-created_at"]
         
     
     def __str__(self) -> str:
-        return self.title 
+        return str(self.title_en and self.title_ar)
         
     def total_views(self):
             return self.views.count()
@@ -94,7 +113,8 @@ class  Blog(models.Model):
     def save(self, *args, **kwargs):
         from django.utils.text import slugify
         if not self.slug:
-            self.slug = slugify (self.title)
+            self.slug = slugify(self.title_en)
+            
          
         super(Blog, self).save(*args, **kwargs) # Call the real save() method
         
@@ -108,6 +128,11 @@ class  Blog(models.Model):
         return reverse('blog:single_blog', kwargs={'slug': self.slug})
         
     #--------------------------------------------------------
+    
+   
+    
+    
+    
     
     
 class AboutAuthor(models.Model):

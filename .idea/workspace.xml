@@ -7,10 +7,24 @@
     <list default="true" id="a1e409a9-5f18-4ae1-8887-b96696150fc6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0002_alter_aboutauthor_options_alter_adswidget_options_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0003_alter_blog_title_ar_blogar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0004_alter_blogar_title_ar1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/0005_alter_blog_content_ar_alter_blog_title_ar_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/static/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin/css/rtl.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/portfolio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/single-blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/single-blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

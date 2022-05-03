@@ -1,14 +1,15 @@
 @import url('widgets.css');
 
 /* FORM ROWS */
-
+ 
 .form-row {
+ display: none!important;
     overflow: hidden;
     padding: 10px;
     font-size: 13px;
     border-bottom: 1px solid var(--hairline-color);
 }
-
+.form-row.field-title_en {display: none;}
 .form-row img, .form-row input {
     vertical-align: middle;
 }
@@ -521,4 +522,7 @@ form .related-widget-wrapper ul {
 
 .clearable-file-input input {
     margin-top: 0;
+}
+.field-title_en {
+    display: none!important;
 }

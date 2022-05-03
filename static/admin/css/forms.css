@@ -1,8 +1,9 @@
 @import url('widgets.css');
 
 /* FORM ROWS */
-
+ 
 .form-row {
+ display: none!important;
     overflow: hidden;
     padding: 10px;
     font-size: 13px;
@@ -521,4 +522,7 @@ form .related-widget-wrapper ul {
 
 .clearable-file-input input {
     margin-top: 0;
+}
+.field-title_en {
+    display: none!important;
 }
