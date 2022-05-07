@@ -85,19 +85,23 @@
 							 
 							 <div class="row">
 							 
-								<div class="portfolio_box">
-									<div class="single_portfolio">
+								
 								{% for alltabs in alltabs %}
 								  
 								
 									<div class="col-lg-4 col-md-6  ">
 										<div class="card m-3">
+										<div class="portfolio_box">
+								
+									<div class="single_portfolio">
 											<img class="img-fluid w-100" src="{{alltabs.image.url}}" alt="Card image cap">
 											<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
+								<a href="{{alltabs.image.url}}" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
+										</div>
+						</div>
 											<div class="card-body">
 											
 												<h6 class="card-title"><a href="#" class="card-link text-dark">{{alltabs.title}}</a> </h6>
@@ -107,8 +111,9 @@
 										
 									</div><!--.col-->
 								{% endfor %}
-							</div>
-						</div>
+								
+								
+						
 								</div><!--.row-->
 							 
 							 
@@ -128,12 +133,17 @@
 								{% for Popular in Popular %}						
 									<div class="col-lg-4 col-md-6">
 										<div class="card m-3">
+										<div class="portfolio_box">
+								
+									<div class="single_portfolio">
 											<img class="img-fluid w-100" src="{{Popular.image.url}}" alt="Card image cap">
 											<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
+								<a href="{{Popular.image.url}}" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
+									</div>
+										</div>
 											<div class="card-body">
 											
 												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Popular.title}}</a> </h6>
@@ -160,12 +170,18 @@
 								
 									<div class="col-lg-4 col-md-6">
 										<div class="card m-3">
+											<div class="portfolio_box">
+								
+									<div class="single_portfolio">
 											<img class="img-fluid w-100" src="{{Latest.image.url}}" alt="Card image cap">
 											<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
+								<a href="{{Latest.image.url}}" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
+									
+									</div>
+										</div>
 											<div class="card-body">
 												
 												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Latest.title}}</a> </h6>
@@ -188,13 +204,19 @@
 								
 									<div class="col-lg-4 col-md-6">
 										<div class="card m-3">
+										<div class="portfolio_box">
+								
+									<div class="single_portfolio">
 											<img class="img-fluid w-100" src="{{Following.image.url}}" alt="Card image cap">
 											
 											<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
+								<a href="{{Following.image.url}}" class="img-gal">
 									<div class="icon">
 										<span class="lnr lnr-cross"></span>
 									</div>
+									</div>
+										</div>
+									
 											<div class="card-body">
 											
 												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Following.title}}</a> </h6>
@@ -217,7 +239,19 @@
 								
 									<div class="col-lg-4 col-md-6">
 										<div class="card">
+										<div class="portfolio_box">
+								
+									<div class="single_portfolio">
 											<img class="img-fluid w-100" src="{{Upcoming.image.url}}" alt="Card image cap">
+						
+											<div class="overlay"></div>
+								<a href="{{Upcoming.image.url}}" class="img-gal">
+									<div class="icon">
+										<span class="lnr lnr-cross"></span>
+									</div>
+									</div>
+										</div>
+										
 											<div class="card-body">
 												
 												<h6 class="card-title"><a href="#" class="card-link text-dark">{{Upcoming.title}}</a> </h6>

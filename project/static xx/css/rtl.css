@@ -1,0 +1,265 @@
+
+.form-row field-title_en {
+    display: none!important;
+}
+
+
+
+
+
+
+
+
+
+.testi_item img {
+    border-radius: 5px;
+    padding-left: 22px!important;
+}
+
+
+h1, h2, h3, h4, h5, h6, p,.blog_details h2,span  {
+   font-family: 'DroidArabicKufiRegular';
+   font-weight: normal;
+   font-style: normal;
+  
+   text-align: right;
+}
+html {direction:rtl;
+font-family:"DroidArabicKufiRegular", "Droid Sans", sans-serif;
+font-size:14px;
+
+}
+
+.blog_right_sidebar .popular_post_widget .post_item + .post_item {  
+    padding: 40px;
+}
+
+
+
+.blog_details h2 {
+    padding: 15px;
+}
+
+.single-post-area .blog_details p {
+    line-height: 32px;
+}
+
+.banner_area .banner_inner .banner_content .page_link a:before {
+    content: ""!important;
+    
+   } 
+
+.banner_area .banner_inner .banner_content h2 {
+    color: #fff;
+    font-size: 30px!important;
+    font-family:"DroidArabicKufiRegular", "Droid Sans", sans-serif!important;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+ .breadcrumb-item{color:#fff}
+.breadcrumb-item+.breadcrumb-item::before {
+    color: #ffffff!important;
+}
+  
+ .blog_right_sidebar .search_widget .input-group .btn-default {
+    left: 0!important;
+    right: 90%!important;
+    top: -11px;
+    bottom: -5px;
+    width: 0%!important;
+  }
+ .lnr-calendar-full:before {
+    content: "\e836";
+    float: right;
+    padding-left:8px
+} 
+.lnr-user:before {
+    content: "\e82a";
+    float: right;
+    padding-left:8px
+}  
+.lnr-eye:before {
+    content: "\e81b";
+    float: right;
+    padding-left:8px
+}
+.blog_info .post_tag {
+    float: right;
+}
+.blog_right_sidebar .author_widget h4 ,p{
+    text-align: center;
+}
+.detials-left{
+    text-align: left;
+    padding: 10px;
+}
+.detials-left p {
+    text-align: left;
+    padding: 10px;
+}
+.detials-left img {
+    text-align: left;
+    padding: 10px;
+    
+    border: 1px #333 dashed;
+}
+.detials-left h5 {
+    text-align: left;
+    padding: 10px;
+    
+   
+}
+.detials-right{
+text-align: right;
+    padding: 10px;
+    }
+ .detials-right h5{
+text-align: right;
+    padding: 10px;
+    }   
+ .detials-right img{
+text-align: right;
+padding: 10px;
+
+border: 1px #333 dashed;
+    }   
+.detials-right p{
+text-align: right;
+    padding: 10px;} 
+    
+ .single-post-area .navigation-area {
+    border-top: 1px solid #e7e7e7;
+    padding-top: 30px;
+    margin-top: 60px;
+    background: rgb(202 202 202 / 9%);
+}  
+
+.comments-area {
+    background: #fafaff;
+    
+    
+    text-align: right;
+
+} 
+label {
+    display: inline-block;
+    float: right;
+    text-align: right;
+}
+.footer_area .footer_logo h4 {
+    text-align: center;
+}
+@media only screen and (min-width: 768px){
+.collapse:not(.show) {
+    display:none!important;
+}
+}
+@media only screen and (max-width: 989px){
+button, select {
+
+    background: #333!important;
+    color: #fff;text-align:left;
+}
+.language-Select{
+background: #171717;
+
+text-align:left;
+    color: #fff;
+    }
+
+.languageform   select  option{
+background: #171717;text-align:left;
+    color: #fff;
+    }
+
+
+.languageform   select {
+background: #171717;text-align:left;
+    color: #fff;
+    width:70px;
+}
+.testi_item img {
+    padding: 22px;
+    border-radius: 5px;
+}
+}
+
+@media only screen and (min-width: 1200px){
+.home_banner_area .banner_inner .home_right_img img {
+    width: 100%!important;
+    }
+    
+.home_banner_area .banner_inner .banner_content h3:after {  
+    left: 13%!important;
+}    
+.about_area .about_img {
+   
+    right: -120px!important;
+}  
+
+.about_area .main_title p {
+    margin-bottom: 20px;
+    position: relative;
+    left: -215px;
+    text-align: right;
+}
+
+.about_area .main_title h2 {
+    position: relative;
+    margin-bottom: 15px;
+    left: -211px;
+    text-align: right;
+}
+.about_area .primary_btn {
+    margin-bottom: 20px;
+    position: relative;
+    right: -40px!important;
+    text-align: right!important;
+}
+
+.Portfolio_Area .main_title h2 {
+    
+    text-align: center;
+}
+.features_area .main_title h2 {
+   
+    text-align: center;
+}
+.testimonial_area .main_title h2 {
+   
+    text-align: center;
+}
+.main_title p {
+    text-align: right;
+    margin-bottom: 0px;
+}
+.client-info {
+    left: -175px; 
+}
+.subscription_box h2 {
+    text-align: center;
+}
+.subscription_box p {
+    text-align: center;
+}
+.subscription_box label {
+    text-align: center;
+    float: none;
+}
+.header_area .navbar .nav .nav-item {
+    margin-right: 0px!important;
+    margin-left: 52px!important;
+}
+
+
+
+}
+
+.contact_info .info_item i {
+    right: -52px!important;
+    float: right;
+    text-align: right;
+}

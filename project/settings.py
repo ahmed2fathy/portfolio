@@ -37,29 +37,31 @@ USE_I18N = True
 # Application definition
 
 INSTALLED_APPS = [
-     ## my_apps
-    
-    'newsletters',
-    'blog',
-    'index',
-    'bootstrap4',
-    'accounts',
+
+    ## my_apps
     'admin_interface',  # theme
     'colorfield',  # theme
-    #'grappelli',
     'crispy_forms',
+    'bootstrap4',
+    'blogs',
+    'newsletters',
+    'index',
+    'accounts',
+    'tof',
    
-    
+     #'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-   
-
 ]
+
+
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -105,7 +107,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Portfolio',
+        'NAME': 'ahmeddev',
         'USER': 'postgres',
         'PASSWORD': '10802',
         'HOST': 'localhost',
@@ -133,10 +135,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Lists of languages site supports.
+LANGUAGES = (
+    ('en', 'English'),
+    ('ar', 'Arabic')
+)
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
+
+DEFAULT_LANGUAGE = '1'
 LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
@@ -147,33 +159,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Lists of languages site supports.
-
-LANGUAGES = (
-
-    ('en', 'English'),
-    ('ar', 'Arabic')
-
-
-   )
-
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
-]
-
-
-
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = 'project/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static','staticroot')
+STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-    os.path.join(BASE_DIR, 'project/static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 
@@ -182,16 +176,10 @@ MEDIA_URL = 'media/'
 
 
 
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-
-
 
 
 #Email Settings
@@ -221,3 +209,6 @@ MANAGERS = [
 ]
 
 #--------------------------------------------
+
+
+ALLOW_UNICODE_SLUGS = True

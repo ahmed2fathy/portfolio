@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from index.models import FooterHeader
-from blog.models import  MenuBar
+from blogs.models import  MenuBar
 from .models import Profile
 from .forms import UserForm , ProfileForm , UserCreateForm
 from django.urls import reverse
