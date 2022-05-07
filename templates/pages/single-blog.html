@@ -37,14 +37,14 @@
                       
                           <a class="breadcrumb-item"  style="color:#fff" href="/"> Home</a>
                         <a class="breadcrumb-item"  href="/blog">Blog</a>
-                        <a class="breadcrumb-item"  href="{{blog.get_absolute_url}}">{{single_blog.title|safe|truncatewords:3}}</a>
+                        <a class="breadcrumb-item"  href="{{blogs.get_absolute_url}}">{{single_blog.title|safe|truncatewords:3}}</a>
                          {% else %}
                             <a >{{single_blog.created_at|date:'d-m-y'}}</a> 
                        <br>
                        
                         <a class="breadcrumb-item"  href="/"> الرئيسية </a>
-                        <a class="breadcrumb-item"  href="/blog"> المدونة </a> 
-                           <a class="breadcrumb-item"  href="{{blog.get_absolute_url}}">{{single_blog.title_ar|safe|truncatewords:3}}</a>
+                        <a class="breadcrumb-item"  href="/blogs"> المدونة </a> 
+                           <a class="breadcrumb-item"  href="{{blogs.get_absolute_url}}">{{single_blog.title_ar|safe|truncatewords:3}}</a>
                           {% endif %}
                     </div>
                 </div>
@@ -120,41 +120,41 @@
 
                     <div class="navigation-area">
                         <div class="row">
-                           
+                            <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                                <div class="thumb">
+                                    <a href="#"><img class="img-fluid" src="img/blog/prev.jpg" alt=""></a>
+                                </div>
                                 
-                                <div class="col">
                                 {% if previous_post %}
-                                <div class="col-sm">
-                                <div class="detials-right">
+                                <div class="detials">
                                 
                                     <p>Prev Post</p>
-                                    <a href="{% url 'blog:single_blog' previous_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{previous_post.image.url}}" alt=""></a>
-                                    <a href="{% url 'blog:single_blog' previous_post.slug %}"><h5>{{previous_post.title}}</h5></a>
-                                </div>
+                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{previous_post.image.url}}" alt=""></a>
+                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><h5>{{previous_post.title}}</h5></a>
                                     
                                 </div>
                                 {% else %}
                                 This is the first blog!
                                 {% endif %}
-                           
                             </div>
-                            <div class="col">
+                            <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                 {% if next_post %}
-                                 <div class="col-sm">
-                                <div class="detials-left">
+                                <div class="detials">
                                     <p>Next Post</p>
-                                    <a href="{% url 'blog:single_blog' next_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{next_post.image.url}}" alt=""></a>
-                                    <a href="{% url 'blog:single_blog' next_post.slug %}"><h5>{{next_post.title}}</h5></a>
-                                 </div>  
-                                
+                                    <a href="{% url 'blogs:single_blog' next_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{next_post.image.url}}" alt=""></a>
+                                    <a href="{% url 'blogs:single_blog' next_post.slug %}"><h5>{{next_post.title}}</h5></a>
+                                   
+                                </div> 
                                 {% else %}
                                 This is the last blog!
                                 {% endif %}
-                                </div>
-                               								
+                                
+                                <div class="thumb">
+                                   
+                                </div>										
                             </div>									
                         </div>
-                    </div> 
+                    </div>
                 <!----------------------------------------------------------------------------------->
                     
                     
@@ -294,20 +294,12 @@
                         {% endfor %}
                         
                         
-                        
-                        
-                        
-                        
-                        
-                        
-                        <!---------------------->
-                        
                         <aside class="single_sidebar_widget popular_post_widget">
                         
                         {% for name_wedgit in name_wedgits %}
-                            <h3 class="widget_title" >{{name_wedgit.popular_post}}</h3>
+                            <h3 class="widget_title">{{name_wedgit.popular_post}}</h3>
                             {% endfor %}
-                       <br>
+                         <article class="col-xs-6 col-sm-3 col-lg-12 mt-3 pointer bg-hover-white-smoke p-1">   
                             
                             {% for popular_blog in popular_blogs %}
                                
@@ -316,20 +308,20 @@
         
         <div class="media post_item" style="margin-top: -31px;
     background: #7e50ec29;
-    padding: 7px">
+    padding: 7px;">
                               <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
                               <div class="col-lg-8">
                                 <div class="media-body">
-                                   <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title|safe|truncatewords:7}}</h3>
+                                   <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title|safe|truncatewords:7}}</h3></a>
                                      <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
                                 </div>
-                            </div></div></div> 
+                            </div></div></div>
                             <div class="br"></div>
-                                {% else %}
-                             <div  class="row align-items-center">
-                              <div class="media post_item" style="margin-top: -31px; background: #7e50ec29; padding: 7px;">
-                                                
-                                                 
+        {% else %}
+       <div  class="row align-items-center">
+        <div class="media post_item" style="margin-top: -31px;
+    background: #7e50ec29;
+    padding: 7px;">
                                 <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
                                 <div class="col-lg-8">
                                 <div class="media-body">
@@ -343,16 +335,14 @@
      
         {% endif %}
      
-     
+      </article>
    
     
                             {% endfor %}
                             <div class="br"></div>
                         </aside>
                         
-                         <!---------------------->
-                         
-                         
+                        
                         {% for ad in ads %}
                       
                         <aside class="single_sidebar_widget ads_widget">

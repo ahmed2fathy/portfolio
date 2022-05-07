@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.http import BadHeaderError
 from django.shortcuts import redirect, render
-from blog.models import MenuBar
+from blogs.models import MenuBar
 from .forms import FeedbackForm, NewsletterUserSignUpForm
 from index.models import Brand, Call, ClientSay, ContactInfo,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
 
