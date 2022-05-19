@@ -96,12 +96,12 @@
 	<section class="brand_area section_gap_bottom">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-6">
+				<div class="col-lg-6 info-client">
 					<div class="row">
 					{% for brand in brand %}
 					  
 				
-						<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class=" col-lg-4 col-md-4 table-responsive-sm" style="">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
 									<img src="{{brand.image.url}}" alt="">
@@ -121,7 +121,7 @@
 						<div class="d-flex mb-50 m-1">
 							<span class=" lage gradient-color font-weight-bold " >{{g.years}}  </span>
 							<span></span>
-							<span class="smll" style="
+							<span class="text-info-client smll" style="
 							font-size: 24px;
 							line-height: 36px;
 							margin-left: 50px;"> {{g.experience}} </span>
@@ -136,8 +136,8 @@
 							</div>
 							<div class="ml-15">
 								
-								<h3 class="text-uppercase">{{g.title}}</h3>
-								<h4>{{g.phone}}</h4>
+								<h3 class="text-uppercase-call">{{g.title}}</h3>
+								<h4 class="mopile-num">{{g.phone}}</h4>
 							</div>
 						</div>
 					</div>
