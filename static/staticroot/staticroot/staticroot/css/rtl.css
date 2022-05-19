@@ -260,3 +260,12 @@ background: #171717;text-align:left;
     float: right;
     text-align: right;
 }
+
+
+.single-brand-item:hover img {
+    filter: brightness(77%)!important;
+    -o-filter: brightness(77%)!important;
+    -ms-filter: brightness(77%)!important;
+    -moz-filter: brightness(77%)!important;
+    -webkit-filter: brightness(77%)!important;
+}

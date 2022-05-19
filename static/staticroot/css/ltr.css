@@ -1,4 +1,10 @@
-
+.single-brand-item:hover img {
+    filter: brightness(88%)!important;
+    -o-filter: brightness(88%)!important;
+    -ms-filter: brightness(88%)!important;
+    -moz-filter: brightness(88%)!important;
+    -webkit-filter: brightness(88%)!important;
+}
 
 .testi_item img {
     border-radius: 5px;
@@ -116,3 +122,4 @@ border: 1px #333 dashed;
     right: -179px;
     text-align: left;
 } }    
+

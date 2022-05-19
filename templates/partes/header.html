@@ -8,13 +8,14 @@
 				<div class="container">
 				
 				
-				<div class="logo">
+				<div class="logo"  style=" padding: 7px">
 					{% for Header in FooterHeader %}
 					
 					 {% if  Header.logo.url != None %}	
 			
-  <a class="navbar-brand" href="/">
-    <img src="{{Header.logo.url}}" width="55" height="55" class="d-inline-block align-top" alt="">
+  <a class="navbar-brand"  href="/">
+    <img style="border-radius: 50%;
+    border: 2px #7536d7 solid" src="{{Header.logo.url}}" width="75" height="75" class="d-inline-block align-top" alt="">
     {{Header.site_name}}
   </a>
 

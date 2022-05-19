@@ -25,6 +25,7 @@ Author E-mail: naimlasker@gmail.com
 /* Wide Mobile Layout: 480px */
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+
 body {
   line-height: 26px;
   font-size: 15px;
@@ -3304,3 +3305,10 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+.single-brand-item:hover img {
+    filter: brightness(88%)!important;
+    -o-filter: brightness(88%)!important;
+    -ms-filter: brightness(88%)!important;
+    -moz-filter: brightness(88%)!important;
+    -webkit-filter: brightness(88%)!important;
+}
