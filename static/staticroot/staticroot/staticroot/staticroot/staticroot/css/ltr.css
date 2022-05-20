@@ -123,3 +123,9 @@ border: 1px #333 dashed;
     text-align: left;
 } }    
 
+@media only screen and (min-width: 992px){
+.call-us-now{
+position: absolute!important;
+    left: 75%!important;
+    top: 20%!important;
+    }}

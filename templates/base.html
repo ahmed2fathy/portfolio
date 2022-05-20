@@ -16,17 +16,89 @@
 In a right-to-left, top-to-bottom script (commonly shortened to right to left or abbreviated RTL), writing starts from the right of the page and continues to the left. For example Arabic script (the most widespread RTL writing system in modern times ).	
 -->	
 <style>
+.skills,
+.skills .skill,
+.skills .skill .skill-title,
+.skills .skill .skill-bar {
+   width: 100%;
+   float: left;
+}
+
+.skills {
+   padding:15px;
+}
+
+.skills .skill {
+   margin-bottom: 30px;
+}
+
+.skills .skill .skill-title {
+   color: #808080;
+   margin-bottom: 10px;
+   font-weight: 400;
+   font-size: 14px;
+}
+
+.skills .skill .skill-bar {
+   width: 0;
+   height: 6px;
+   background: #f0f0f0;
+   transition: 1s cubic-bezier(1, 0, .5, 1);
+   -webkit-transition: 1s cubic-bezier(1, 0, .5, 1);
+   -ms-transition: 1s cubic-bezier(1, 0, .5, 1);
+}
+
+.skills.active .skill .skill-bar {
+   width: 100%;
+}
+
+.skills .skill .skill-bar span {
+   float: left;
+   width: 0%;
+   background: #1D91F2;
+   height: 6px;
+   position: relative;
+   transition: 1s cubic-bezier(1, 0, .5, 1);
+   -webkit-transition: 1s cubic-bezier(1, 0, .5, 1);
+   -ms-transition: 1s cubic-bezier(1, 0, .5, 1);
+}
+
+.skills .skill .skill-bar span b {
+   float: left;
+   width: 100%;
+   position: relative;
+   text-align: right;
+   opacity: 0;
+   font-size: 14px;
+   color: #1D91F2;
+   font-weight: 400;
+   top: -13px;
+}
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900&subset=latin,latin-ext);
+
+
+
+
+
 
 
 </style>
 
 <link rel="stylesheet" href="{% static  'css/base.css' %}">
 
-{% if LANGUAGE_CODE  == 'ar' %} 
-	<link rel="stylesheet" href="{% static  'css/rtl.css' %}">
-	{% else %}
-	<link rel="stylesheet" href="{% static  'css/ltr.css' %}">
-	{% endif %}
+{% if LANGUAGE_CODE  == 'en' %} 
+
+<link rel="stylesheet" href="{% static  'css/ltr.css' %}">
+
+{% else %}
+	
+<link rel="stylesheet" href="{% static  'css/rtl.css' %}">
+
+{% endif %}
 
 <!------ Required meta tags ------->
 	
@@ -114,7 +186,20 @@ $('.carousel').carousel({
   interval: 2000
 })
   
+  </script>
   
+  <script>
+ $(".skills").addClass("active")
+$(".skills .skill .skill-bar span").each(function() {
+   $(this).animate({
+      "width": $(this).parent().attr("data-bar") + "%"
+   }, 1000);
+   $(this).append('<b>' + $(this).parent().attr("data-bar") + '%</b>');
+});
+setTimeout(function() {
+   $(".skills .skill .skill-bar span b").animate({"opacity":"1"},1000);
+}, 2000);
+
   </script>
     
     

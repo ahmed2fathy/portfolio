@@ -94,9 +94,15 @@
 	
 	
 	<section class="brand_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 info-client">
+		<div class="row justify-content-center">
+			
+				<div class="col-lg-8 text-center">
+				<div class=" info-client">
+				
+				
+				
+				
+				
 					<div class="row">
 					{% for brand in brand %}
 					  
@@ -109,42 +115,123 @@
 							</div>
 						</div>
 					{% endfor %}
-					</div>
-				</div>
-				
-				
-				
-				<div class="offset-lg-2 col-lg-4 col-md-6">
 					
-					<div class="client-info">
+					
+					
+					
+					<div class="container">
+<div class="skills">
+   <!-- skill -->
+   <div class="skill">
+      <!-- title -->
+      <div class="skill-title">
+         Web Development
+      </div>
+      <!-- bar -->
+      <div class="skill-bar" data-bar="90"><span></span></div>
+   </div>
+   <!-- #skill -->
+   <!-- skill -->
+   <div class="skill">
+      <!-- title -->
+      <div class="skill-title">
+         Consulting
+      </div>
+      <!-- bar -->
+      <div class="skill-bar" data-bar="70"><span></span></div>
+   </div>
+   <!-- #skill -->
+   <!-- skill -->
+   <div class="skill">
+      <!-- title -->
+      <div class="skill-title">
+         Branding & Identity
+      </div>
+      <!-- bar -->
+      <div class="skill-bar" data-bar="60"><span></span></div>
+   </div>
+   <!-- #skill -->
+   <!-- skill -->
+   <div class="skill">
+      <!-- title -->
+      <div class="skill-title">
+         Graphic Design
+      </div>
+      <!-- bar -->
+      <div class="skill-bar" data-bar="80"><span></span></div>
+   </div>
+   <!-- #skill -->
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+<div class="client-info" style=" width: 100%;">
 						{% for g in call %}
 						<div class="d-flex mb-50 m-1">
 							<span class=" lage gradient-color font-weight-bold " >{{g.years}}  </span>
 							<span></span>
-							<span class="text-info-client smll" style="
+							<span class="text-info-client1 smll2" style="
 							font-size: 24px;
 							line-height: 36px;
 							margin-left: 50px;"> {{g.experience}} </span>
+							<br><br><br>
 						</div>
-						
-						<br><br><br>
-						<div class="call-now d-flex">
-							<div>
+							<div class="call-us-now  d-flex ">
 							
-							
+							<div class="phone-icon" style="color: #854fee;
+   
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 85px;
+    position: relative;
+    z-index: 9;">
 								<span class="fa fa-phone gradient-color"></span>
-							</div>
-							<div class="ml-15">
+								</div>
 								
-								<h3 class="text-uppercase-call">{{g.title}}</h3>
+									<div class="uppercase-cal">
+								<h3>{{g.title}}</h3>
+								<div class="mopile-number">
 								<h4 class="mopile-num">{{g.phone}}</h4>
 							</div>
-						</div>
+								</div>
+									
+					
+					
+						
+						<br><br><br>
+						
 					</div>
 					{% endfor %}
 				</div>
-			</div>
+					
+					</div>
+					
+					
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
 		</div>
+			
 	</section>
 	<!--================ End Brand Area =================-->
 
