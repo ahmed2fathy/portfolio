@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from accounts import models
-from .models import Brand, Call, ClientSay, ClientSay, ContactInfo, Feedback,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+from .models import Skills, Call, ClientSay, ClientSay, ContactInfo, Feedback,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
 
 
 class FeedbackAdmin(admin.ModelAdmin):
@@ -20,7 +20,7 @@ admin.site.register(NewsletterUser,NewsletterAdmin)
 # Register your models here.
 admin.site.register(Hello)
 admin.site.register(Call)
-admin.site.register(Brand)
+admin.site.register(Skills)
 admin.site.register(ClientSay)
 admin.site.register(MySelf)
 admin.site.register(Service)

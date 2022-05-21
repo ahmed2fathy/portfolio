@@ -6,7 +6,7 @@ from django.http import BadHeaderError
 from django.shortcuts import redirect, render
 from blogs.models import MenuBar
 from .forms import FeedbackForm, NewsletterUserSignUpForm
-from index.models import Brand, Call, ClientSay, ContactInfo,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+from index.models import Skills, Call, ClientSay, ContactInfo,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
 
 
 
@@ -92,7 +92,7 @@ def all_index(request):
     'client': ClientSay.objects.all(),
     'work': Work.objects.all(),
     'FooterHeader':FooterHeader.objects.all()[:1],
-    'brand':Brand.objects.all()[:9],
+    'skills':Skills.objects.all()[:9],
     'work':Work.objects.all()[:1],
     'form':form,
     'alltabs': Tab.objects.all(),
@@ -144,7 +144,7 @@ def about_area(request):
         'client': ClientSay.objects.all(),
         'work': Work.objects.all(),
         'FooterHeader': FooterHeader.objects.all()[:1],
-        'brand': Brand.objects.all()[:9],
+        'skills': Skills.objects.all()[:9],
         'work': Work.objects.all()[:1],
         'form': form,
         'alltabs': Tab.objects.all(),
@@ -193,7 +193,7 @@ def service_area(request):
         'client': ClientSay.objects.all(),
         'work': Work.objects.all(),
         'FooterHeader': FooterHeader.objects.all()[:1],
-        'brand': Brand.objects.all()[:9],
+        'skills': Skills.objects.all()[:9],
         'work': Work.objects.all()[:1],
         'form': form,
         'alltabs': Tab.objects.all(),

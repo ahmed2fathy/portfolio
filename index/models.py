@@ -174,13 +174,33 @@ class ClientSay(models.Model):
         return self.title
      
             
-class Brand(models.Model):
-    image= models.ImageField( upload_to='media/index/brands/', verbose_name=_('image'))
+class Skills(models.Model):
+    color = [
+        ('#800000', 'Maroon'),
+        ('#728FCE', 'LightPurple'),
+        ('#800080', 'Purple'),
+        ('#4863A0', 'Azure'),
+        ('#566D7E', 'Marble'),
+        ('#CD7F32', ' Bronze'),
+        ('#FF8040', 'Orange'),
+        ('#15317E ', 'Lapis'),
+        ('#1E90FF', 'DeepSkyBlue'),
+        ('#0041C2', '  Canary'),
+        ('#7BCCB5', 'BlueGreen'),
+        ('#6A5ACD', 'SlateBlue'),
+        ('#8A2BE2 ', 'BlueViolet'),
+        ('#57FEFF', 'Zircon'),
+    ]
+    skill_title = models.CharField(max_length=60, verbose_name=_('skill_title'))
+    skill_percentage = models.IntegerField(verbose_name=_('skill_percentage'))
+    image = models.ImageField(
+        upload_to='media/index/Skill/', verbose_name=_('image'))
+    color_bar = models.CharField(max_length=60,choices =color, verbose_name=_('color') )
     def __str__(self) -> str:
-            return str (self.image)
+        return str(self.skill_title)
 
     class Meta:
-        verbose_name_plural = _('Brand')
+        verbose_name_plural = _('skills')
      
 
 class Feedback(models.Model):

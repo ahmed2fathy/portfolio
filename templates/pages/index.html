@@ -101,20 +101,20 @@
 				
 				
 				
-				
+				<!---
 				
 					<div class="row">
-					{% for brand in brand %}
+				
 					  
 				
 						<div class=" col-lg-4 col-md-4 table-responsive-sm" style="">
 							<div class="single-brand-item d-table">
 								<div class="d-table-cell text-center">
-									<img src="{{brand.image.url}}" alt="">
+									
 								</div>
 							</div>
 						</div>
-					{% endfor %}
+				-->
 					
 					
 					
@@ -122,45 +122,22 @@
 					<div class="container">
 <div class="skills">
    <!-- skill -->
-   <div class="skill">
+   	{% for skill in skills %}
+   <div class="skill"  >
+
       <!-- title -->
       <div class="skill-title">
-         Web Development
+       
       </div>
       <!-- bar -->
-      <div class="skill-bar" data-bar="90"><span></span></div>
-   </div>
+      <div class="row">
+      <div class="skill-image"  >
+      <img src="{{skill.image.url}}" width="35" height="30" alt=""></div>
+      <div class="skill-bar"  data-bar="{{skill.skill_percentage}}"><span  style = " background-color: {{skill.color_bar}} ;"><h6 class="skill-title"> {{skill.skill_title}}</h6> </span></div>
+   </div></div>
+   	{% endfor %}
    <!-- #skill -->
-   <!-- skill -->
-   <div class="skill">
-      <!-- title -->
-      <div class="skill-title">
-         Consulting
-      </div>
-      <!-- bar -->
-      <div class="skill-bar" data-bar="70"><span></span></div>
-   </div>
-   <!-- #skill -->
-   <!-- skill -->
-   <div class="skill">
-      <!-- title -->
-      <div class="skill-title">
-         Branding & Identity
-      </div>
-      <!-- bar -->
-      <div class="skill-bar" data-bar="60"><span></span></div>
-   </div>
-   <!-- #skill -->
-   <!-- skill -->
-   <div class="skill">
-      <!-- title -->
-      <div class="skill-title">
-         Graphic Design
-      </div>
-      <!-- bar -->
-      <div class="skill-bar" data-bar="80"><span></span></div>
-   </div>
-   <!-- #skill -->
+   
 </div>
 </div>
 
