@@ -132,13 +132,13 @@
 	&:before {
 		content: '';
 		position: absolute;
-		top: -25px;
+		top: -16px!important;
 		left: -50px;
 		background: url(../img/client-info-bg.png) no-repeat;
 		height: 175px;
 		width: 175px;
 		@media (max-width: 575px) {
-			background: none;
+			background:  url(../img/client-info-bg.png) no-repeat;
 		}
 	}
 	.d-flex {

@@ -1,3 +1,31 @@
+.primary_btn:hover {
+    background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee)!important;
+    border: 2px solid #854fee;
+    color: #dddddd!important;
+    box-shadow: none;
+    background-clip: border-box;
+}
+.in-down {
+    padding: 8px!important;
+    color: rgba(243, 240, 255, 0.76)!important;
+}
+
+ .dropdown .primary_btn span {
+    padding: 0 5px!important;
+    top: 8px!important;
+}
+
+.experience-info{
+padding-bottom: 75px;
+    background: #faf8ff;
+    }
+@media only screen and (max-width: 779px){
+ 
+ .client-info:before {
+    display:none;
+	}
+	}
+
 @media (max-width: 775.98px){
 .main_title h2 {
     text-align: center!important;
@@ -66,13 +94,7 @@
     -ms-filter: brightness(103%)!important;
     -moz-filter: brightness(103%)!important;
     -webkit-filter: brightness(103%)!important;
-    border-radius: 50%!important;
-   
-    width: 68%!important;
-    border: 2px rgb(126 80 236 / 46%) solid!important;
-    height: 68%!important;
-    margin: 57px!important;
-    margin-top: -42px!important;
+    
     
     }
 .single-brand-item:hover img {
@@ -83,3 +105,31 @@
     -webkit-filter: brightness(88%)!important;
 }
 
+
+.text-info-client{
+    font-size: 24px;
+    color: #1e1e1e;
+    position: relative;
+    bottom: -17px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 50px;
+}
+    
+.phone-icon{
+   color: #854fee;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 85px;
+    position: relative;
+    z-index: 9;
+}
+
+
+
+
+	
+	
+	
+	
+	

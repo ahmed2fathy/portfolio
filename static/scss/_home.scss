@@ -124,21 +124,21 @@
 	position: relative;
 	margin-top: 25px;
 	@media only screen and (max-width: 991px) {
-		margin-top: 50px;
+	
 	}
 	@media (max-width: 575px) {
-		padding-top: 50px;
+	
 	}
 	&:before {
 		content: '';
 		position: absolute;
-		top: -25px;
+		top: -16px!important;
 		left: -50px;
 		background: url(../img/client-info-bg.png) no-repeat;
 		height: 175px;
 		width: 175px;
 		@media (max-width: 575px) {
-			background: none;
+			background:  url(../img/client-info-bg.png) no-repeat;
 		}
 	}
 	.d-flex {
