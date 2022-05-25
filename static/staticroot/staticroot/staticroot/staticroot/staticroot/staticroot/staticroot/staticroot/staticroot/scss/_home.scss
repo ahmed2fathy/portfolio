@@ -124,10 +124,10 @@
 	position: relative;
 	margin-top: 25px;
 	@media only screen and (max-width: 991px) {
-		margin-top: 50px;
+	
 	}
 	@media (max-width: 575px) {
-		padding-top: 50px;
+	
 	}
 	&:before {
 		content: '';

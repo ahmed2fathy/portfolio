@@ -8,7 +8,10 @@ html{
 }
 
 
-
+.meta li I {
+    float: right!important;
+    padding: 6px 0px 5px 4px!important;
+}
 
 h1, h2, h3, h4, h5, h6, p,.blog_details h2,span  {
    font-family: 'DroidArabicKufiRegular';

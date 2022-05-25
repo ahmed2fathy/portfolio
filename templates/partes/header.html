@@ -68,6 +68,7 @@
    		
 <!---------- language  form  ------------->
  <div class="language-Select">
+  {% csrf_token %} 
 <form class="languageform" action="{% url 'set_language' %}" method="post">{% csrf_token %}
     <input class="SelectLanguage" name="next" type="hidden" value="{{ redirect_to }}">
    <select name="language" class="form-control" onchange="this.form.submit()">

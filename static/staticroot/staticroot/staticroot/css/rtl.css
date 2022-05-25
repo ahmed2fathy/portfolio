@@ -182,7 +182,10 @@ background: #171717;text-align:left;
 }
 }
 
+
 @media only screen and (min-width: 992px){
+
+
 .home_banner_area .banner_inner .home_right_img img {
     width: 100%!important;
     }
@@ -237,7 +240,15 @@ position: absolute!important;
     text-align: right;
     margin-bottom: 0px;
 }
-.client-info {
+
+ 
+
+
+
+.text-info-client {
+    
+    left: -39px!important;
+    font-weight: 600!important;
    
 }
 .subscription_box h2 {
@@ -267,6 +278,8 @@ position: absolute!important;
     position: absolute;
     top: -25px;
     right: -50px!important;
+    
+    
    
 }
 
@@ -275,54 +288,13 @@ position: absolute!important;
 }
 
 
-@media only screen and (max-width: 570px){
-.client-info .d-flex {
-    padding: 17px!important;
-}
-}
 
 .feature_item h4 {
    
     text-align: center!important;
    
 }
-/*
-@media only screen and (max-width: 570px){
-.client-info .smll {
-    text-align: left;
-    left: 55px;
-    position: absolute;
-    color: #000000;
-    font-family: "Rubik", sans-serif;
-}
-.client-info .lage {
-   
-    position: absolute!important;
-    left: 0px!important;
-  
-}
-.call-now span {
-    
-    float: left;
-    position: absolute!important;
-    top: 152px!important;
-    left: 0px!important;
-}
-.text-uppercase-call{
-    text-align: left;
-    position: absolute!important;
-    left: 113px!important;
-    text-transform: uppercase !important;
-}
-.mopile-num {
-  
-    text-align: left;
-    position: absolute!important;
-    bottom: -6px!important;
-    left: 113px!important;
-    text-transform: uppercase !important;
-}
-}*/
+
 .single-brand-item:hover img {
     filter: brightness(77%)!important;
     -o-filter: brightness(77%)!important;
@@ -331,4 +303,186 @@ position: absolute!important;
     -webkit-filter: brightness(77%)!important;
 }
 
+/*--------------start skills-----------------------*/
+.skills,
+.skills .skill,
+.skills .skill .skill-title,
+.skills .skill .skill-bar {
+   width: 100%;
+   float: right;
+}
 
+.skills {
+   padding:15px;
+    float: right;
+}
+
+.skills .skill {
+   margin-bottom: 30px;
+    float: right;
+}
+
+.skills .skill  .skill-title {
+   color: rgb(255 255 255);
+    text-shadow: 0px 1px #010139;
+    text-align: right;
+    margin-top: 2px;
+    margin-right: 15px;
+    padding: 0px;
+    font-weight: 800;
+    font-size: 13px;
+     float: right;
+}
+
+.skills .skill .skill-bar {
+ float: right;
+   width: 0;
+   height: 21px;
+   background: #f0f0f0;
+   transition: 1s cubic-bezier(1, 0, .5, 1);
+   -webkit-transition: 1s cubic-bezier(1, 0, .5, 1);
+   -ms-transition: 1s cubic-bezier(1, 0, .5, 1);
+}
+
+.skills.active .skill .skill-bar {
+  width: 85%;
+    position: relative;
+    left: -12px;
+    float: right;
+}
+
+
+.skills .skill .skill-bar span {
+    float: right;
+   width: 0%;
+   background: #1D91F2;
+   height: 21px;
+   position: relative;
+   transition: 1s cubic-bezier(1, 0, .5, 1);
+   -webkit-transition: 1s cubic-bezier(1, 0, .5, 1);
+   -ms-transition: 1s cubic-bezier(1, 0, .5, 1);
+}
+.skill-image{
+    position: relative;
+    top: -6px;
+    float: right;
+}
+.skills .skill .skill-bar span b {
+     float: right;
+    color: rgb(255 255 255);
+    text-shadow: 0px 1px #010139;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    opacity: .8;
+    font-size: 13px;
+     right: -4px;
+    font-weight: 600;
+    top: -27px;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900&subset=latin,latin-ext);
+
+/*--------------end skills-----------------------*/
+
+
+ /*------dropdown call----------*/
+.dropbtn {
+  
+  color: #333;
+  padding: 16px;
+  font-size: 28px;
+   background-color: transparent!important;
+    border: 1px rgb(213, 201, 243) solid;
+  cursor: pointer;
+}
+
+.dropdown {
+float:left;
+  position: relative;
+  
+ 
+ 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:0;
+   border: 1px #ddd solid;
+  background-color: transparent!important;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.phone-icon {
+    font-size: 44px!important;
+  
+    padding: 5px;
+}
+.dropdown-content a {
+  direction: ltr;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {  background-color: transparent;
+    border: 1px #ddd solid;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn { background-color: transparent;
+    border: 1px #ddd solid;}
+    
+ .phone-icon {
+   transform:  rotate(274deg);  
+     animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {transform: rotate(200deg);}
+    
+}
+
+.experience{float: right!important;}   
+
+.client-info .smll {
+    margin-right: 40px!important;
+}   
+
+.dropdown .primary_btn{
+border-radius: 5px!important;
+    background-origin: border-box!important;
+    background-clip: content-box, border-box!important;
+   
+   
+   background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee)!important;
+    border: double 2px transparent!important;
+    box-shadow: 0px 10px 30px rgb(118 85 225 / 30%)!important;
+}
+.client-info .smll {
+    text-align: right!important;
+    }
+@media only screen and (max-width: 767px){
+.experience-info {
+    padding-bottom: 150px!important;
+   
+}
+ .experience  {
+    float: right!important;
+	}
+ .dropdown {
+    float: right!important;
+	}
+	}
+	
+@media only screen and (min-width: 772px){
+.client-info .lage {
+    color: #854fee;
+    font-family: "Rubik", sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    top: -17px!important;
+    left: 22px!important;
+ }
+
+}
+ /*------ end dropdown call----------*/

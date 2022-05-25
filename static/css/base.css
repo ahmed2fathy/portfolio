@@ -1,3 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.meta{display: flex;
+    width: 100%;
+    background: rgb(221 221 221 / 48%);}
+.meta li I{
+padding: 8px 2px 5px 6px;
+    padding: 8px 2px 5px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3506d0;
+    
+    }
+.meta li{
+color: #5e54e3;
+padding: 0px 9px;
+font-size: 11px;
+font-weight: 500;
+ 
+    }
+
+.meta a {
+  
+    color: #5e54e3;
+    font-weight: 500;
+}
+
+
+
+.p-bo label{display: none;}
+.p-bo input{
+    margin: 0 auto;
+width: 80%;}
+
+.card-body .btn-primary {
+    color: #fff;
+    font-size: 13px;
+    background-color: #5655e1;
+    border-color: #2901ac;
+}
+
+
+.card-body .btn-primary:hover{
+    color: #fff;
+    font-size: 13px;
+    background-color: #624a92;
+    border-color: #2901ac;
+}
+.card-title {
+    color: #333!important;
+}
+.card-body .input-group .lnr {
+font-size: 15px!important;
+    font-style: oblique;
+    font-weight: 900!important;
+    font-variant: discretionary-ligatures;
+    text-transform: none;
+    line-height: inherit!important;
+    }
+    
+   .card-body .input-group .lnr:hover {
+font-size: 18px!important;
+   color: blue;
+   }
+   
+ .card-header {
+    text-align: center!important;  
+     } 
+ .media .card-body {
+     border-bottom: 1px rgb(92 85 227 / 35%) solid;
+ }   
+  .blog_right_sidebar .post_category_widget .cat-list li a {
+    padding-top: 9px;
+    color: #333!important;
+    color: #777;
+}  
+.card-list{display: inline-flex;}  
+.card-list ul {
+    padding: 5px;
+}
+.blog_right_sidebar {
+    position: sticky;
+    top: 0px;}
+.card-list .cat-list li a{background-color: #ddd;}
+.bbtntag{    background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);}
+.bbtntag a{color: #fff;
+    padding-top: 12px;
+    }
+    
+    
+
+
+.blog_right_sidebar .post_category_widget .cat-list li {
+    border-bottom: 2px dotted rgb(93 84 227 / 38%)!important;
+  }   
+    
+    
+@media only screen and (max-width: 408px){
+.meta li {
+    color: #5e54e3;
+    padding: 0px 9px;
+    font-size: 12px;
+    font-weight: 500;
+}
+}
+
+
+@media only screen and (max-width: 408px){
+.meta li {
+    color: #5e54e3;
+    padding: 0px 4px;
+    font-size: 10px;
+    font-weight: 500;
+}
+}
+
+
+@media only screen and (min-width: 1068px){
+.banner_area .banner_inner {
+    right: -6.8%!important;
+    margin: 0 auto;
+    background-size: 105.3% 80%!important;
+}
+.banner_area .banner_inner .banner_content {
+    margin-left: -20%!important;
+}
+}
+
+
+
 .primary_btn:hover {
     background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee)!important;
     border: 2px solid #854fee;

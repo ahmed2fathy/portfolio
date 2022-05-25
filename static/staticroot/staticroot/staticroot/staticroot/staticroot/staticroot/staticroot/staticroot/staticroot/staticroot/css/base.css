@@ -1,3 +1,54 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.primary_btn:hover {
+    background-image: linear-gradient(to right, #4458dc 0%, #854fee 100%), radial-gradient(circle at top left, #4458dc, #854fee)!important;
+    border: 2px solid #854fee;
+    color: #dddddd!important;
+    box-shadow: none;
+    background-clip: border-box;
+}
+.in-down {
+    padding: 8px!important;
+    color: rgba(243, 240, 255, 0.76)!important;
+}
+
+ .dropdown .primary_btn span {
+    padding: 0 5px!important;
+    top: 8px!important;
+}
+
+.experience-info{
+padding-bottom: 75px;
+    background: #faf8ff;
+    }
+@media only screen and (max-width: 779px){
+ 
+ .client-info:before {
+    display:none;
+	}
+	}
+
 @media (max-width: 775.98px){
 .main_title h2 {
     text-align: center!important;
@@ -77,76 +128,31 @@
     -webkit-filter: brightness(88%)!important;
 }
 
-.skills,
-.skills .skill,
-.skills .skill .skill-title,
-.skills .skill .skill-bar {
-   width: 100%;
-   float: left;
-}
 
-.skills {
-   padding:15px;
-}
-
-.skills .skill {
-   margin-bottom: 30px;
-}
-
-.skills .skill  .skill-title {
-   color: rgb(255 255 255);
-    text-shadow: 0px 1px #010139;
-    text-align: left;
-    margin-top: 2px;
-    margin-left: 7px;
-    padding: 0px;
-    font-weight: 800;
-    font-size: 13px;
-}
-
-.skills .skill .skill-bar {
-   width: 0;
-   height: 21px;
-   background: #f0f0f0;
-   transition: 1s cubic-bezier(1, 0, .5, 1);
-   -webkit-transition: 1s cubic-bezier(1, 0, .5, 1);
-   -ms-transition: 1s cubic-bezier(1, 0, .5, 1);
-}
-
-.skills.active .skill .skill-bar {
-  width: 85%;
+.text-info-client{
+    font-size: 24px;
+    color: #1e1e1e;
     position: relative;
-    right: -12px;
+    bottom: -17px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-left: 50px;
 }
-
-.skills .skill .skill-bar span {
-   float: left;
-   width: 0%;
-   background: #1D91F2;
-   height: 21px;
-   position: relative;
-   transition: 1s cubic-bezier(1, 0, .5, 1);
-   -webkit-transition: 1s cubic-bezier(1, 0, .5, 1);
-   -ms-transition: 1s cubic-bezier(1, 0, .5, 1);
-}
-.skill-image{
+    
+.phone-icon{
+   color: #854fee;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 85px;
     position: relative;
-    top: -6px;
+    z-index: 9;
 }
-.skills .skill .skill-bar span b {
-    float: left;
-    color: rgb(255 255 255);
-    text-shadow: 0px 1px #010139;
-    width: 100%;
-    position: relative;
-    text-align: right;
-    opacity: .8;
-    font-size: 13px;
-    right: 7px;
-    font-weight: 600;
-    top: -25px;
-}
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900&subset=latin,latin-ext);
 
 
 
+
+	
+	
+	
+	
+	

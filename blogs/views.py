@@ -1,5 +1,6 @@
 
 
+from inspect import BlockFinder
 from pdb import post_mortem
 
 from django.forms import SlugField
@@ -64,7 +65,7 @@ def blogs(request):
 
 
 #--------------------دالة ترقيم الصفحات ---------------------------------
-    paginator = Paginator(search, 2)  # Show 1 contacts per page.
+    paginator = Paginator(search, 8)  # Show 1 contacts per page.
 
     page_number = request.GET.get('page')
 
@@ -81,7 +82,9 @@ def blogs(request):
     menu = MenuBar.objects.all()[:8]
 
     context = {
+        'top_blogs': Blogs.objects.all()[1:2],
         'all_blogs': page_obj,
+        'all_category':Category.objects.all()[0:6],
         'about': about,
         'popular_blogs': popular_blogs,
         'name_wedgits': name_wedgits,
@@ -89,7 +92,7 @@ def blogs(request):
         #'all_category': all_category,
         #'banner_category': banner_category,
         'form': form,
-        #'all_tag': all_tag,
+        'all_tag': Tag.objects.all()[0:6],
         'menu': menu,
         #'comment_count': comment_count,
         'FooterHeader': FooterHeader.objects.all()[:1],
