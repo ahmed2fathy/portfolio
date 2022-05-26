@@ -11,6 +11,13 @@
     -moz-filter: brightness(88%)!important;
     -webkit-filter: brightness(88%)!important;
 }
+.card-body h2 {
+    font-size: 17px!important;
+}
+.img-fluid-r{
+float: left!important; margin-right: 22px!important; 
+}
+.img-fluid-l{float: right!important; margin-left: 22px!important  }
 
 .testi_item img {
     border-radius: 5px;

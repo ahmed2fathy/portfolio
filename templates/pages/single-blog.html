@@ -5,10 +5,16 @@
 
 {% block content %}
   
-
+<style>
+.section_gap {
+    padding: 50px 0!important;
+}
+</style>
 
     <!--================ Start Banner Area =================-->
-    <section class="banner_area"  style="color:#fff">
+    	<div class="container-fluid">
+    
+    <section class="banner_area"  style="color:#fff"; >
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
@@ -36,7 +42,7 @@
                             <p >{{single_blog.created_at|date:'d-m-y'}}</p> 
                       
                           <a class="breadcrumb-item"  style="color:#fff" href="/"> Home</a>
-                        <a class="breadcrumb-item"  href="/blog">Blog</a>
+                        <a class="breadcrumb-item"  href="/blogs">Blog</a>
                         <a class="breadcrumb-item"  href="{{blogs.get_absolute_url}}">{{single_blog.title|safe|truncatewords:3}}</a>
                          {% else %}
                             <a >{{single_blog.created_at|date:'d-m-y'}}</a> 
@@ -56,7 +62,7 @@
     <!--================Blog Area =================-->
     <section class="blog_area single-post-area section_gap">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                
                 <div class="col-lg-8 posts-list">
                    
@@ -68,33 +74,20 @@
                         
                      
                    
-                        <div class="col-lg-3  col-md-3">
-                            <div class="blog_info text-right">
-                                <div class="post_tag">
-                                   
-                                    <a class="active" href="#">{{single_blog.category}},</a>
-                                
-                                </div>
-                                <ul class="blog_meta list">
-                                    <li><a href="#">{{single_blog.author}}<i class="lnr lnr-user"></i></a></li>
-                                    <li><a href="#">{{single_blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
-                                    <li><a >{{single_blog.views}}  Views<i class="lnr lnr-eye"></i></a></li>
-                                    <li><a href="#">{{comment_count}} Comments<i class="lnr lnr-bubble"></i></a></li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 blog_details">
+                       
+                        <div class="col-lg-12 col-md-12 blog_details">
                             <div class="feature-img">
-                                <img class="img-fluid" src="{{single_blog.image.url}}" alt="">
+                                <img class="img-fluid" src="{{single_blog.image.url}}" style="max-height:750px;" alt="">
                             </div>	
                             
-                           
+                           <div class=" meta small text-muted"  style=" list-style: none;">
+                                 <li>  <a class="active" href="#">{{single_blog.category}},</a></li>
+                                     <li><a >{{single_blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
+                                      <li><a >{{single_blog.author}} <i class="lnr lnr-user"></i></a></li>
+                                        <li><a >( {{single_blog.views}} ) Views<i class="lnr lnr-eye"></i></a></li>
+                                         <li><a href="#">{{comment_count}} Comments<i class="lnr lnr-bubble"></i></a></li>
+                                    </div>
+                                
                            
                             {% if LANGUAGE_CODE  == 'en' %} 
                                         <h2>{{single_blog.title}}</h2>
@@ -128,9 +121,23 @@
                                 {% if previous_post %}
                                 <div class="detials">
                                 
-                                    <p>Prev Post</p>
-                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{previous_post.image.url}}" alt=""></a>
-                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><h5>{{previous_post.title}}</h5></a>
+                                    <p class="detial-r"><a href="{% url 'blogs:single_blog' previous_post.slug %}"> Prev Post</a></p>
+                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><img class="img-fluid-r w-25 h-25 " src="{{previous_post.image.url}}" alt=""></a>
+                                     {% if LANGUAGE_CODE  == 'en' %} 
+                                        
+                                         
+                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><h6>{{previous_post.title|safe|truncatewords:5}}</h6></a>
+                                    {% elif LANGUAGE_CODE  == 'ar' %} 
+                                        
+                                    <a href="{% url 'blogs:single_blog' previous_post.slug %}"><h6>{{previous_post.title_ar|safe|truncatewords:5}}</h6></a>
+                                    {% else %}
+                                         not support
+                                    {% endif %}
+                            
+                                    
+                                    
+                                    
+                                   
                                     
                                 </div>
                                 {% else %}
@@ -140,9 +147,22 @@
                             <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                                 {% if next_post %}
                                 <div class="detials">
-                                    <p>Next Post</p>
-                                    <a href="{% url 'blogs:single_blog' next_post.slug %}"><img class="img-fluid w-25 h-25 " src="{{next_post.image.url}}" alt=""></a>
-                                    <a href="{% url 'blogs:single_blog' next_post.slug %}"><h5>{{next_post.title}}</h5></a>
+                                    <p class="detial-l"  ><a href="{% url 'blogs:single_blog' next_post.slug %}">Next Post</a></p>
+                                    <a href="{% url 'blogs:single_blog' next_post.slug %}"><img class="img-fluid-l w-25 h-25 " src="{{next_post.image.url}}" alt=""></a>
+                                    
+                                   
+                                    {% if LANGUAGE_CODE  == 'en' %} 
+                                        
+                                         
+                                     <a href="{% url 'blogs:single_blog' next_post.slug %}"><h6>{{next_post.title|safe|truncatewords:5}}</h6></a>
+                                    {% elif LANGUAGE_CODE  == 'ar' %} 
+                                        
+                                      <a href="{% url 'blogs:single_blog' next_post.slug %}"><h6>{{next_post.title_ar|safe|truncatewords:5}}</h6></a>
+                                    {% else %}
+                                         not support
+                                    {% endif %}
+                            
+                                   
                                    
                                 </div> 
                                 {% else %}
@@ -236,7 +256,7 @@
                     
                     </style>
                     
-                    <div class="comment-form text-left w-full " style="background: rgb(214 196 196 / 34%);">
+                    <div class="comment-form text-left w-full ">
                         <h4>Leave a Reply</h4>
                         <form method="POST">
                         {% csrf_token %}
@@ -256,13 +276,17 @@
                 
                 
                 
+                <!-- Side widgets-->
+                
                 <div class="col-lg-4">
-                    <div class="blog_right_sidebar">
-                    
-                         <!---محرك البحث-->      
-                    <!--
-                        <aside class="single_sidebar_widget search_widget">
-                         <form method="GET" action="" class="form-inline ml-3">
+                 <div class="blog_right_sidebar">
+                    <!-- Search widget-->
+                      <aside class="single_sidebar_widget search_widget">
+                      <div class="card mb-4 ">
+                       <div class="card-header"> Search</div>
+                         <div class="card-body justify-content-start align-items-center">
+                             <!---محرك البحث-->
+                            <form method="GET" action="" class="form-inline ml-3">
                                 <div class="input-group" style="width: 100%;">
                                   <input class="form-control form-control-navbar" name="search_name" type="search" placeholder="Search" aria-label="Search">
                                   <button class="btn btn-default" type="submit">
@@ -273,91 +297,182 @@
                                   </div>
                                 </div>
                               </form>
-                         
-                            <div class="br"></div>
-                        </aside> --->
+                        <!--------------------------------------------------->
                         
-                        {% for about in  about %}  
-                        <aside class="single_sidebar_widget author_widget">
-                            <img class="author_img rounded-circle" src="{{about.image.url}}" alt="">
+                         </div>
+                           </div>
+                           
+                        </aside>
+                    <aside class="single_sidebar_widget search_widget">
+                     <div class="card mb-4 ">
+                      <div class="card-header"> about</div>
+                         <div class="card-body justify-content-start align-items-center">
+                        <div class="single_sidebar_widget author_widget">
+                    {% for about in  about %}  
+                      
+                            <img class="author_img-w rounded-circle align-items-center" src="{{about.image.url}}" style="max-height:100px;max-width:100px" alt="">
                             <h4> {{about.name}}</h4>
                             <p>{{about.short_des}}</p>
-                            <div class="social_icon">
-                                <a href="{{about.fb_link}}"><i class="fa fa-facebook"></i></a>
-                                <a href="{{about.twitter_link}}"><i class="fa fa-twitter"></i></a>
-                                <a href="{{about.github_link}}"><i class="fa fa-github"></i></a>
-                               
+                            
+                             <div class="footer-basic">
+                            <div class="social"><!--<a href="#"><i class="icon ion-social-instagram"></i></a>--><a href="{{about.github_link}}"><i class="icon ion-social-github"></i></a><a href="{{about.twitter_link}}"><i class="icon ion-social-twitter"></i></a><a href="{{about.fb_link}}"><i class="icon ion-social-facebook"></i></a></div>
                             </div>
+                            
                             <p>{{about.des}}</p>
+                             {% endfor %}
+                            </div></div>
                             <div class="br"></div>
-                        </aside>
-                        {% endfor %}
-                        
-                        
-                        <aside class="single_sidebar_widget popular_post_widget">
-                        
-                        {% for name_wedgit in name_wedgits %}
-                            <h3 class="widget_title">{{name_wedgit.popular_post}}</h3>
+                    
+                     </div>
+                    
+                    </aside>
+                    
+                    
+                    
+                    
+                    <!-- messages widget-->  
+                      <aside class="single-sidebar-widget newsletter_widget  justify-content-start align-items-center">      
+                        <div class="card mb-4">
+                        <div class="card-header">message</div>
+                       
+                         <div class="card-body justify-content-start align-items-center">
+                            {% for name_wedgit in name_wedgits %}
+                            <h3 class="widget_title">{{name_wedgit.newsletter}}</h3>
                             {% endfor %}
-                         <article class="col-xs-6 col-sm-3 col-lg-12 mt-3 pointer bg-hover-white-smoke p-1">   
+                        
+                            <p  class="p-body justify-content-start align-items-center">
+                            <i class="fa fa-envelope" aria-hidden="true" style="font-size: xx-large;
+                            color: #4458dc;
+                            padding: 9px;"></i>
+                            
+                            
+                              
+                            </p>
+                             <p  class="p-body justify-content-start align-items-center">
+                                get update from anywhere
+                            </p>
+                            <div class="form-group d-flex flex-row">
+                                <div class="input-group">        
+                                     
+                                {% if messages %}
+                                {% for message in messages %}
+                                <div style="margin: 0 auto;" {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+                                  {{message}}
+                                  </div>
+                                {% endfor %}
+                                {% else %}
+                              
+                                    <form  method="POST"  class="form-control" style="font-size: 10px;
+                                    line-height: 24px;
+                                    background: #fff0;
+                                    font-weight: bold;
+                                    color: #131111db;
+                                    border: 0px solid #eeeeee00;
+                                    border-left: 0px;
+                                    border-radius: 0px;
+                                    with:100%;
+                                " id="inlineFormInputGroup">
+                                        {% csrf_token %} 
+                                        <div  class="p-bo" style="padding-bottom: 12px;">
+                                        {{form}}
+                                           </div>
+                                            <button class="bbtns" type="submit" style="line-height: 21px;
+                                            display: inline-block;
+                                            font-weight: 500;
+                                            padding: 2px;">Subscribe</button>
+                                     
+                                        </form>  
+                                        {% endif %}              
+                                  
+                                    </div>
+                                </div>
+                                </div>
+                             <br><br>
+                            <a  href="/newsletters/unsubscribe.html/" class="text-bottom" style=" font-size: 11px;font-weight: 500;" >You can unsubscribe at any time</a>	
+                         
+                            
+                           </div>
+                        </aside>
+                   
+                    
+                    
+                    
+                     <aside class="single_sidebar_widget search_widget">
+                       <div class="card mb-4">
+                       
+                    <div class="card-header"> {% for name_wedgit in name_wedgits %}
+                            <h3 class="widget_title">{{name_wedgit.popular_post}}</h3>
+                            {% endfor %}</div>
+                        
+                       
+                       <div class="card-body justify-content-start align-items-center">
                             
                             {% for popular_blog in popular_blogs %}
                                
         {% if LANGUAGE_CODE  == 'en' %}
        <div  class="row align-items-center">
         
-        <div class="media post_item" style="margin-top: -31px;
-    background: #7e50ec29;
-    padding: 7px;">
+        <div class="media post_item">
+          <div class="card-body justify-content-start align-items-center"> 
                               <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
                               <div class="col-lg-8">
                                 <div class="media-body">
                                    <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title|safe|truncatewords:7}}</h3></a>
-                                     <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
+                                    <!--- <p>{{popular_blog.created_at|date:'d-m-y'}}</p>-->
                                 </div>
-                            </div></div></div>
-                            <div class="br"></div>
+                            </div></div></div></div>
+                            
         {% else %}
        <div  class="row align-items-center">
-        <div class="media post_item" style="margin-top: -31px;
-    background: #7e50ec29;
-    padding: 7px;">
+        <div class="media post_item">
+        <div class="card-body justify-content-start align-items-center"> 
                                 <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
-                                <div class="col-lg-8">
+                                
+                                <div class="col-lg-8">   
                                 <div class="media-body">
                                      <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title_ar|safe|truncatewords:7}}</h3></a>
-                                    <p>{{popular_blog.created_at|date:'d-m-y'}}</p>
+                                        <!--- <p>{{popular_blog.created_at|date:'d-m-y'}}</p>-->
                                 </div>
-                                </div>
+                                </div></div>
                             </div></div>
-                            <div class="br"></div>
+                           
      
      
         {% endif %}
      
-      </article>
+     
    
     
                             {% endfor %}
-                            <div class="br"></div>
-                        </aside>
-                        
-                        
-                        {% for ad in ads %}
+                          
                       
-                        <aside class="single_sidebar_widget ads_widget">
+                    
+                    </div>
+                     </aside>
+                     <!-- ad_code widget-->  
+                      <aside class="single_sidebar_widget search_widget">
+                     <div class="card mb-4">
+                     
+                       <div class="card-header">ad_code  </div>
+                        <div class="card-body justify-content-start align-items-center"> 
+                       {% for ad in ads %}
+                      
+                       
                             
                             <p>{{ad.ad_code_1}}</p>
-                            <div class="br"></div>
-                        </aside>
+                          
+                       
                         {% endfor %}
-                        
-                        
-                        
-                        
-                        
-                        <aside class="single_sidebar_widget post_category_widget">
-                        
+                         </div>
+                        </div>
+                   </aside>
+                    
+                    <!-- Categories widget-->
+                   
+                            <aside class="single_sidebar_widget post_category_widget">
+                        <div class="card mb-4 ">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body justify-content-start align-items-center"> 
                             {% for name_wedgit in name_wedgits %}
                             <h3 class="widget_title">{{name_wedgit.post_catgories}}</h3>
                             {% endfor %}
@@ -375,62 +490,21 @@
                             </ul>
                             
                             {% endfor %}
-                            
-                            <div class="br"></div>
+                            </div>
+                             </div>
+                          
                         </aside>
-                        <aside class="single-sidebar-widget newsletter_widget">
-                        
-                            {% for name_wedgit in name_wedgits %}
-                            <h3 class="widget_title">{{name_wedgit.newsletter}}</h3>
-                            {% endfor %}
-                        
-                            <p>
-                                get update from anywhere
-                            </p>
-                            <i class="fa fa-envelope" aria-hidden="true" style="font-size: xx-large;
-                            color: #4458dc;
-                            padding: 9px;"></i>
-                            <div class="form-group d-flex flex-row">
-                                <div class="input-group">        
-                                     
-                                {% if messages %}
-                                {% for message in messages %}
-                                <div style="margin: 0 auto;" {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
-                                  {{message}}
-                                  </div>
-                                {% endfor %}
-                                {% else %}
-                              
-                                    <form  method="POST"  class="form-control" style="font-size: 10px;
-                                    line-height: 24px;
-                                    background: #fff0;
-                                    font-weight: bold;
-                                    color: #353232db;
-                                    border: 0px solid #eeeeee00;
-                                    border-left: 0px;
-                                    border-radius: 0px;
-                                " id="inlineFormInputGroup">
-                                        {% csrf_token %} 
-                                       
-                                        {{form}}
-                                            <button class="bbtns" type="submit" style="line-height: 21px;
-                                            display: inline-block;
-                                            font-weight: 500;
-                                            padding: 2px;">Subscribe</button>
-                                      
-                                        </form>
-                                        {% endif %}              
-                                  
-                                    </div>
-                                </div>
-                                <div class="br"></div>	
-                            <a  href="/newsletters/unsubscribe.html/" class="text-bottom">You can unsubscribe at any time</a>	
-                            <div class="br"></div>
-                            
-                            
-                        </aside>
-                        <aside class="single-sidebar-widget tag_cloud_widget">
                            
+                           
+                           
+                           
+                           <!-- Tags widget--> 
+                       
+                       
+                        <aside class="single-sidebar-widget tag_cloud_widget">
+                           <div class="card mb-4 ">
+                        <div class="card-header">Tags</div>
+                        <div class="card-body justify-content-start align-items-center"> 
                             {% for name_wedgit in name_wedgits %}
                             <h3 class="widget_title">{{name_wedgit.tag_clouds}}</h3>
                             {% endfor %}
@@ -444,12 +518,32 @@
                                 <li><a href="">{{tag}}</a></li>
                             {% endfor %}   
                             </ul>
+                              </div>
+                             </div>
+                            
                         </aside>
-                    </div>
-                </div>
-            </div>
+                       
+                       
+                       
+                       
+                            
+                            
+                            
+                        
+                  
+                   <!-- ad_code widget-->  
+                    
+                  
+                  
+                  
+                    
+                     
+                       
+                       
+   </div>             
         </div>
     </section>
+     </div>
     <!--================Blog Area =================-->
         
 {% endblock content %}

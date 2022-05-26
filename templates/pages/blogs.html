@@ -49,16 +49,31 @@
                        
                            {% for top in  top_blogs %}
                             
-                             <a href="#!"><img class="card-img-top" style="max-height:300px;" src="{{top.image.url}}" alt="..." /></a>
+                             <a href="{{top.get_absolute_url}}"><img class="card-img-top" style="max-height:300px;" src="{{top.image.url}}" alt="..." /></a>
                         <div class="card-body">
                            <div class=" meta small text-muted"  style=" list-style: none;">
                                      <li><a >{{top.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
                                       <li><a >{{top.author}} <i class="lnr lnr-user"></i></a></li>
                                         <li><a >( {{top.views}} ) Views<i class="lnr lnr-eye"></i></a></li>
                                     </div>
-                            <h2 class="card-title">{{top.title|safe|truncatewords:7}}</h2>
-                            <p class="card-text">{{top.content|safe|truncatewords:20}}</p>
-                            <a class="btn btn-primary"  href="{{top.get_absolute_url}}">{% trans "View More" %} →</a>
+                            {% if LANGUAGE_CODE  == 'en' %} 
+                                        
+                                        <a href="{{top.get_absolute_url}}"> <h2 class="card-title"> {{top.title|safe|truncatewords:7}}</h2></a>
+                                       <p class="card-text">{{top.content|safe|truncatewords:20}}</p>
+                                    {% elif LANGUAGE_CODE  == 'ar' %} 
+                                        <a href="{{top.get_absolute_url}}"> <h2 class="card-title"> {{top.title_ar|safe|truncatewords:7}}</h2></a>
+                                       <p class="card-text">{{top.content_ar|safe|truncatewords:20}}</p>
+                                    {% else %}
+                                         not support
+                                    {% endif %}
+                            
+                            <a class="btn btn-primary"  href="{{top.get_absolute_url}}">{% trans "View More" %} </a>
+                            
+                            
+                             
+                            
+                            
+                            
                         </div>
                         
                         
@@ -71,7 +86,7 @@
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" style="max-height:200px;" src="{{blog.image.url}}" alt="..." /></a>
+                                <a href="{{blog.get_absolute_url}}"><img class="card-img-top" style="max-height:200px;" src="{{blog.image.url}}" alt="..." /></a>
                                 <div class="card-body">
                                     <div class=" meta small text-muted"  style=" list-style: none;">
                                      <li><a >{{blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
@@ -79,8 +94,20 @@
                                         <li><a >( {{blog.views}} ) Views<i class="lnr lnr-eye"></i></a></li>
                                     </div>
                                     <br>
-                                    <h2 class="card-title h4">{{blog.title|safe|truncatewords:7}}</h2>
-                                    <p class="card-text">{{blog.content|safe|truncatewords:20}}</p>
+                                   
+                                    
+                                      {% if LANGUAGE_CODE  == 'en' %} 
+                                        
+                                        <a href="{{blog.get_absolute_url}}"> <h2 class="card-title"> {{blog.title|safe|truncatewords:7}}</h2></a>
+                                       <p class="card-text card-des">{{blog.content|safe|truncatewords:20}}</p>
+                                    {% elif LANGUAGE_CODE  == 'ar' %} 
+                                        <a href="{{blog.get_absolute_url}}"> <h2 class="card-title"> {{blog.title_ar|safe|truncatewords:7}}</h2></a>
+                                       <p class="card-text card-des">{{blog.content_ar|safe|truncatewords:20}}</p>
+                                    {% else %}
+                                         not support
+                                    {% endif %}
+                            
+                                    
                                     <a class="btn btn-primary" href="{{blog.get_absolute_url}}">{% trans "View More" %} </a>
                                 </div>
                             </div>
@@ -104,6 +131,10 @@
                                            
                                             
                                         </span>
+                                        
+                                        
+                                        
+                                        
                                         
                                         
                                     </a>
@@ -175,11 +206,8 @@
                             <img class="author_img-w rounded-circle align-items-center" src="{{about.image.url}}" style="max-height:100px;max-width:100px" alt="">
                             <h4> {{about.name}}</h4>
                             <p>{{about.short_des}}</p>
-                            <div class="social_icon">
-                                <a href="{{about.fb_link}}"><i class="fa fa-facebook"></i></a>
-                                <a href="{{about.twitter_link}}"><i class="fa fa-twitter"></i></a>
-                                <a href="{{about.github_link}}"><i class="fa fa-github"></i></a>
-                               
+                            <div class="footer-basic">
+                            <div class="social"><!--<a href="#"><i class="icon ion-social-instagram"></i></a>--><a href="{{about.github_link}}"><i class="icon ion-social-github"></i></a><a href="{{about.twitter_link}}"><i class="icon ion-social-twitter"></i></a><a href="{{about.fb_link}}"><i class="icon ion-social-facebook"></i></a></div>
                             </div>
                             <p>{{about.des}}</p>
                              {% endfor %}
@@ -189,6 +217,73 @@
                      </div>
                     
                     </aside>
+                    
+                    
+                     <!-- messages widget-->  
+                      <aside class="single-sidebar-widget newsletter_widget  justify-content-start align-items-center">      
+                        <div class="card mb-4">
+                        <div class="card-header">message</div>
+                       
+                         <div class="card-body justify-content-start align-items-center">
+                            {% for name_wedgit in name_wedgits %}
+                            <h3 class="widget_title">{{name_wedgit.newsletter}}</h3>
+                            {% endfor %}
+                        
+                            <p  class="p-body justify-content-start align-items-center">
+                            <i class="fa fa-envelope" aria-hidden="true" style="font-size: xx-large;
+                            color: #4458dc;
+                            padding: 9px;"></i>
+                            
+                            
+                              
+                            </p>
+                             <p  class="p-body justify-content-start align-items-center">
+                                get update from anywhere
+                            </p>
+                            <div class="form-group d-flex flex-row">
+                                <div class="input-group">        
+                                     
+                                {% if messages %}
+                                {% for message in messages %}
+                                <div style="margin: 0 auto;" {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+                                  {{message}}
+                                  </div>
+                                {% endfor %}
+                                {% else %}
+                              
+                                    <form  method="POST"  class="form-control" style="font-size: 10px;
+                                    line-height: 24px;
+                                    background: #fff0;
+                                    font-weight: bold;
+                                    color: #131111db;
+                                    border: 0px solid #eeeeee00;
+                                    border-left: 0px;
+                                    border-radius: 0px;
+                                    with:100%;
+                                " id="inlineFormInputGroup">
+                                        {% csrf_token %} 
+                                        <div  class="p-bo" style="padding-bottom: 12px;">
+                                        {{form}}
+                                           </div>
+                                            <button class="bbtns" type="submit" style="line-height: 21px;
+                                            display: inline-block;
+                                            font-weight: 500;
+                                            padding: 2px;">Subscribe</button>
+                                     
+                                        </form>  
+                                        {% endif %}              
+                                  
+                                    </div>
+                                </div>
+                                </div>
+                             <br><br>
+                            <a  href="/newsletters/unsubscribe.html/" class="text-bottom" style=" font-size: 11px;font-weight: 500;" >You can unsubscribe at any time</a>	
+                         
+                            
+                           </div>
+                        </aside>
+                    
+                    
                      <aside class="single_sidebar_widget search_widget">
                        <div class="card mb-4">
                        
@@ -316,74 +411,7 @@
                         </aside>
                        
                        
-                       
-                       
-                            
-                            
-                            
-                        <!-- messages widget-->  
-                          
-                        <div class="card mb-4">
-                        <div class="card-header">message</div>
-                         <aside class="single-sidebar-widget newsletter_widget  justify-content-start align-items-center">
-                         <div class="card-body justify-content-start align-items-center">
-                            {% for name_wedgit in name_wedgits %}
-                            <h3 class="widget_title">{{name_wedgit.newsletter}}</h3>
-                            {% endfor %}
-                        
-                            <p  class="p-body justify-content-start align-items-center">
-                            <i class="fa fa-envelope" aria-hidden="true" style="font-size: xx-large;
-                            color: #4458dc;
-                            padding: 9px;"></i>
-                            
-                            
-                              
-                            </p>
-                             <p  class="p-body justify-content-start align-items-center">
-                                get update from anywhere
-                            </p>
-                            <div class="form-group d-flex flex-row">
-                                <div class="input-group">        
-                                     
-                                {% if messages %}
-                                {% for message in messages %}
-                                <div style="margin: 0 auto;" {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
-                                  {{message}}
-                                  </div>
-                                {% endfor %}
-                                {% else %}
-                              
-                                    <form  method="POST"  class="form-control" style="font-size: 10px;
-                                    line-height: 24px;
-                                    background: #fff0;
-                                    font-weight: bold;
-                                    color: #131111db;
-                                    border: 0px solid #eeeeee00;
-                                    border-left: 0px;
-                                    border-radius: 0px;
-                                    with:100%;
-                                " id="inlineFormInputGroup">
-                                        {% csrf_token %} 
-                                        <div  class="p-bo" style="padding-bottom: 12px;">
-                                        {{form}}
-                                           </div>
-                                            <button class="bbtns" type="submit" style="line-height: 21px;
-                                            display: inline-block;
-                                            font-weight: 500;
-                                            padding: 2px;">Subscribe</button>
-                                     
-                                        </form>  
-                                        {% endif %}              
-                                  
-                                    </div>
-                                </div>
-                                </div>
-                             <br>
-                            <a  href="/newsletters/unsubscribe.html/" class="text-bottom" style=" font-size: 11px;font-weight: 500;" >You can unsubscribe at any time</a>	
-                         
-                            
-                           </div>
-                        </aside>
+                
                    </div>
                   
                    <!-- ad_code widget-->  
@@ -402,7 +430,7 @@
 
 </section>
 
-  <br><br><br><br><br><br><br><br><br><br>
+ 
     
     
  <div class="clearfix">...</div>

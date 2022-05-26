@@ -1,51 +1,13 @@
-<!--================Footer Area =================-->
-	<footer class="footer_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="footer_top flex-column">
-                        <div class="footer_logo">
-                            <a href="#">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        {% for Footer in  FooterHeader  %}
-                        
-                            <h4>{{Footer.follow_me_text_name}}</h4>
-                        </div>
-                        <div class="footer_social">
-                        
-                     
-                         
-                       
-                            <a href="{{Footer.fb_link}}"><i class="fa fa-facebook"></i></a>
-                            <a href="{{Footer.twitter_link}}"><i class="fa fa-twitter"></i></a>
-                            <a href="{{Footer.instagram_link}}"><i class="fa fa-instagram"></i></a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row footer_bottom justify-content-center">
-                <p class="col-lg-8 col-sm-12 footer-text">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    
-{% for aboutFooter in FooterHeader  %}
-              
-{{aboutFooter.Copyright}}  {{aboutFooter.Copyright_date| date:'Y'}}                {{aboutFooter.all_rights_reserved}} |  {{aboutFooter.Copyright_txt_1}} <i class="fa fa-heart-o" aria-hidden="true"></i> {{aboutFooter.Copyright_txt_2}}<a href="{{aboutFooterHeader.Copyright_link}} " target="_blank"> {{aboutFooter.site_name}} </a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-{% endfor %}
-            </div>
-        </div>
+ <div class="footer-basic">
+        <footer>
         
-    </footer>
-    <!--================End Footer Area =================-->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+            <div class="social"><!--<a href="#"><i class="icon ion-social-instagram"></i></a>--><a href="#"><i class="icon ion-social-github"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Company Name © 2018</p>
+        </footer>

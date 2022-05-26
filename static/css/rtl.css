@@ -1,13 +1,35 @@
 html{
   direction: rtl;
 }
+.card-body h2 {
+    font-size: 17px!important;
+}
 
+.card-body .list {
+   text-align: right!important;
+}
+.card-text , .card-des{
+    text-align: right!important;
+}
 .testi_item img {
     border-radius: 5px;
     padding-left: 22px!important;
 }
 
 
+ .p-bo .bbtns{
+    text-align: center!important;
+}
+
+.detial-r{
+margin-left: 80%!important;
+}
+.detial-l{margin-right: 80%!important;   }
+
+.img-fluid-r{
+float: right!important; margin-left: 22px!important; 
+}
+.img-fluid-l{float: left!important; margin-left: 10%!important;  }
 .meta li I {
     float: right!important;
     padding: 6px 0px 5px 4px!important;
