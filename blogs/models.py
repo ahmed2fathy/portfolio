@@ -57,14 +57,6 @@ class Category(models.Model):
         return self.name
 
 
-
-
-
-
-
-
-
-
 class Blogs(models.Model):
 
     title = models.CharField(
@@ -83,20 +75,18 @@ class Blogs(models.Model):
         default=timezone.now, verbose_name=_('created at'))
     author = models.ForeignKey(User, related_name='post_author',
                                default=User, on_delete=models.CASCADE, verbose_name=_(' author'))
-    
+
     views = models.IntegerField(default=0,  verbose_name=_(' views'))
     slug = models.SlugField(max_length=200, blank=True, unique=True, help_text=_(
         'You should write some words indicating the content of the article in English'), verbose_name=_(' url'))
-        
+
     def __str__(self):
         return '%s - %s' % (self.title, self.title_ar)
 
     class Meta:
         verbose_name_plural = _('Blogs')
         ordering = ["-created_at"]
-        
-    
-        
+
     # دالة جلب رابط المقال
 
     def get_absolute_url(self):
@@ -115,16 +105,6 @@ class Blogs(models.Model):
         super(Blogs, self).save(*args, **kwargs)  # Call the real save() method
 
     #-----------------------------------------------------------------------------
-
-
-
-    
-         
-          
-        
-        
-    
-     
 
 
 class AboutAuthor(models.Model):

@@ -37,7 +37,8 @@ urlpatterns += i18n_patterns  (
     path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('index.urls'), name='index'),
-    path('blogs/', include('blogs.urls'), name='blogs'),
+    path('blog-en/', include('BlogEn.urls'), name='BlogEn'),
+    path('blog-ar/', include('BlogAr.urls'), name='BlogAr'),
     path('newsletters/', include('newsletters.urls'), name='newsletters'),
     
 )

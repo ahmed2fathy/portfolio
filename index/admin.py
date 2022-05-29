@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 from accounts import models
-from .models import Skills, Call, ClientSay, ClientSay, ContactInfo, Feedback,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+from project.settings import LANGUAGE_CODE, LANGUAGES
+from .models import MenuBarAr, MenuBarEn, Skills, Call, ClientSay, ClientSay, ContactInfo, Feedback,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
 
 
 class FeedbackAdmin(admin.ModelAdmin):
@@ -29,4 +30,12 @@ admin.site.register(FooterHeader)
 admin.site.register(Tab)
 admin.site.register(Feedback, FeedbackAdmin, )
 admin.site.register(ContactInfo)
+admin.site.register(MenuBarEn)
+admin.site.register(MenuBarAr)
+
+
+
+
+
+
 

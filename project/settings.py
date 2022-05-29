@@ -39,6 +39,8 @@ USE_I18N = True
 INSTALLED_APPS = [
 
     ## my_apps
+    'BlogAr',
+    'BlogEn',
     'admin_interface',  # theme
     'colorfield',  # theme
     'crispy_forms',

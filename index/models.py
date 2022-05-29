@@ -236,4 +236,28 @@ class ContactInfo(models.Model):
         return self.phone + "-" + self.email
 
 
+
+class MenuBarEn(models.Model):
+     menu = models.CharField(max_length=100, null=True,
+                            blank=True, verbose_name=_('name'))
+     url = models.CharField(max_length=100, null=True, blank=True,
+                           default='/', help_text="eg: /page", verbose_name=_('url'))
+
+     class Meta:
+        verbose_name_plural = _('MenuBar En')
+
+     def __str__(self) -> str:
+        return self.menu
+
+class MenuBarAr(models.Model):
+     menu = models.CharField(max_length=100, null=True,
+                            blank=True, verbose_name=_('name'))
+     url = models.CharField(max_length=100, null=True, blank=True,
+                           default='/', help_text="eg: /page", verbose_name=_('url'))
+
+     class Meta:
+        verbose_name_plural = _('MenuBar Ar')
+
+     def __str__(self) -> str:
+        return self.menu
     

@@ -84,7 +84,7 @@ def blogs(request):
     context = {
         'top_blogs': Blogs.objects.all()[1:2],
         'all_blogs': page_obj,
-        'all_category':Category.objects.all()[0:6],
+        'all_category': Category.objects.all()[0:6],
         'about': about,
         'popular_blogs': popular_blogs,
         'name_wedgits': name_wedgits,

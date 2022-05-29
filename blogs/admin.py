@@ -14,9 +14,9 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'title_ar',
                     'author',   'created_at',)
     list_display_link = (
-        'title' , 'title_ar', 'author', )
-    search_fields = ('title','title_ar',)
-    list_editable = (  'created_at',)
+        'title', 'title_ar', 'author', )
+    search_fields = ('title', 'title_ar',)
+    list_editable = ('created_at',)
     list_filter = ('author', 'created_at')
     date_hierarchy = ('created_at')
 

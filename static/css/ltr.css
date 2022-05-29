@@ -1,3 +1,9 @@
+html {direction:ltr!important;
+font-family:"DroidArabicKufiRegular", "Droid Sans", sans-serif!important;
+font-size:14px!important;
+
+}
+
 .menu .dropdown {
     margin-right: 20px!important;
     margin-bottom: -2px!important;
@@ -37,7 +43,7 @@ float: left!important; margin-right: 22px!important;
 .banner_area .banner_inner .banner_content h2 {
     color: #fff;
     font-size: 30px!important;
-    font-family: "Rubik", sans-serif;
+   font-family:"DroidArabicKufiRegular", "Droid Sans", sans-serif!important;
     margin-bottom: 10px;
     text-align: center;
     text-transform: capitalize!important;
@@ -220,7 +226,7 @@ top: 0px;
 
 .client-info .lage {
     color: #854fee;
-    font-family: "Rubik", sans-serif;
+   font-family:"DroidArabicKufiRegular", "Droid Sans", sans-serif!important;
     font-size: 100px;
     font-weight: 700;
     top: -17px!important;
