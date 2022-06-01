@@ -49,7 +49,7 @@
                          {% if LANGUAGE_CODE  == 'ar' %} 
                            {% for top in  top_blogs %}
                             
-                             <a href="{{top.get_absolute_url}}"><img class="card-img-top" style="max-height:300px;" src="{{top.image.url}}" alt="..." /></a>
+                             <a href="{{top.get_absolute_url}}"><i class="lnr lnr-book cate" style="z-index:99999999999;  position: absolute;color: #fff;left: 5px;border-radius: 5px;padding: 6px;background: rgb(3 2 141 / 42%);top: 5px;"> {{top.category}}</i><img class="card-img-top" style="max-height:300px;" src="{{top.image.url}}" alt="..." /></a>
                            
                         <div class="card-body">
                            <div class=" meta small text-muted"  style=" list-style: none;">
@@ -60,10 +60,8 @@
                             {% if LANGUAGE_CODE  == 'ar' %} 
                                         
                                         <a href="{{top.get_absolute_url}}"> <h2 class="card-title"> {{top.title|safe|truncatewords:7}}</h2></a>
-                                       <p class="card-text">{{top.content|safe|truncatewords:20}}</p>
-                                    {% elif LANGUAGE_CODE  == 'ar' %} 
-                                        <a href="{{top.get_absolute_url}}"> <h2 class="card-title"> {{top.title_ar|safe|truncatewords:7}}</h2></a>
-                                       <p class="card-text">{{top.content_ar|safe|truncatewords:20}}</p>
+                                       <p class="card-text">{{top.content|safe|truncatewords:35}}</p>
+                                    
                                     {% else %}
                                          not support
                                     {% endif %}
@@ -87,9 +85,11 @@
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="{{blog.get_absolute_url}}"><img class="card-img-top" style="max-height:200px;" src="{{blog.image.url}}" alt="..." /></a>
+                                <a href="{{blog.get_absolute_url}}"><i class="lnr lnr-book cate" style="z-index:99999999999;  position: absolute;color: #fff;left: 5px;border-radius: 5px;padding: 6px;background: rgb(3 2 141 / 42%);top: 5px;"> {{blog.category}}</i><img class="card-img-top" style="max-height:200px;" src="{{blog.image.url}}" alt="..." /></a>
                                 <div class="card-body">
+                                  
                                     <div class=" meta small text-muted"  style=" list-style: none;">
+                                   
                                      <li><a >{{blog.created_at|date:'d - m - y'}}<i class="lnr lnr-calendar-full"></i></a></li>
                                       <li><a >{{blog.author}} <i class="lnr lnr-user"></i></a></li>
                                         <li><a >( {{blog.views}} ) Views<i class="lnr lnr-eye"></i></a></li>
@@ -100,6 +100,8 @@
                                       {% if LANGUAGE_CODE  == 'ar' %} 
                                         
                                         <a href="{{blog.get_absolute_url}}"> <h2 class="card-title"> {{blog.title|safe|truncatewords:7}}</h2></a>
+                                        
+                                        
                                        <p class="card-text card-des">{{blog.content|safe|truncatewords:20}}</p>
                                    
                                     {% else %}
@@ -315,7 +317,7 @@
                               <img class="img-fluid" src="{{popular_blog.image.url}}" alt="post" style="width: 75px;max-height: 75px;">
                               <div class="col-lg-8">
                                 <div class="media-body">
-                                   <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small">{{popular_blog.title|safe|truncatewords:7}}</h3></a>
+                                   <a href="{{popular_blog.get_absolute_url}}"><h3 class="mb-0 small"> {{popular_blog.title|safe|truncatewords:7}}</h3></a>
                                     <!--- <p>{{popular_blog.created_at|date:'d-m-y'}}</p>-->
                                 </div>
                             </div></div></div></div>
@@ -361,8 +363,8 @@
 
                             <ul class="list cat-list">
                                 <li>
-                                    <a href="#" class="d-flex justify-content-between">
-                                        <p> {{all_category}}</p>
+                                    <a href="{{all_category.get_absolute_url}}" class="d-flex justify-content-between">
+                                        <p>  {{all_category}}  <i class="lnr lnr-book"></i> </p>
                                         <p>{{all_category.post_count}}</p>
                                     </a>
                                 </li>
@@ -395,7 +397,7 @@
                             {% for tag in all_tag %}
                               
                             
-                                <li><a href="">{{tag}}</a></li>
+                                <li><a href="{{tag.get_absolute_url}}">{{tag}}</a></li>
                             {% endfor %}   
                             </ul>
                               </div>

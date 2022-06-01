@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from index.models import FooterHeader
-from blogs.models import  MenuBar
+from index.models import MenuBarAr
+from index.models import  MenuBarEn
 from .models import Profile
 from .forms import UserForm , ProfileForm , UserCreateForm
 from django.urls import reverse
@@ -29,7 +30,11 @@ def signup(request):
     return render(request, 'registration/signup.html', {
     'signup_form': signup_form, 
     'FooterHeader': FooterHeader.objects.all()[:1], 
-    'menu': MenuBar.objects.all()[:8] }
+    'menu_en': MenuBarEn.objects.all()[:8],
+     'menu_en': MenuBarAr.objects.all()[:8],
+    
+    
+    }
     
     )
 
@@ -41,7 +46,8 @@ def profile(request):
     return render(request, 'profile/profile.html', {
     'profile': profile,
     'FooterHeader': FooterHeader.objects.all()[:1], 
-    'menu': MenuBar.objects.all()[:8]
+   'menu_en': MenuBarEn.objects.all()[:8],
+   'menu_en': MenuBarAr.objects.all()[:8],
     }
     )
 
@@ -71,7 +77,8 @@ def profile_edit(request):
         'user_form' : user_form , 
         'profile_form' : profile_form,
         'FooterHeader': FooterHeader.objects.all()[:1],
-         'menu': MenuBar.objects.all()[:8]
+        'menu_en': MenuBarEn.objects.all()[:8],
+     'menu_en': MenuBarAr.objects.all()[:8],
     }
     )
 

@@ -313,3 +313,11 @@ top: 0px;
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,900&subset=latin,latin-ext);
 
 /*--------------end skills-----------------------*/
+
+
+.cat-list  .lnr-book {
+    float: left;
+    padding: 3px;}
+
+.small {
+    font-weight: 600!important;}

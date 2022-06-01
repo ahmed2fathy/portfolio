@@ -37,8 +37,14 @@ urlpatterns += i18n_patterns  (
     path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('index.urls'), name='index'),
-    path('blog-en/', include('BlogEn.urls'), name='BlogEn'),
-    path('blog-ar/', include('BlogAr.urls'), name='BlogAr'),
+   
+    path('blog-en/', include('blog_eng.urls'), name='blog_eng'),
+    path('category_en/', include('category_eng.urls'), name='category_eng'),
+    path('tag_en/', include('tag_eng.urls'), name='tag_eng'),
+    
+    path('blog-ar/', include('blog_arab.urls'), name='blog_arab'),
+    path('category_ar/', include('category_arab.urls'), name='category_arab'),
+    path('tag_ar/', include('tag_arab.urls'), name='tag_arab'),
     path('newsletters/', include('newsletters.urls'), name='newsletters'),
     
 )

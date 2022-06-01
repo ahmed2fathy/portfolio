@@ -513,4 +513,12 @@ border-radius: 5px!important;
  }
 
 }
+
+
+.cat-list  .lnr-book {
+    float: right;
+    padding: 3px;}
+
+.small {
+    font-weight: 600!important;}
  /*------ end dropdown call----------*/
