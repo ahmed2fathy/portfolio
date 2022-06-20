@@ -146,7 +146,7 @@ font-size: 18px!important;
     text-align: center!important;  
      } 
  .media .card-body {
-     border-bottom: 1px rgb(92 85 227 / 35%) solid;
+     border-top: 1px rgb(92 85 227 / 35%) solid;
  }   
   .blog_right_sidebar .post_category_widget .cat-list li a {
     padding-top: 9px;
@@ -335,7 +335,9 @@ padding-bottom: 75px;
 }
 
 
-
+select.form-control:not([size]):not([multiple]) {
+    padding: 2px!important;
+}
 
 	
 	

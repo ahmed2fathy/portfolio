@@ -1,3 +1,6 @@
+
+# -*- coding: UTF-8 -*-
+
 from http.client import HTTPResponse
 from django.conf import settings
 from django.contrib import messages

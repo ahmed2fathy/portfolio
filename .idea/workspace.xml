@@ -5,165 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1e409a9-5f18-4ae1-8887-b96696150fc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blog_arab/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_arab/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog_eng/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_arab/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/category_eng/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/02_VXGes30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/02_dVaGxI8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/02_uDUz49F.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/174881_NUWNToe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/21-210893_web-development-company-web-design-clipart-icon-png_1otwdon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/21-210893_web-development-company-web-design-clipart-icon-png_CqX4jK3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/21-210893_web-development-company-web-design-clipart-icon-png_F380A6L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/21-210893_web-development-company-web-design-clipart-icon-png_RD6HU8h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/21-210893_web-development-company-web-design-clipart-icon-png_feI0dhr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/21-210893_web-development-company-web-design-clipart-icon-png_u2N8nGq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/2621040.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_0A4s7tV.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_A0Rmueg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_DTbKiMn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_HTfvFa0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_HXAcuT7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_K2JUy0U.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_PPJu8is.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_QaoSrUk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_QtfqoZs.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_U3CwXn8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_UsyjgIO.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_Z9Al7rm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_cDh8Q2d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_cStuZhg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_eY1h7DJ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_edOY9Ct.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_gqMO8J5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_okLah5U.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_sIPJUjA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_uSUCqu5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/5f704379453eb_unDobsN.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/Screen_Shot_2020-03-26_at_09.39.28_OIe7X90.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/Screen_Shot_2020-03-26_at_09.59.32_1h0LFtV.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/Screen_Shot_2020-03-26_at_09.59.32_mti4MGz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/Screen_Shot_2020-03-26_at_09.59.32_p39Z9PZ.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/category/02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/category/toppng.com-bootstrap-social-media-icons-html-css-js-logo-800x1129.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/category/تطور_بلو_هوست.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/red-ocean.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/red-ocean_BtzinDc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/red-ocean_RUSgLQp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/red-ocean_tJSnWaA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/start-mesh-wordpress-website-galway.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/start-mesh-wordpress-website-galway_XjVO2RB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/tag/france.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/tag/toppng.com-bootstrap-social-media-icons-html-css-js-logo-800x1129.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/web-development.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/web-development_g8j8U4K.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/web-development_ptM8RTP.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/web-development_wWARrCv.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/blog/frontbage/مكونات_الحاسب_المحمول.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/admin_interface/css/55553.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_arab/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tag_eng/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/_tag_arab_blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/_tag_eng_blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/catgory_arab_blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/catgory_eng_blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/migrations/0002_remove_blogs_content_ar_remove_blogs_title_ar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/migrations/0003_rename_slug_blogs_arabic_slugify.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/migrations/0004_rename_arabic_slugify_blogs_slug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/migrations/0005_delete_menubar.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogAr/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/migrations/0002_menubaren_rename_menubar_menubarar_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/migrations/0003_delete_menubarar_delete_menubaren.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogEn/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/ar/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/ar/LC_MESSAGES/django.po" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin_interface/css/admin-interface-fix.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_interface/css/admin-interface-fix.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/admin_interface/css/admin-interface.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/admin_interface/css/admin-interface.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/_tag_arab_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/_tag_arab_blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/_tag_eng_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/_tag_eng_blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/blogs-ar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/blogs-ar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/blogs-en.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/blogs-en.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/catgory_arab_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/catgory_arab_blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/catgory_eng_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/catgory_eng_blog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/single-blog-ar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/single-blog-ar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/single-blog-en.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/single-blog-en.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partes/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +65,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

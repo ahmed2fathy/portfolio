@@ -1,3 +1,6 @@
+
+# -*- coding: UTF-8 -*-
+
 from django.utils import timezone
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -23,10 +26,10 @@ class FooterHeader(models.Model):
     email               = models.EmailField(max_length = 254, null = True , blank = True, verbose_name=_('email'))
     description         = models.TextField(max_length = 500, null = True , blank = True, verbose_name=_('description'))
     follow_me_text_name = models.CharField(max_length = 220, null = True , blank = True, default='follow_me_text_name')
-    fb_link             = models.URLField(max_length = 400,  null = True , blank = True, verbose_name=_('fb_link'))
+    fb_link             = models.URLField(max_length = 600,  null = True , blank = True, verbose_name=_('fb_link'))
     twitter_link = models.URLField(
-        max_length=400, null=True, blank=True, verbose_name=_('twitter_link'))
-    instagram_link      = models.URLField(max_length = 400,  null = True , blank = True, verbose_name=_('instagram_link'))
+        max_length=600, null=True, blank=True, verbose_name=_('twitter_link'))
+    github_link      = models.URLField(max_length = 600,  null = True , blank = True, verbose_name=_('github_link'))
     Copyright           = models.CharField(max_length = 220, null = True , blank = True, default='Copyright', verbose_name=_('Copyright'))
     all_rights_reserved = models.CharField(
         max_length=220, null=True, blank=True, default=' All rights reserved', verbose_name=_('all_rights_reserved'))

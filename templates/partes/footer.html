@@ -1,13 +1,17 @@
  <div class="footer-basic"  style=" font-family:'DroidArabicKufiRegular', 'Droid Sans', sans-serif!important;">
         <footer>
-        
-            <div class="social"><!--<a href="#"><i class="icon ion-social-instagram"></i></a>--><a href="#"><i class="icon ion-social-github"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+        {% for item in FooterHeader %}
+            <div class="social"><!--<a href="#"><i class="icon ion-social-instagram"></i></a>--><a href="{{item.github_link}}"><i class="icon ion-social-github"></i></a><a href="{{item.twitter_link}}"><i class="icon ion-social-twitter"></i></a><a href="{{item.fb_link}}"><i class="icon ion-social-facebook"></i></a></div>
+            {% endfor %}
+            
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Home</a></li>
-                <li class="list-inline-item"><a href="#">Services</a></li>
-                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="/">Home</a></li>
+                <li class="list-inline-item"><a href="/services">Services</a></li>
+                <li class="list-inline-item"><a href="/about">About</a></li>
                 <li class="list-inline-item"><a href="#">Terms</a></li>
                 <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
             </ul>
-            <p class="copyright">Company Name © 2018</p>
+               {% for item in FooterHeader %}
+            <p class="copyright">{{item.site_name}}© {{item.Copyright_date| date:'Y'}}</p>
+             {% endfor %}
         </footer>

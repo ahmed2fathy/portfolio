@@ -1,3 +1,6 @@
+
+# -*- coding: UTF-8 -*-
+
 from django.contrib import messages
 from .models import NewsletterUser
 from .forms import NewsletterUserSignUpForm

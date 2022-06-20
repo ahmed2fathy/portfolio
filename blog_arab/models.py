@@ -1,4 +1,5 @@
 
+# -*- coding: UTF-8 -*-
 from pyexpat import model
 from selectors import DefaultSelector
 from trace import Trace
@@ -116,8 +117,21 @@ class Blog(models.Model):
     class Meta:
         verbose_name_plural = _('Blogs')
         ordering = ["-created_at"]
- # دالة تحويل اسم المقال الي رابط وازالة المسافات الفارغة ووضع - داش
-  
+
+
+        
+        
+        
+ #---- دالة جلب رابط المقال
+
+    def get_absolute_url(self):
+        
+        return reverse('blog_arab:single_blog', kwargs={'slug': self.slug})
+ #---------------------------------------------------------------------------
+
+
+        
+# دالة تحويل اسم المقال الي رابط وازالة المسافات الفارغة ووضع - داش
 
 
     def save(self, *args, **kwargs):
@@ -127,16 +141,6 @@ class Blog(models.Model):
             if not self.slug:
                 self.slug = arabic_slugify(self.title)
         super(Blog, self).save(*args, **kwargs)  # Call the real save() method
-
-    def __str__(self):
-        return self.title
-        
-        
-        
-    # دالة جلب رابط المقال
-    def get_absolute_url(self):
-        
-        return reverse('blog_arab:single_blog', kwargs={'slug': self.slug})
 
 
 
@@ -148,6 +152,9 @@ def arabic_slugify(str):
     str = str.replace(")", "")
     str = str.replace("؟", "")
     return str
+
+#-----------------------------------------------
+
 
 
 class Comment(models.Model):

@@ -1,0 +1,608 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-16 22:32+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\blog_arab\models.py:33 .\blog_arab\models.py:100 .\blog_eng\models.py:30
+#: .\blog_eng\models.py:97 .\category_arab\models.py:20
+#: .\category_eng\models.py:20 .\index\models.py:82 .\index\models.py:95
+#: .\index\models.py:117 .\index\models.py:150 .\index\models.py:168
+#: .\index\models.py:197 .\tag_arab\models.py:20 .\tag_eng\models.py:20
+msgid "image"
+msgstr "الصورة"
+
+#: .\blog_arab\models.py:35 .\blog_arab\models.py:161 .\blog_eng\models.py:32
+#: .\blog_eng\models.py:155 .\category_arab\models.py:13
+#: .\category_eng\models.py:13 .\index\models.py:208 .\index\models.py:242
+#: .\index\models.py:254 .\tag_arab\models.py:13 .\tag_eng\models.py:13
+msgid "name"
+msgstr "الاسم"
+
+#: .\blog_arab\models.py:37 .\blog_eng\models.py:34
+msgid "short description"
+msgstr "وصف قصير"
+
+#: .\blog_arab\models.py:38 .\blog_eng\models.py:35 .\index\models.py:24
+msgid "description"
+msgstr "الوصف"
+
+#: .\blog_arab\models.py:40 .\blog_eng\models.py:37
+msgid "Facebook link"
+msgstr "رابط الفيس بوك"
+
+#: .\blog_arab\models.py:42 .\blog_eng\models.py:39
+msgid "Twitter link"
+msgstr "رابط تويتر"
+
+#: .\blog_arab\models.py:44 .\blog_eng\models.py:41
+msgid "Github link"
+msgstr "رابط جيت هوب"
+
+#: .\blog_arab\models.py:47 .\blog_eng\models.py:44
+msgid "AboutAuthor"
+msgstr "معلومات عن الكاتب"
+
+#: .\blog_arab\models.py:55 .\blog_eng\models.py:52
+msgid "popular post"
+msgstr "الاكثر مشاهدة"
+
+#: .\blog_arab\models.py:57 .\blog_eng\models.py:54
+msgid "post catgories"
+msgstr "تصنيفات المقالات"
+
+#: .\blog_arab\models.py:59 .\blog_eng\models.py:56
+msgid "newsletter"
+msgstr "النشرة الاخبارية"
+
+#: .\blog_arab\models.py:61 .\blog_eng\models.py:58
+msgid " tag clouds"
+msgstr "العلامات السحابية"
+
+#: .\blog_arab\models.py:64 .\blog_eng\models.py:61
+msgid "NameWidget"
+msgstr "اسم الاداة"
+
+#: .\blog_arab\models.py:72 .\blog_eng\models.py:69
+msgid " ad code (1) "
+msgstr "كود اعلان (1)"
+
+#: .\blog_arab\models.py:74 .\blog_eng\models.py:71
+msgid " ad code (2) "
+msgstr "كود اعلان (2)"
+
+#: .\blog_arab\models.py:76 .\blog_eng\models.py:73
+msgid " ad code (3) "
+msgstr "كود اعلان (3)"
+
+#: .\blog_arab\models.py:78 .\blog_eng\models.py:75
+msgid " ad code (4) "
+msgstr "كود اعلان (4)"
+
+#: .\blog_arab\models.py:80 .\blog_eng\models.py:77
+msgid " ad code (5) "
+msgstr "كود اعلان (5)"
+
+#: .\blog_arab\models.py:82 .\blog_eng\models.py:79
+msgid " ad code (6) "
+msgstr "كود اعلان (6)"
+
+#: .\blog_arab\models.py:85 .\blog_eng\models.py:82
+msgid "AdsWidget"
+msgstr "اداة الاعلانات"
+
+#: .\blog_arab\models.py:94 .\blog_eng\models.py:91 .\index\models.py:53
+#: .\index\models.py:77 .\index\models.py:93 .\index\models.py:114
+#: .\index\models.py:129 .\index\models.py:147 .\index\models.py:165
+msgid "title"
+msgstr "العنوان"
+
+#: .\blog_arab\models.py:97 .\blog_eng\models.py:94
+msgid "content"
+msgstr "المحتوي"
+
+#: .\blog_arab\models.py:102 .\blog_eng\models.py:99
+msgid "created at"
+msgstr "تاريخ الانشاء"
+
+#: .\blog_arab\models.py:104 .\blog_eng\models.py:101
+msgid " author"
+msgstr "الكاتب"
+
+#: .\blog_arab\models.py:106 .\blog_eng\models.py:103
+msgid " category"
+msgstr "تصنيف"
+
+#: .\blog_arab\models.py:108 .\blog_eng\models.py:105
+msgid "tag"
+msgstr "علامة"
+
+#: .\blog_arab\models.py:109 .\blog_eng\models.py:106
+msgid " views"
+msgstr "المشاهدات"
+
+#: .\blog_arab\models.py:111 .\blog_eng\models.py:108
+#: .\category_arab\models.py:23 .\category_eng\models.py:23
+#: .\tag_arab\models.py:23 .\tag_eng\models.py:23
+msgid ""
+"You should write some words indicating the content of the article in English"
+msgstr "يجب كتابة بعض الكلمات التي تدل على محتوى المقال باللغة الإنجليزية"
+
+#: .\blog_arab\models.py:111 .\blog_eng\models.py:108
+#: .\category_arab\models.py:23 .\category_eng\models.py:23
+#: .\tag_arab\models.py:23 .\tag_eng\models.py:23
+msgid " url"
+msgstr "رابط"
+
+#: .\blog_arab\models.py:117 .\blog_eng\models.py:114
+msgid "Blogs"
+msgstr "التدوين"
+
+#: .\blog_arab\models.py:160 .\blog_eng\models.py:154
+msgid "post"
+msgstr "مقال"
+
+#: .\blog_arab\models.py:162 .\blog_eng\models.py:156 .\index\models.py:7
+#: .\index\models.py:23 .\index\models.py:209 .\index\models.py:228
+msgid "email"
+msgstr "الايميل"
+
+#: .\blog_arab\models.py:163 .\blog_eng\models.py:157
+msgid "comment"
+msgstr "تعليق"
+
+#: .\blog_arab\models.py:165 .\blog_eng\models.py:159
+msgid "date added"
+msgstr "تاريخ الاضافة"
+
+#: .\blog_arab\models.py:168 .\blog_eng\models.py:162
+#: .\templates\pages\single-blog-ar.html:93
+msgid "Comments"
+msgstr "التعليقات"
+
+#: .\category_arab\models.py:18 .\category_eng\models.py:18
+#: .\tag_arab\models.py:18 .\tag_eng\models.py:18
+msgid "Description"
+msgstr "الوصف"
+
+#: .\index\models.py:9
+msgid "data_added"
+msgstr "اضافة تاريخ"
+
+#: .\index\models.py:12
+msgid "NewsletterUser"
+msgstr "مستخدمين النشرة الاخبارية"
+
+#: .\index\models.py:19
+msgid "site_name"
+msgstr "اسم الموقع"
+
+#: .\index\models.py:20
+msgid "logo"
+msgstr "لوجو"
+
+#: .\index\models.py:21 .\index\models.py:66 .\index\models.py:96
+#: .\index\models.py:225
+msgid "phone"
+msgstr "الهاتف"
+
+#: .\index\models.py:22 .\index\models.py:222
+msgid "address"
+msgstr "عنوان المنزل"
+
+#: .\index\models.py:26
+msgid "fb_link"
+msgstr "رابط للفيس لوك"
+
+#: .\index\models.py:28
+msgid "twitter_link"
+msgstr "رابط لتويتر"
+
+#: .\index\models.py:29
+msgid "instagram_link"
+msgstr "رابط لانسجترام"
+
+#: .\index\models.py:30
+msgid "Copyright"
+msgstr "حقوق النشر"
+
+#: .\index\models.py:32
+msgid "all_rights_reserved"
+msgstr "جميع الحقوق محفوظة"
+
+#: .\index\models.py:33
+msgid "Copyright_txt_1"
+msgstr "نص حقوق النشر - 1"
+
+#: .\index\models.py:34
+msgid "Copyright_txt_2"
+msgstr "نص حقوق النشر - 2"
+
+#: .\index\models.py:36
+msgid "Copyright_link"
+msgstr "رابط حقوف النشر"
+
+#: .\index\models.py:38
+msgid "Copyright_date"
+msgstr "تاريخ حقوق النشر"
+
+#: .\index\models.py:41
+msgid "FooterHeader"
+msgstr "الهيدر والفوتر"
+
+#: .\index\models.py:52
+msgid "hello_name"
+msgstr "اسم الترحيب"
+
+#: .\index\models.py:54 .\index\models.py:78 .\index\models.py:94
+#: .\index\models.py:115 .\index\models.py:131 .\index\models.py:148
+#: .\index\models.py:166
+msgid "des"
+msgstr "وصف"
+
+#: .\index\models.py:56
+msgid "image_banner"
+msgstr "لافتة مصورة"
+
+#: .\index\models.py:57
+msgid "cv"
+msgstr "السيرة الذاتية"
+
+#: .\index\models.py:59
+msgid "cv_link"
+msgstr "رابط السيرة الذاتية"
+
+#: .\index\models.py:61
+msgid "hire"
+msgstr "وظيفة"
+
+#: .\index\models.py:63
+msgid "hire_link"
+msgstr "رابط الوظيفة"
+
+#: .\index\models.py:64
+msgid "back_banner"
+msgstr "بانر خلفي"
+
+#: .\index\models.py:69
+msgid "Hello"
+msgstr "الترحيب"
+
+#: .\index\models.py:79
+msgid "download_cv"
+msgstr "تنزيل السيرة الذاتية"
+
+#: .\index\models.py:80
+msgid "download_link"
+msgstr "رابط التنزيل"
+
+#: .\index\models.py:85
+msgid "MySelf"
+msgstr "عن نفسك"
+
+#: .\index\models.py:98
+msgid "experience"
+msgstr "الخبرات"
+
+#: .\index\models.py:100
+msgid "years"
+msgstr "اعوام"
+
+#: .\index\models.py:103
+msgid "Call"
+msgstr "الاتصال"
+
+#: .\index\models.py:111 .\index\models.py:163
+msgid "big_name"
+msgstr "الاسم بالكامل"
+
+#: .\index\models.py:113 .\index\models.py:164
+msgid "big_dec"
+msgstr "الوصف بالكامل"
+
+#: .\index\models.py:120
+msgid "Service"
+msgstr "خدمات"
+
+#: .\index\models.py:133
+msgid "Work"
+msgstr "الاعمال"
+
+#: .\index\models.py:146
+msgid "status"
+msgstr "الحالة"
+
+#: .\index\models.py:151
+msgid "active"
+msgstr "تفعيل"
+
+#: .\index\models.py:154
+msgid "Tab"
+msgstr "الازرار"
+
+#: .\index\models.py:171
+msgid "ClientSay"
+msgstr "اراء العملاء"
+
+#: .\index\models.py:194
+#, fuzzy
+#| msgid "title"
+msgid "skill_title"
+msgstr "العنوان"
+
+#: .\index\models.py:195
+msgid "skill_percentage"
+msgstr "نسبة_المهارة"
+
+#: .\index\models.py:198
+msgid "color"
+msgstr "اللون"
+
+#: .\index\models.py:203
+msgid "skills"
+msgstr "المهارات"
+
+#: .\index\models.py:210
+msgid "subject"
+msgstr "الموضوع"
+
+#: .\index\models.py:211
+msgid "message"
+msgstr "الرسالة"
+
+#: .\index\models.py:212
+msgid "date"
+msgstr "التاريخ"
+
+#: .\index\models.py:215
+msgid "Feedback"
+msgstr "فيد باك"
+
+#: .\index\models.py:223
+msgid "address_details"
+msgstr "العنوان بالتفصيل"
+
+#: .\index\models.py:227
+msgid "work_time"
+msgstr "اوقات العمل"
+
+#: .\index\models.py:230
+msgid "Send_any_time"
+msgstr "ارسل في اي وقت"
+
+#: .\index\models.py:233
+msgid "ContactInfo"
+msgstr "معلومات الاتصال"
+
+#: .\index\models.py:244 .\index\models.py:256
+msgid "url"
+msgstr "الرابط"
+
+#: .\index\models.py:247
+#, fuzzy
+#| msgid "MenuBar"
+msgid "MenuBar En"
+msgstr "شريط القوائم"
+
+#: .\index\models.py:259
+#, fuzzy
+#| msgid "MenuBar"
+msgid "MenuBar Ar"
+msgstr "شريط القوائم"
+
+#: .\templates\pages\_tag_arab_blog.html:89 .\templates\pages\blogs-ar.html:57
+#: .\templates\pages\blogs-ar.html:92
+#: .\templates\pages\catgory_arab_blog.html:144
+#: .\templates\pages\single-blog-ar.html:92
+#, fuzzy
+#| msgid " views"
+msgid "Views"
+msgstr "المشاهدات"
+
+#: .\templates\pages\_tag_arab_blog.html:104
+#: .\templates\pages\_tag_eng_blog.html:102 .\templates\pages\blogs-ar.html:66
+#: .\templates\pages\blogs-ar.html:107 .\templates\pages\blogs-en.html:64
+#: .\templates\pages\blogs-en.html:105
+#: .\templates\pages\catgory_arab_blog.html:159
+#: .\templates\pages\catgory_eng_blog.html:157
+msgid "View More"
+msgstr "شاهد المزيد"
+
+#: .\templates\pages\_tag_arab_blog.html:184
+#: .\templates\pages\blogs-ar.html:178
+#: .\templates\pages\catgory_arab_blog.html:229
+msgid "Search"
+msgstr "البحث"
+
+#: .\templates\pages\_tag_arab_blog.html:206
+#: .\templates\pages\blogs-ar.html:200
+#: .\templates\pages\catgory_arab_blog.html:251
+msgid "about"
+msgstr "عن الكاتب"
+
+#: .\templates\pages\_tag_arab_blog.html:230
+#: .\templates\pages\blogs-ar.html:224
+#: .\templates\pages\catgory_arab_blog.html:275
+#, fuzzy
+#| msgid "NewsletterUser"
+msgid "News Letters"
+msgstr "مستخدمين النشرة الاخبارية"
+
+#: .\templates\pages\_tag_arab_blog.html:246
+#: .\templates\pages\catgory_arab_blog.html:291
+msgid "  get update from anywhere"
+msgstr "احصل على التحديثات"
+
+#: .\templates\pages\_tag_arab_blog.html:276
+msgid "  Subscribe"
+msgstr "الإشتراك"
+
+#: .\templates\pages\_tag_arab_blog.html:285
+msgid " You can unsubscribe at any time"
+msgstr "يمكنك إلغاء الاشتراك في أي وقت"
+
+#: .\templates\pages\_tag_arab_blog.html:295
+#, fuzzy
+#| msgid "popular post"
+msgid "  popular blogs"
+msgstr "الاكثر مشاهدة"
+
+#: .\templates\pages\_tag_arab_blog.html:329
+#, fuzzy
+#| msgid " ad code (1) "
+msgid "  ad_code "
+msgstr "كود اعلان (1)"
+
+#: .\templates\pages\_tag_arab_blog.html:347
+#: .\templates\pages\blogs-ar.html:340
+#: .\templates\pages\catgory_arab_blog.html:94
+#: .\templates\pages\catgory_arab_blog.html:393
+#: .\templates\pages\single-blog-ar.html:459
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: .\templates\pages\_tag_arab_blog.html:377
+#, fuzzy
+#| msgid "Tags"
+msgid "  Tags"
+msgstr "العلامات"
+
+#: .\templates\pages\blogs-ar.html:238
+#: .\templates\pages\single-blog-ar.html:351
+msgid "get update from anywhere"
+msgstr "احصل على التحديثات"
+
+#: .\templates\pages\blogs-ar.html:268
+#: .\templates\pages\catgory_arab_blog.html:321
+#: .\templates\pages\catgory_arab_blog.html:330
+#: .\templates\pages\single-blog-ar.html:381
+msgid "Subscribe"
+msgstr "الاشتراك"
+
+#: .\templates\pages\blogs-ar.html:277
+#: .\templates\pages\single-blog-ar.html:390
+msgid "You can unsubscribe at any time"
+msgstr "يمكنك إلغاء الاشتراك في أي وقت"
+
+#: .\templates\pages\blogs-ar.html:288
+#: .\templates\pages\catgory_arab_blog.html:341
+#: .\templates\pages\single-blog-ar.html:402
+#, fuzzy
+#| msgid "popular post"
+msgid "popular blogs"
+msgstr "الاكثر مشاهدة"
+
+#: .\templates\pages\blogs-ar.html:322
+#: .\templates\pages\catgory_arab_blog.html:375
+#: .\templates\pages\single-blog-ar.html:441
+#, fuzzy
+#| msgid " ad code (1) "
+msgid "ad_code"
+msgstr "كود اعلان (1)"
+
+#: .\templates\pages\blogs-ar.html:370
+#: .\templates\pages\catgory_arab_blog.html:423
+#: .\templates\pages\single-blog-ar.html:489
+msgid "Tags"
+msgstr "العلامات"
+
+#: .\templates\pages\single-blog-ar.html:132
+msgid "Prev Post"
+msgstr "المقال السابق"
+
+#: .\templates\pages\single-blog-ar.html:148
+msgid "This is the first blog!"
+msgstr "هذه هي المقالة الأولى!"
+
+#: .\templates\pages\single-blog-ar.html:154
+msgid "Next Post"
+msgstr "المقال التالي"
+
+#: .\templates\pages\single-blog-ar.html:169
+msgid " This is the last blog!"
+msgstr "هذه هي المقالة الاخيرة!"
+
+#: .\templates\pages\single-blog-ar.html:186
+#, fuzzy
+#| msgid "Comments"
+msgid " Comments"
+msgstr "التعليقات"
+
+#: .\templates\pages\single-blog-ar.html:189
+msgid "  no comments yet!"
+msgstr "لا توجد تعليقات حتى الآن!"
+
+#: .\templates\pages\single-blog-ar.html:221
+msgid " reply"
+msgstr "الرد"
+
+#: .\templates\pages\single-blog-ar.html:226
+msgid ""
+" Some placeholder content for the collapse component. This panel is hidden "
+"by default but revealed when the user activates the relevant trigger."
+msgstr "بعض محتوى العنصر النائب لمكون التصغير. هذه اللوحة مخفية
+بشكل افتراضي ولكن يتم الكشف عنها عندما يقوم المستخدم بتنشيط المشغل ذي الصلة.
+"    
+#: .\templates\pages\single-blog-ar.html:261
+msgid " Leave a Reply"
+msgstr "اترك رد"
+
+#: .\templates\pages\single-blog-ar.html:269
+#, fuzzy
+#| msgid "Comments"
+msgid " add Comment"
+msgstr "التعليقات"
+
+#: .\templates\pages\single-blog-ar.html:287
+msgid " Search"
+msgstr "البحث"
+
+#: .\templates\pages\single-blog-ar.html:309
+msgid " about"
+msgstr "عن الكاتب"
+
+#: .\templates\pages\single-blog-ar.html:337
+#, fuzzy
+#| msgid "NewsletterUser"
+msgid " News Letters"
+msgstr "مستخدمين النشرة الاخبارية"
+
+#: .\templates\partes\header.html:59 .\templates\partes\test.html:47
+msgid "Profile"
+msgstr "الصفحة الشخصية"
+
+#: .\templates\partes\header.html:60 .\templates\partes\test.html:48
+msgid "Logout"
+msgstr "خروج"
+
+#: .\templates\partes\header.html:68 .\templates\partes\test.html:57
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\templates\partes\header.html:69 .\templates\partes\test.html:58
+msgid "Signup"
+msgstr "تسجيل عضو جديد"
+
+#~ msgid "title_ar"
+#~ msgstr "العنوان بالعربية"
+
+#~ msgid "content_ar"
+#~ msgstr "المحتوي بالعربية"
+
+#~ msgid "Brand"
+#~ msgstr "الشعارات"
