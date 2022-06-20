@@ -438,3 +438,108 @@
 .admin-interface .timelist a:hover {
     background: var(--admin-interface-module-background-color);
 }
+
+
+
+.admin-interface #main  .content {
+    max-width: 100%!important;
+    background-image: url(55553.jpg)!important;
+    background-repeat: round!important;
+}
+#changelist-filter {
+   
+    background: rgb(248 248 248 / 62%)!important;
+   
+}
+#changelist .actions {
+  
+    background: rgb(255 255 255 / 10%)!important;
+    }
+.module {
+    border: none;
+    margin-bottom: 30px;
+    background: rgb(219 222 237 / 73%)!important;
+}
+#toolbar {
+   
+    background: rgb(248 248 248 / 5%)!important;
+   
+}
+#content-related {
+    background: rgb(248 248 248 / 61%)!important;
+}
+
+tbody {
+   background: rgb(248 248 248 / 61%)!important;
+}
+tr:nth-child(odd), .row-form-errors {
+     background: rgb(248 248 248 / 61%)!important;
+}
+.results {
+   
+    background: rgb(221 221 221 / 26%)!important;
+}
+#changelist-form{
+   
+    background: rgb(221 221 221 / 26%)!important;
+}#result_list{
+   
+    background: rgb(221 221 221 / 26%)!important;
+}
+.submit-row {
+    
+    background: rgb(248 248 248 / 52%)!important;
+}
+#content h2 {
+color: #333!important;
+    font-weight: 700!important;
+    background: rgb(255 255 255 / 47%)!important;
+    padding: 17px!important;
+}
+#changelist .paginator {
+  
+    background: rgb(255 255 255 / 24%)!important;
+   
+}
+form .aligned p.help:last-child, form .aligned div.help:last-child {
+  
+    color: rgb(51 51 51 / 90%)!important;
+    font-weight: 700!important;
+  
+}
+.admin-interface .related-modal .mfp-content {
+   
+    background: rgb(221 221 221 / 53%)!important;
+    }
+    
+ .admin-interface .related-modal .related-modal-iframe-container {
+   
+    background: rgb(221 221 221 / 62%)!important;  
+    }
+    
+.admin-interface .related-modal #related-modal-iframe {
+    
+    background-color: rgb(255 255 255 / 1%)!important;    
+    }
+    
+.colM .aligned .vLargeTextField, .colM .aligned .vXMLLargeTextField {
+    width: 710px!important;   
+    background: rgb(255 255 255 / 99%)!important;   
+    border: 2px rgb(84 84 84 / 37%) double!important;   
+    height: 617px!important;   
+}
+
+.aligned label {
+    
+    color: #333!important; 
+    background: rgb(255 255 255 / 64%)!important; 
+    padding: 1px!important; 
+    padding-right: 5px!important; 
+    font-weight: 700!important; 
+}
+    
+    
+    .admin-interface.sticky-pagination.change-list:not(.popup) #main.shifted > #nav-sidebar + .content .paginator {
+    width: calc(100% - 0px)!important; 
+    z-index: auto!important; 
+}

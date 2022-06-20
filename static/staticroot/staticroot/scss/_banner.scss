@@ -17,7 +17,8 @@
 				}
 			}
 			@media (max-width: 991px) {
-				display: none;
+				 display: block!important;
+                 padding-top: 0px!important;
 			}
 		}
 		.col-lg-7 {

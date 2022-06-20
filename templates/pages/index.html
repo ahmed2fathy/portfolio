@@ -5,7 +5,7 @@
 {% block content %}
 
 					
-					
+	<div class="container-fluid">			
 	<!--================ Start Home Banner Area =================-->
 	<section class="home_banner_area" style="background-image: none!important;">
 		<div class="banner_inner">
@@ -94,60 +94,75 @@
 	
 	
 	<section class="brand_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 info-client">
-					<div class="row">
-					{% for brand in brand %}
-					  
-				
-						<div class=" col-lg-4 col-md-4 table-responsive-sm" style="">
-							<div class="single-brand-item d-table">
-								<div class="d-table-cell text-center">
-									<img src="{{brand.image.url}}" alt="">
-								</div>
-							</div>
-						</div>
-					{% endfor %}
-					</div>
-				</div>
+		<div class="row justify-content-center">
+			
+				<div class="col-lg-8 text-center">
+				<div class=" info-client">
 				
 				
-				
-				<div class="offset-lg-2 col-lg-4 col-md-6">
 					
-					<div class="client-info">
+<div class="container-fluid">
+<div class="skills">
+   <!-- skill -->
+   	{% for skill in skills %}
+   <div class="skill"  >
+
+      <!-- title -->
+      <div class="skill-title">
+       
+      </div>
+      <!-- bar -->
+      <div class="row">
+      <div class="skill-image"  >
+      <img src="{{skill.image.url}}" width="35" height="30" alt=""></div>
+      <div class="skill-bar"  data-bar="{{skill.skill_percentage}}"><span  style = " background-color: {{skill.color_bar}} ;"><h6 class="skill-title"> {{skill.skill_title}}</h6> </span></div>
+   </div></div>
+   	{% endfor %}
+   <!-- #skill -->
+   
+</div>
+</div>
+
+<div class="experience-info" >
+<div class="client-info" >
+
 						{% for g in call %}
-						<div class="d-flex mb-50 m-1">
+						<div class="d-flex experience col-sm-6  p-sm-3 mb-2">
 							<span class=" lage gradient-color font-weight-bold " >{{g.years}}  </span>
 							<span></span>
-							<span class="text-info-client smll" style="
-							font-size: 24px;
-							line-height: 36px;
-							margin-left: 50px;"> {{g.experience}} </span>
-						</div>
+							<h5 class="card-title smll "> {{g.experience}} </h5>
 						
-						<br><br><br>
-						<div class="call-now d-flex">
-							<div>
-							
-							
-								<span class="fa fa-phone gradient-color"></span>
-							</div>
-							<div class="ml-15">
-								
-								<h3 class="text-uppercase-call">{{g.title}}</h3>
-								<h4 class="mopile-num">{{g.phone}}</h4>
-							</div>
 						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ End Brand Area =================-->
+					
+						<div class="col mb-6">  <span></span>                        </div>
+						
+						<div class="  col-sm-6  mb-2">
+				
+					<div class="card-text text-muted ">
+								​​<div class="dropdown primary_btn">
+  <button href="{{g.phone}}" class="primary_btn call-us-phone">
+							<a href="tel:{{g.phone}}">	<span class="fa fa-phone  phone-icon" style="color:#ddd "></span></a>{{g.title}}<i class="fas fa-caret-down in-down "></i></button>
+  <div class="dropdown-content">
+  
+    <a  class="mopile-num1" href="tel:{{g.phone}}">  <i class="fas fa-mobile"></i> {{g.phone}}</a>
+    <a class="mopile-num1" href="tel:{{g.phone}}">  <i class="fas fa-mobile"></i> {{g.phone}}  </a>
+  </div>
+  
+  
+</div>
+								
+</div></div>
+		
+		{% endfor %}				
+					
+</div>	
+</div>
+					
+</section>
+	
+<!--================ End Brand Area =================-->
 
+	
 	<!--================ Start Features Area =================-->
 	<section class="features_area">
 		<div class="container">
@@ -526,29 +541,7 @@
 				
 			  </div>
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-        			
-        			
-						
-        		
-        			
+				
         		</div>
 			</div>
 		</div>
@@ -590,326 +583,9 @@
 			</div>
 		</div>
 	</section>
-	<!--================ End Newsletter Area =================-->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-<br>
-	<br>
-	
-	<!--
-	
-	<section class="portfolio_area" id="portfolio">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="main_title text-left">
-						<h2>quality work <br>
-							Recently done project </h2>
-					</div>
-				</div>
-			</div>
-			<div class="filters portfolio-filter">
-				<ul>
-					<li class="active" data-filter="*">all</li>
-					<li data-filter=".popular">popular</li>
-					<li data-filter=".latest"> latest</li>
-					<li data-filter=".following">following</li>
-					<li data-filter=".upcoming">upcoming</li>
-				</ul>
-			</div>
-	
-			<div class="filters-content">
-				<div class="row portfolio-grid justify-content-center">
-					<div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p1.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p1.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">minimal design</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all popular">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p2.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p2.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">Paint wall</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all latest">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p3.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p3.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">female light</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all popular">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p4.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p4.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">fourth air</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all following">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p6.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p5.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">together sign</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all upcoming">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p6.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">multiply fowl</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all upcoming following">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p7.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p7.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">green heaven</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all following">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p8.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p8.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4>fly male</h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 all upcoming">
-						<div class="portfolio_box">
-							<div class="single_portfolio">
-								<img class="img-fluid w-100" src="img/portfolio/p9.jpg" alt="">
-								<div class="overlay"></div>
-								<a href="img/portfolio/p9.jpg" class="img-gal">
-									<div class="icon">
-										<span class="lnr lnr-cross"></span>
-									</div>
-								</a>
-							</div>
-							<div class="short_info">
-								<h4><a href="portfolio-details.html">season face</a></h4>
-								<p>Animated, portfolio</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	--->
-	<!--
-	<hr>
-	<div class="col-lg-4 col-md-6 all upcoming">
-		<div class="portfolio_box">
-			<div class="single_portfolio">
-				<img class="img-fluid w-100" src="img/portfolio/p5.jpg" alt="">
-				<div class="overlay"></div>
-				<a href="img/portfolio/p6.jpg" class="img-gal">
-					<div class="icon">
-						<span class="lnr lnr-cross"></span>
-					</div>
-				</a>
-			</div>
-			<div class="short_info">
-				<h4><a href="portfolio-details.html">multiply fowl</a></h4>
-				<p>Animated, portfolio</p>
-			</div>
-		</div>
 	</div>
-	-->
-	<!--================End Portfolio Area =================-->
-
-	<!--================ Start Testimonial Area =================-->
-	<!--
-	<div class="testimonial_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<div class="main_title">
-					{% for clientsay  in clientsay %}
-					  
-					
-						<h2>{{clientsay.big_name}}</h2>
-						<p>{{clientsay.big_dec}}</p>
-							 
-					 {% endfor %}
-					 
-					 
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-8 text-center">
-				<div class="testi_slider owl-carousel">
-				
-				{% for client in client  %}
-				  
-				
-        			<div class="testi_item">
-        				<div class="row">
-        					<div class="col-lg-4">
-        						<img src="{{client.image.url}}" alt="">
-        					</div>
-        					<div class="col-lg-8">
-        						<div class="testi_text">
-        							<h4>{{client.name}}</h4>
-									<p>{{client.des}} </p>
-        						</div>
-        					</div>
-        				</div>
-        			</div>
-        			</div>
-        			
-				{% endfor %}	
-			</div>
-        		</div>
-			</div>
-		</div>
-	</div>-->
-	<!--================ End Testimonial Area =================-->
-
-	<!--================ Start Newsletter Area =================-->
-	<!--
-	<section class="newsletter_area">
-		<div class="container">
-			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-12">
-					<div class="subscription_box text-center">
-						<h2 class="text-uppercase text-white">get update from anywhere</h2>
-						<p class="text-white">
-							Bearing Void gathering light light his eavening unto dont afraid. 
-						</p>
-						<div class="subcribe-form" id="mc_embed_signup">
-							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscription relative">
-								<input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required="" type="email">
-								<div style="position: absolute; left: -5000px;">
-									<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-								</div>
-								<button class="primary-btn hover d-inline">Get Started</button>
-								<div class="info"></div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<!--================ End Newsletter Area =================-->
-
-
-
-
-
-
-
-
+	
+	
 {% endblock content %}
         

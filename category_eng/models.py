@@ -1,0 +1,58 @@
+from django.db import models
+from django.urls import reverse
+import blog_eng
+
+
+from django.utils.translation import gettext_lazy as _
+# Create your models here.
+
+
+class Category(models.Model):
+
+    name = models.CharField(
+        max_length=180, help_text='Enter category name ', verbose_name=_('name'))
+
+    
+
+    des = models.TextField(max_length=340, null=True,
+                           blank=True, verbose_name=_('Description'))
+    image = image = models.ImageField(
+        upload_to='media/blog/frontbage/category', null=True, blank=True, verbose_name=_('image'),)
+
+    slug = models.SlugField(max_length=200, editable=True, allow_unicode=True, blank=True,  help_text=_(
+        'You should write some words indicating the content of the article in English'), verbose_name=_(' url'))
+
+    def __str__(self) -> str:
+        return self.name
+
+    def get_article(self):
+        return blog_eng.models.Blog.objects.filter(category_eng=self)
+
+     # دالة تحويل اسم المقال الي رابط وازالة المسافات الفارغة ووضع - داش
+
+    def save(self, *args, **kwargs):
+        from django.utils.text import slugify
+        if not self.slug:
+            self.slug = slugify(self.name)
+            if not self.slug:
+                self.slug = arabic_slugify(self.name)
+        # Call the real save() method
+        super(Category, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+    # دالة جلب رابط المقال
+
+    def get_absolute_url(self):
+
+        return reverse('category_eng:category_detail', kwargs={'slug': self.slug})
+
+
+def arabic_slugify(str):
+    str = str.replace(" ", "-")
+    str = str.replace(",", "-")
+    str = str.replace("(", "-")
+    str = str.replace(")", "")
+    str = str.replace("؟", "")
+    return str

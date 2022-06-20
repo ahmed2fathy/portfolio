@@ -4,18 +4,16 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.http import BadHeaderError
 from django.shortcuts import redirect, render
-from blogs.models import MenuBar
+
 from .forms import FeedbackForm, NewsletterUserSignUpForm
-from index.models import Brand, Call, ClientSay, ContactInfo,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
+from index.models import MenuBarAr, MenuBarEn, Skills, Call, ClientSay, ContactInfo,  FooterHeader, Hello, MySelf, NewsletterUser, Service, Tab, Work
 
 
 
 #
 
 # Create your views here.
-
-
-
+    
 
 # دالة فيد باك----------------------------
 from .forms import FeedbackForm
@@ -44,7 +42,8 @@ def feedback(request):
     context = {
     'formx': f,
     'FooterHeader': FooterHeader.objects.all()[:1],
-    'menu': MenuBar.objects.all()[:8],
+    'menu_ar': MenuBarAr.objects.all()[:8],
+    'menu_en': MenuBarEn.objects.all()[:8],
     'ContactInfo': ContactInfo.objects.all(),
     }
     
@@ -92,7 +91,7 @@ def all_index(request):
     'client': ClientSay.objects.all(),
     'work': Work.objects.all(),
     'FooterHeader':FooterHeader.objects.all()[:1],
-    'brand':Brand.objects.all()[:9],
+    'skills':Skills.objects.all()[:9],
     'work':Work.objects.all()[:1],
     'form':form,
     'alltabs': Tab.objects.all(),
@@ -100,7 +99,8 @@ def all_index(request):
     'Latest': Tab.objects.filter(status = 'Latest')[:6],
     'Following': Tab.objects.filter(status = 'Following')[:6],
     'Upcoming': Tab.objects.filter(status = 'Upcoming')[:6],
-    'menu': MenuBar.objects.all()[:8],
+    'menu_ar': MenuBarAr.objects.all()[:8],
+    'menu_en': MenuBarEn.objects.all()[:8],
     
     
     }
@@ -144,7 +144,7 @@ def about_area(request):
         'client': ClientSay.objects.all(),
         'work': Work.objects.all(),
         'FooterHeader': FooterHeader.objects.all()[:1],
-        'brand': Brand.objects.all()[:9],
+        'skills': Skills.objects.all()[:9],
         'work': Work.objects.all()[:1],
         'form': form,
         'alltabs': Tab.objects.all(),
@@ -152,7 +152,8 @@ def about_area(request):
         'Latest': Tab.objects.filter(status='Latest')[:6],
         'Following': Tab.objects.filter(status='Following')[:6],
         'Upcoming': Tab.objects.filter(status='Upcoming')[:6],
-        'menu': MenuBar.objects.all()[:8],
+        'menu_ar': MenuBarAr.objects.all()[:8],
+        'menu_en': MenuBarEn.objects.all()[:8],
 
     }
 
@@ -193,7 +194,7 @@ def service_area(request):
         'client': ClientSay.objects.all(),
         'work': Work.objects.all(),
         'FooterHeader': FooterHeader.objects.all()[:1],
-        'brand': Brand.objects.all()[:9],
+        'skills': Skills.objects.all()[:9],
         'work': Work.objects.all()[:1],
         'form': form,
         'alltabs': Tab.objects.all(),
@@ -201,7 +202,8 @@ def service_area(request):
         'Latest': Tab.objects.filter(status='Latest')[:6],
         'Following': Tab.objects.filter(status='Following')[:6],
         'Upcoming': Tab.objects.filter(status='Upcoming')[:6],
-        'menu': MenuBar.objects.all()[:8],
+        'menu_ar': MenuBarAr.objects.all()[:8],
+        'menu_en': MenuBarEn.objects.all()[:8],
 
     }
 
@@ -239,7 +241,8 @@ def portfolio_area(request):
         'Latest': Tab.objects.filter(status='Latest')[:6],
         'Following': Tab.objects.filter(status='Following')[:6],
         'Upcoming': Tab.objects.filter(status='Upcoming')[:6],
-        'menu': MenuBar.objects.all()[:8],
+        'menu_ar': MenuBarAr.objects.all()[:8],
+        'menu_en': MenuBarEn.objects.all()[:8],
         'FooterHeader': FooterHeader.objects.all()[:1],
 
     }
