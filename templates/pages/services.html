@@ -1,170 +1,175 @@
-
 {% extends 'base.html' %}
 
 
 {% block content %}
 
-<br>	
 <br>
-<br>	
 <br>
-	<!--================ Start Features Area =================-->
-	<section class="features_area">
-		<div class="container">
-			<div class="row justify-content-center">
-			
-				<div class="col-lg-8 text-center">
-					
-					{% for serve in serv %}
+<br>
+<br>
+<!--================ Start Features Area =================-->
+<section class="features_area">
+	<div class="container">
+		<div class="row justify-content-center">
 
-					<div class="main_title">
-						<h2>{{serve}}</h2>
-						<p>
+			<div class="col-lg-8 text-center">
+
+				{% for serve in serv %}
+
+				<div class="main_title">
+					<h2>{{serve}}</h2>
+					<p>
 						{{serve.big_dec}}
-						</p>
-					</div>
-					{% endfor %}
-				
+					</p>
+				</div>
+				{% endfor %}
+
 			</div>
 			<div class="row feature_inner">
-			
-		
+
+
 				{% for ser in service %}
-	
+
 				<div class="col-lg-3 col-md-6">
 					<div class="feature_item">
-					<img src="{{ser.image.url}}" alt="">
-						<h4>	{{ser.title}}</h4>
+						<img src="{{ser.image.url}}" alt="">
+						<h4> {{ser.title}}</h4>
 						<p>{{ser.des}}</p>
 					</div>
 				</div>
-				{% endfor %}	
+				{% endfor %}
 			</div>
 		</div>
-	</section>
-	<!--================ End Features Area =================-->
-	
-	<!--================Start Portfolio Area =================-->
-	<!-- Tabs navs -->
-	
+</section>
+<!--================ End Features Area =================-->
+
+<!--================Start Portfolio Area =================-->
+<!-- Tabs navs -->
+
 
 
 <br>
-	<!--================ Start Testimonial Area =================-->
-	<div class="testimonial_area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<div class="main_title">
+<!--================ Start Testimonial Area =================-->
+<div class="testimonial_area section_gap_bottom">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8 text-center">
+				<div class="main_title">
 					{% for clientsay in clientsay %}
-					  
-				
-						<h2>{{clientsay.big_name}}</h2>
-						<p>{{clientsay.big_dec}}</p>
-							 {% endfor %}
-					</div>
+
+
+					<h2>{{clientsay.big_name}}</h2>
+					<p>{{clientsay.big_dec}}</p>
+					{% endfor %}
 				</div>
 			</div>
-			<div class="row">
+		</div>
+		<div class="row">
 			<div class="testi_item">
-							
-			
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				
-				<ol class="carousel-indicators" style="bottom: -11px;">
-				
-				  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="background: rgba(124, 124, 124, 0.56);"></li>
-				  <li data-target="#carouselExampleIndicators" data-slide-to="1" style="background: rgb(177 175 175 / 56%);;"></li>
-				  <li data-target="#carouselExampleIndicators" data-slide-to="2" style="background: rgb(177 175 175 / 56%);;"></li>
-				</ol>
-				<div class="carousel-inner">
-				
-				
-					{% for client in client %}
-									{% with forloop.counter0 as i %}
-									<div class="carousel-item {% if i is 0 %}active{% endif %}">
-										<div class="col-lg-2 col-md-6 m-1">
-										<img src="{{client.image.url}}" alt="Chania">
-										</div>
-										<div class="col-lg-9 col-md-6 m-6">
-										<h3>{{client.title}}</h3>
-								        <p class=" text-capitalize text-dark  ">{{client.des}} </p>
-								        
+
+
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+					<ol class="carousel-indicators" style="bottom: -11px;">
+
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"
+							style="background: rgba(124, 124, 124, 0.56);"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"
+							style="background: rgb(177 175 175 / 56%);;"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"
+							style="background: rgb(177 175 175 / 56%);;"></li>
+					</ol>
+					<div class="carousel-inner">
+
+
+						{% for client in client %}
+						{% with forloop.counter0 as i %}
+						<div class="carousel-item {% if i is 0 %}active{% endif %}">
+							<div class="col-lg-2 col-md-6 m-1">
+								<img src="{{client.image.url}}" alt="Chania">
+							</div>
+							<div class="col-lg-9 col-md-6 m-6">
+								<h3>{{client.title}}</h3>
+								<p class=" text-capitalize text-dark  ">{{client.des}} </p>
+
 							</div>
 						</div>
-									{% endwith %}
-									{% endfor %}
-				
-				
-				
-				 
+						{% endwith %}
+						{% endfor %}
+
+
+
+
+					</div>
+
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"
+						style=" width: 2%; margin: -40px;">
+						<span class="carousel-control-prev-icon" aria-hidden="true"
+							style="background-color: #bfb8b8cc "></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"
+						style=" width: 2%; margin: -40px;">
+						<span class="carousel-control-next-icon" aria-hidden="true"
+							style="background-color: #bfb8b8cc "></span>
+						<span class="sr-only">Next</span>
+					</a>
+
 				</div>
-				
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style=" width: 2%; margin: -40px;">
-				  <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #bfb8b8cc " ></span>
-				  <span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style=" width: 2%; margin: -40px;">
-				  <span  class="carousel-control-next-icon" aria-hidden="true" style="background-color: #bfb8b8cc "></span>
-				  <span class="sr-only">Next</span>
-				</a>
-				
-			  </div>
-			
-			
-		
-        			
-        		</div>
+
+
+
+
 			</div>
 		</div>
 	</div>
-	<!--================ End Testimonial Area =================-->
+</div>
+<!--================ End Testimonial Area =================-->
 
-	<!--================ Start Newsletter Area =================-->
-	<section class="newsletter_area">
-		<div class="container">
-			<div class="row justify-content-center align-items-center">
-				<div class="col-lg-12">
-					<div class="subscription_box text-center">
-						<h2 class="text-uppercase text-white">get update from anywhere</h2>
-                  
-                    <p class="text-white">
-                        Bearing Void gathering light light his eavening unto dont afraid. 
-                    </p>
-                    {% if messages %}
-                    {% for message in messages %}
-                    <div  {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
-                      {{message}}
-                      </div>
-                    {% endfor %}
-                    {% else %}
-                    <div class="subcribe-form" id="mc_embed_signup">
-                        <form target="_blank" novalidate="true"  method="POST" class="subscription relative">
-                            {% csrf_token %} 
-								{{form}}
-								<div style="position: absolute; left: -5000px;">
-									
-								</div>
-								<button class="primary-btn hover d-inline" type="submit">Subscribe</button>
-								<div class="info"></div>
-							</form>
-							{% endif %}
-						</div>
+<!--================ Start Newsletter Area =================-->
+<section class="newsletter_area">
+	<div class="container">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-lg-12">
+				<div class="subscription_box text-center">
+					<h2 class="text-uppercase text-white">get update from anywhere</h2>
+
+					<p class="text-white">
+						Bearing Void gathering light light his eavening unto dont afraid.
+					</p>
+					{% if messages %}
+					{% for message in messages %}
+					<div {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+						{{message}}
+					</div>
+					{% endfor %}
+					{% else %}
+					<div class="subcribe-form" id="mc_embed_signup">
+						<form target="_blank" novalidate="true" method="POST" class="subscription relative">
+							{% csrf_token %}
+							{{form}}
+							<div style="position: absolute; left: -5000px;">
+
+							</div>
+							<button class="primary-btn hover d-inline" type="submit">Subscribe</button>
+							<div class="info"></div>
+						</form>
+						{% endif %}
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<!--================ End Newsletter Area =================-->
-	
-	
-	
-	
+	</div>
+</section>
+<!--================ End Newsletter Area =================-->
 
-	<br>
-	
-	
+
+
+
+
+<br>
+
+
 
 
 {% endblock content %}
-        

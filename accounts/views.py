@@ -1,3 +1,6 @@
+
+# -*- coding: UTF-8 -*-
+
 from django.shortcuts import get_object_or_404, redirect, render
 from index.models import FooterHeader
 from index.models import MenuBarAr

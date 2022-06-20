@@ -1,3 +1,6 @@
+
+# -*- coding: UTF-8 -*-
+
 from inspect import BlockFinder
 from pdb import post_mortem
 from webbrowser import get
